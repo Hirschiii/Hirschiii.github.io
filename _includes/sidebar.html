@@ -3,6 +3,7 @@
   <meta>{{ site.data.resume.basics.summary }}<meta>
   <hr />
   <a {% if include.active == "notes" %} style="font-weight: bold;" {% endif %} href="/notes">Notes</a><br />
+  <a {% if include.active == "resources" %} style="font-weight: bold;" {% endif %} href="/resources">Resources</a><br />
   <a {% if include.active == "topics" %} style="font-weight: bold;" {% endif %} href="/topics">Topics</a><br />
   <a {% if include.active == "projects" %} style="font-weight: bold;" {% endif %} href="/projects">Projects</a><br />
   <a {% if include.active == "articles" %} style="font-weight: bold;" {% endif %} href="/articles">Articles</a><br />
@@ -17,6 +18,7 @@
 <div class="ui secondary pointing menu">
   <a href="/" class="{% if include.active == "home" %}active{% endif %} item">Home</a>
   <a href="/notes" class="{% if include.active == "notes" %}active{% endif %} item">Notes</a>
+  <a href="/resources" class="{% if include.active == "resources" %}active{% endif %} item">Resources</a>
   <a href="/projects" class="{% if include.active == "projects" %}active{% endif %} item">Projects</a>
   <a href="/articles" class="{% if include.active == "articles" %}active{% endif %} item">Articles</a>
   <a href="/resume" class="{% if include.active == "resume" %}active{% endif %} item">Resume</a>

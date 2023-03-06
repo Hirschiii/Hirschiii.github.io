@@ -8,8 +8,6 @@
 
   <title>
       
-      Demo Note Page |
-      
     Niklas von Hirschfeld
   </title>
 
@@ -55,7 +53,7 @@
     <a href="/">Eric Chapdelaine</a><br />
   <meta>Student at Northeastern University Studying Computer Science.<meta>
   <hr />
-  <a  style="font-weight: bold;"  href="/notes">Notes</a><br />
+  <a  href="/notes">Notes</a><br />
   <a  href="/resources">Resources</a><br />
   <a  href="/topics">Topics</a><br />
   <a  href="/projects">Projects</a><br />
@@ -70,7 +68,7 @@
 <div hidden class="topbar">
 <div class="ui secondary pointing menu">
   <a href="/" class=" item">Home</a>
-  <a href="/notes" class="active item">Notes</a>
+  <a href="/notes" class=" item">Notes</a>
   <a href="/resources" class=" item">Resources</a>
   <a href="/projects" class=" item">Projects</a>
   <a href="/articles" class=" item">Articles</a>
@@ -78,84 +76,93 @@
 </div></div>
 
 
-<div class="contents nonprintable"></div>
+<head>
+<title> NEU Resources | Eric Chapdelaine </title>
+</head>
+<script src="https://unpkg.com/lunr/lunr.js"></script>
 
-
-<div class="segment ui text container document">
-  <h1 id=""><span class="half-background">Demo Note Page</span></h1>
-  <hr>
-        <button class="ui button" onClick="setDetails(false);">Close all sections</button>
-        <button class="ui button" onClick="setDetails(true);">Open all sections</button>
-    
-    <div class="cnote">
-    
-        <h1 id="section-1-math-and-latex">Section 1: Math and LaTeX</h1>
-
-<p>Here is an example of how I take my math notes:</p>
-
-<p>$\lim_{n \to \infty} \frac{n}{n} = 1$</p>
-
-<h1 id="section-2-images">Section 2: Images</h1>
-
-<p>Here is an example of an image:</p>
-
-<div style="width: 100%" class="ui rounded images">
-  <p><img class="ui image" src="/articles/how-i-take-notes/demo-note/fig1.png" /></p>
-</div>
-
-
-    
+<div style="margin-top: 20px; margin-bottom: 20px" class="ui text container">
+  <div class="ui stackable centered three cards">
+    <div class="segment ui text container document">
+    <h1 id=""><span class="half-background">Northeastern Resources</span></h1>
+    <hr>
+    <form id="form" onsubmit="submitSearch()">
+        <div class="ui action input">
+            <input placeholder="Search..." type="text" id="search" >
+            <button class="ui icon button">
+                <i class="search icon"></i>
+              </button>
+        </div>
+    </form>
+    <div id="results">
     </div>
-    
+    <hr>
+    <details>
+        <summary>
+         Important Links
+        </summary>
+        <div id="links">
+        </div>
+    </details>
+    </div>
+  </div>
 </div>
 
 <script>
-    
-    var contents = "<nav>In Open Sections:";
-    betweenH1 = /<h1.*?(?=<h1|$)/gs;
-    anyHeaderID = /(?<=<h[1-3][^>]*id=").*?(?=")/gs;
-    anyHeaderText = /(?<=<h[123][^>]*>).*?(?=<\/h[123])/gs;
-    var newHTML, curIDs, curHeaders;
+    var form = document.getElementById("form");
+    function removeRefresh(event) { event.preventDefault(); }
+    form.addEventListener('submit', removeRefresh);
 
-    allCollapseableSections = document.getElementsByClassName("cnote");
+    var notes = [
+        {"name": "My note wiki inspiration", "link": "https://github.com/eric-chapdelaine/eric-chapdelaine.github.io"},
+    ];
+    addResources("notes", notes);
 
-    for (var curBlock = 0; curBlock < allCollapseableSections.length; curBlock++) {
-        // Onetime:
-        //Create sections which are defined as area between two h1's
-        var doc = allCollapseableSections[curBlock].innerHTML;
-        var sectionsBody = doc.match(betweenH1);
 
-        allCollapseableSections[curBlock].innerHTML = "";
-        for (var i = 0; i < sectionsBody.length ; i++) {
-            //contents
-            curHeaders = sectionsBody[i].match(anyHeaderText);
-            curIDs = sectionsBody[i].match(anyHeaderID);
-            contents += "<div data-id='" + curIDs[0] + "' hidden>";
+    var links = [
+        {"name": "View the Classroom", "link": "https://classroom.neu.edu/Shibboleth.sso/Login"},
+    ];
+    addResources("links", links);
 
-            for (var j = 0; j < curHeaders.length ; j++){
-                contents += "<a href='#" + curIDs[j] + "'>" + curHeaders[j] + "</a><br />";
-            }
-            contents += "</div>";
-
-            // Body
-            allCollapseableSections[curBlock].innerHTML += "<details id='" + curIDs[0] + "'><summary>" + sectionsBody[i].match(anyHeaderText)[0] + "</summary>" + sectionsBody[i] + "</details>";
+    function addResources(sectionId, resources) {
+        for (let i = 0; i < resources.length; i++) {
+            document.getElementById(sectionId).insertAdjacentHTML("beforeend", "<a href=\"" + resources[i]["link"] + "\">" + resources[i]["name"] + "</a><br />")
         }
     }
-    contents += "</nav";
-    document.getElementsByClassName("contents")[0].innerHTML = contents;
-    
-    // Auto showing of sub-sections
-    function showSubsections(e) {
-        const item = document.querySelector(`[data-id='${e.target.id}']`);
-        item.toggleAttribute('hidden');
+
+    // var all = academics.concat(careers, experiential, financial, graduation, health, housing, it, library, misc);
+    var all = links.concat(notes);
+
+    var allId = []
+    for (let i  = 0; i < all.length; i++) {
+        allId.push(all[i]);
+        allId[i]["id"] = i;
     }
 
-    const sections = document.querySelectorAll('details');
-    sections.forEach((section) => {
-        section.addEventListener('toggle', showSubsections);
-    });
-</script>
+    var idx = lunr(function () {
+    this.ref('id')
+    this.field('name')
 
+    allId.forEach(function (doc) {
+        this.add(doc)
+    }, this)
+    })
+
+function submitSearch() {
+    var query = document.getElementById("search").value;
+    var answer = idx.search(query)
+
+    const displayedResults = document.getElementById("results");
+    displayedResults.innerHTML = '<strong>Search Results</strong>:<br />';
+
+    var results = [];
+    for (let i = 0; i < answer.length; i++) {
+        var index = answer[i].ref;
+        displayedResults.insertAdjacentHTML("beforeend", "<a href=\"" + all[index]["link"] + "\">" + all[index]["name"] + "</a><br />")
+    }
+}
+
+</script>
 
     <!-- Have links go to correct location (even when in details tag) -->
 <script>
