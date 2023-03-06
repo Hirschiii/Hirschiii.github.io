@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>
+      
+      Comparing the Class of 2020 and 2021 with Machine Learning and Reddit |
+      
+    Niklas von Hirschfeld
+  </title>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet-custom.css">
+
+  <!-- KaTeX --!>    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+          });
+      });
+  </script>
+
+
+  <script type="text/javascript" src="/js/custom.js"></script>
+
+  <!-- Highlight all code blocks -->
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.highlightAll();</script>
+</head>
+
+  <body>
+    <div class="sidenav">
+    <a href="/">Eric Chapdelaine</a><br />
+  <meta>Student at Northeastern University Studying Computer Science.<meta>
+  <hr />
+  <a  href="/notes">Notes</a><br />
+  <a  href="/topics">Topics</a><br />
+  <a  href="/projects">Projects</a><br />
+  <a  style="font-weight: bold;"  href="/articles">Articles</a><br />
+  <a  href="/resume">Resume</a><br />
+  <hr />
+  <a href="mailto:chapdelaine.e@northeastern.edu">Email</a><br />
+  <a href="http://github.com/eric-chapdelaine">GitHub</a><br />
+  <a href="https://www.linkedin.com/in/eric-chapdelaine/">LinkedIn</a><br />
+</div>
+
+<div hidden class="topbar">
+<div class="ui secondary pointing menu">
+  <a href="/" class=" item">Home</a>
+  <a href="/notes" class=" item">Notes</a>
+  <a href="/projects" class=" item">Projects</a>
+  <a href="/articles" class="active item">Articles</a>
+  <a href="/resume" class=" item">Resume</a>
+</div></div>
+
+
+<div class="segment ui text container document">
+    <h1><span class="half-background">Comparing the Class of 2020 and 2021 with Machine Learning and Reddit</span></h1>
+    <style>
+table {
+    font-size: 10px;
+}
+</style>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>The college application process is stressful. Any student knows that it will be overwhelming even in the best of cases.  On top of that, the many students that graduated high school in the past two years had another stressor that no one could have predicted: COVID-19. From missing out on their last year of high school to having trouble (both financial and academic) applying to their top-choice college, these students have had it bad. I, as part of the class of 2020, can attest to this. The coronavirus pandemic has caused much uncertainty and unexpected roadblocks in my college application process.</p>
+
+<p>Even just between the class of 2020 and the class of 2021, the times have changed dramatically. Most schools have been able to partially reopen and we are seeing a return to ‘normalcy’ already (Operational). I first noticed this difference when talking to students in the class of 2021 who seemed to be both have a more typical senior year and also a more stressful one. These are seemingly juxtaposing, however. I am not the only one to notice this, either. The Tampa Bay Times interviewed 10 high school seniors on their experiences. Some said positive things about the year:</p>
+
+<blockquote>
+  <p>“‘I go to school every day, and I try to appreciate it, because last year when I didn’t have it, I was bored out of my mind,’ said Gavyn Dorsey, a senior at Zephyrhills High. ‘I treat every day like it’s the best day.’” (Tampa)</p>
+</blockquote>
+
+<p>Others stated the negatives:</p>
+
+<blockquote>
+  <p>“‘I’m not going to lie. It hurts,’ said Jenesis Montero, a senior in Blake High School’s fine arts magnet program, who saw so many of her performances and competitions canceled. ‘I didn’t think they would take everything away. We have nothing. We have literally nothing.’” (Tampa)</p>
+</blockquote>
+
+<p>It should be noted, however, that these ideas aren’t mutually exclusive. Any given student could both be upset because of the state of their senior year of high school while still being optimistic and appreciate what they still have. What interests me, however, is the difference between the class of 2020 and the class of 2021.</p>
+
+<p>The rest of this article aims to figure this out as well as answering the question “what are the differences in attitudes in the class of 2021 compared to the class of 2020?”. To answer this, I took data from Reddit from the popular subreddits r/ACT, r/SAT, and r/ApplyingToCollege and analyzed it with the machine learning technique <code class="language-plaintext highlighter-rouge">word2vec</code>.</p>
+
+<h1 id="why-reddit">Why Reddit?</h1>
+
+<p>I chose Reddit for my corpus for three reasons: it is organized into subreddits, there are dates attached to posts, and posts are long (so the students can elaborate on their experiences more). Reddit is also a popular social media for posting about college applications. For example, r/ApplyingToCollege self-proclaims themselves as “the premier forum for college admissions” with 341,000 active members. Therefore, it acts as a great corpus for seeing the thoughts of students applying to colleges. I also gathered data from r/ACT and r/SAT as taking these exams is vital for the college application process. Although several schools got rid of their standardized testing requirements in light of the pandemic, these communities have still been very active.</p>
+
+<p>For scrapping Reddit, I used <a href="https://praw.readthedocs.io/en/latest/"><code class="language-plaintext highlighter-rouge">praw</code></a> which is an API in Python for getting information from Reddit. For the class of 2020, I considered all posts from the respective subreddits that fall between the dates of August 1st, 2019 to June 1st, 2020. For the class of 2021, the date range was just one year later: August 1st, 2020 to June 1st, 2021. This method does result in some spillover, such as ambitious freshmen and sophomores posting as well as those who like the linger on the subreddit after they are done with the application process. However, because these spillovers are uncommon, the data is still representative of the respective classes.</p>
+
+<p>Python code used:
+<script src="https://gist.github.com/eric-chapdelaine/7d2e69bda848c0246d45d8b5b7cb1ba6.js"></script></p>
+
+<h1 id="what-is-word2vec">What is Word2Vec?</h1>
+
+<p><code class="language-plaintext highlighter-rouge">Word2Vec</code> is a technique commonly used in natural language processing that assigns given words to a vector (which can have hundreds of dimensions).  Essentially, it takes the meaning of a given word and maps it to a vector. Why is this helpful? Well, because vectors are just linear algebra, we can do math with them. We can see relationships between two word vectors to understand their semantic relationship. That is, we can see how similar words are by seeing how close they are in a vector space. For simplicity, you can think of it as a graph with points. The closer words are to each other on that graph, the closer their meanings are.</p>
+
+<p>If we import the Reddit corpora into the word2vec package in the <code class="language-plaintext highlighter-rouge">R</code> programming language, we can visualize some of the data.</p>
+
+<p>Here is the class of 2020:</p>
+
+<div style="width: 100%" class="ui rounded images">
+  <p><img class="ui image" src="/articles/word2vec/2020.png" /></p>
+</div>
+
+<p>Here is the class of 2021:</p>
+<div style="width: 100%" class="ui rounded images">
+  <p><img class="ui image" src="/articles/word2vec/2021.png" /></p>
+</div>
+
+<p>Keep in mind that the actual location of each word is arbitrary (which is why the numbers in the class of 2020 dataset are in a different location than the numbers of the class of 2021). It’s the relationships that are important.</p>
+
+<h1 id="the-results">The Results</h1>
+
+<p>I tried three different queries in both of the corpora to compare: uncertainty, covid, and stress. These results were then used to make conclusions about the different attitudes of the class of 2020 and the class of 2021.</p>
+
+<h3 id="uncertainty">Uncertainty</h3>
+
+<p>First, I wanted to see students’ thoughts regarding uncertainty. To do this, I found what words are most similar and related to ‘uncertain’ and ‘uncertainty’ by running the following <code class="language-plaintext highlighter-rouge">R</code> code:</p>
+
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classof2020</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">closest_to</span><span class="p">(</span><span class="o">~</span><span class="s2">"uncertain"</span><span class="o">+</span><span class="s2">"uncertainty"</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>This resulted in the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class of 2020</th>
+      <th>word</th>
+      <th>similarity to “uncertain” + “uncertainty”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>uncertainty</td>
+      <td>0.916201454249531</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>uncertain</td>
+      <td>0.800270770179415</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td><strong>virus</strong></td>
+      <td>0.573571297177422</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td><strong>pandemic</strong></td>
+      <td>0.563139000208725</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>daunting</td>
+      <td>0.537301285335967</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>signs</td>
+      <td>0.5355093861046</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>concerns</td>
+      <td>0.531550817807281</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>excitement</td>
+      <td>0.530166944442763</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>surrounding</td>
+      <td>0.515865066798079</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td><strong>corona</strong></td>
+      <td>0.510703784331665</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>midst</td>
+      <td>0.509826727040499</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td><strong>lockdown</strong></td>
+      <td>0.509195898826775</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>dread</td>
+      <td>0.505274784596487</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>outcomes</td>
+      <td>0.504228181962831</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>stigma</td>
+      <td>0.504088021311954</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>unstable</td>
+      <td>0.502606934423754</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><strong>coronavirus</strong></td>
+      <td>0.502527241517773</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>expectation</td>
+      <td>0.499880866941874</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td><strong>outbreak</strong></td>
+      <td>0.498839683540765</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>corners</td>
+      <td>0.497746503311933</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Already, you can notice how COVID-19 is present in 6 (bolded) of the top 20 similar words. For comparison, I also did this for the class of 2021 corpus. This yielded the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class of 2021</th>
+      <th>word</th>
+      <th>similarity to “uncertain” + “uncertainty”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>uncertain</td>
+      <td>0.806773534302534</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>uncertainty</td>
+      <td>0.784916186119596</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>dreading</td>
+      <td>0.654581549097321</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>avoided</td>
+      <td>0.613847350145064</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>kicking</td>
+      <td>0.605324004291105</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>considerable</td>
+      <td>0.591866339914577</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>biased</td>
+      <td>0.590763063424328</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>sleeping</td>
+      <td>0.587421351684044</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>sacrificing</td>
+      <td>0.580067895212026</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>questioning</td>
+      <td>0.579700939187577</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>dedicating</td>
+      <td>0.572807165602128</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>frustration</td>
+      <td>0.565102488262904</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>schoolwork</td>
+      <td>0.564671233956532</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>unproductive</td>
+      <td>0.563131848504995</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>workload</td>
+      <td>0.559043160869937</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>impactful</td>
+      <td>0.556937053741166</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>individuals</td>
+      <td>0.556410105374563</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>situations</td>
+      <td>0.555195834166442</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>defeated</td>
+      <td>0.553633837850615</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>unhappy</td>
+      <td>0.552352692912157</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Surprisingly, no words relating to the coronavirus made their way to the top 20. From this, we can assume that the uncertainty of COVID-19 affected the class of 2020 significantly more than the class of 2021. Although this was expected, I was surprised how not a single COVID-19 related word appeared.</p>
+
+<h3 id="covid-19">COVID-19</h3>
+
+<p>The second query that I tried was searching for words relating to COVID-19. For this, I used the <code class="language-plaintext highlighter-rouge">R</code> code:</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classof2020</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">closest_to</span><span class="p">(</span><span class="o">~</span><span class="s2">"covid"</span><span class="o">+</span><span class="s2">"coronavirus"</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>That code resulted in the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class of 2020</th>
+      <th>word</th>
+      <th>similarity to “covid” + “coronavirus”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>covid</td>
+      <td>0.927010003808503</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>coronavirus</td>
+      <td>0.914407842634866</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>pandemic</td>
+      <td>0.756876875665945</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>outbreak</td>
+      <td>0.743696242619837</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>19</td>
+      <td>0.706524442613571</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>cancellations</td>
+      <td>0.614211640528429</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>covid19</td>
+      <td>0.601072599310534</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>virus</td>
+      <td>0.599014496064918</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>corona</td>
+      <td>0.593752302818033</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>situation</td>
+      <td>0.54530106936663</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>4</td>
+      <td>0.540277552151175</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>3</td>
+      <td>0.534743280988726</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>9</td>
+      <td>0.532063589951454</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>www.forbes.com</td>
+      <td>0.529202532238379</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>lining</td>
+      <td>0.529023601531651</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>1</td>
+      <td>0.524257973963267</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>crisis</td>
+      <td>0.522048729073635</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>5</td>
+      <td>0.520963679829812</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>www.nytimes.com</td>
+      <td>0.51507740299426</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>uncertainty</td>
+      <td>0.513892154116675</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The first two things that stick out in this table are the numbers and the URLs. The numbers are (mostly) specific dates of canceled events such as SAT or ACT test dates, and the URLs, www.forbes.com and www.nytimes.com, are popular sites that track the coronavirus. The exception is ‘19’ which is from the phrase “covid 19”. However, these numbers and URLs aren’t apparent in the class of 2021 version of the table as shown below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class of 2021</th>
+      <th>word</th>
+      <th>similarity to “covid” + “coronavirus”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>covid</td>
+      <td>0.927572248980337</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>coronavirus</td>
+      <td>0.925194258658541</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>pandemic</td>
+      <td>0.740656253763169</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>capacity</td>
+      <td>0.661856864633386</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>corona</td>
+      <td>0.637021535204168</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>due</td>
+      <td>0.626885755343254</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>virus</td>
+      <td>0.625887637395977</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>cancelled</td>
+      <td>0.578294801796821</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>closed</td>
+      <td>0.569695128455252</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>19</td>
+      <td>0.563720660535182</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>lockdown</td>
+      <td>0.549465196103793</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>ongoing</td>
+      <td>0.548434690854775</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>restrictions</td>
+      <td>0.547763706469807</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>symptoms</td>
+      <td>0.54383753952305</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>adhd</td>
+      <td>0.53999284844337</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>canceled</td>
+      <td>0.531780206224112</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>caused</td>
+      <td>0.516899057611585</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>closures</td>
+      <td>0.516884089588083</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>circumstances</td>
+      <td>0.513076732029396</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>cases</td>
+      <td>0.510760795339529</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The closest words to “covid” in the class of 2021’s corpora are less relating to the virus itself and more on the effects of it – mainly the cancelations. By this, I can assume that the class of 2021 views COVID-19 as a fact of nature instead of a new phenomenon that is a cause of uncertainty.</p>
+
+<h3 id="stress">Stress</h3>
+
+<p>The last query that I did was looking at the word ‘stress’. For this, the <code class="language-plaintext highlighter-rouge">R</code> command is:</p>
+<div class="language-r highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">classof2020</span><span class="w"> </span><span class="o">%&gt;%</span><span class="w"> </span><span class="n">closest_to</span><span class="p">(</span><span class="s2">"stress"</span><span class="p">,</span><span class="w"> </span><span class="m">20</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>The table for the class of 2020 is below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class of 2020</th>
+      <th>word</th>
+      <th>similarity to “stress”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>stress</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>draining</td>
+      <td>0.569763099756746</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>anxiety</td>
+      <td>0.568005619428719</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>sleep</td>
+      <td>0.556364373828751</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>fear</td>
+      <td>0.550306141962488</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>intense</td>
+      <td>0.549747369306958</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>nerves</td>
+      <td>0.546825651072332</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>pressure</td>
+      <td>0.533962601407304</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>excitement</td>
+      <td>0.532409821161514</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>disappointment</td>
+      <td>0.528782449520114</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>emotionally</td>
+      <td>0.510667143930341</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>healthy</td>
+      <td>0.504236970335187</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>nerve</td>
+      <td>0.502928272110659</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>packed</td>
+      <td>0.502672347198466</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>existence</td>
+      <td>0.501582095144679</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>tears</td>
+      <td>0.498361680102606</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td><strong>uncertainty</strong></td>
+      <td>0.497733288854682</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>relieve</td>
+      <td>0.495661310995123</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>hanging</td>
+      <td>0.494759334664189</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>boredom</td>
+      <td>0.489887012525981</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The class of 2021’s corpus yielded the following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class of 2021</th>
+      <th>word</th>
+      <th>similarity to “stress”</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>stress</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>anxiety</td>
+      <td>0.660850386058463</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>yourselves</td>
+      <td>0.565706189106917</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>depression</td>
+      <td>0.544819958947775</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>urself</td>
+      <td>0.538460151624733</td>
+    </tr>
+    <tr>
+      <td>6</td>
+      <td>pressure</td>
+      <td>0.534360784364564</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>validation</td>
+      <td>0.532770108129177</td>
+    </tr>
+    <tr>
+      <td>8</td>
+      <td>stressing</td>
+      <td>0.524595133499214</td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>fear</td>
+      <td>0.524493787139435</td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td>shit</td>
+      <td>0.510227388359591</td>
+    </tr>
+    <tr>
+      <td>11</td>
+      <td>workload</td>
+      <td>0.508394797155711</td>
+    </tr>
+    <tr>
+      <td>12</td>
+      <td>worry</td>
+      <td>0.508108730036202</td>
+    </tr>
+    <tr>
+      <td>13</td>
+      <td>control</td>
+      <td>0.507477160961492</td>
+    </tr>
+    <tr>
+      <td>14</td>
+      <td>severely</td>
+      <td>0.499121925311335</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>guilt</td>
+      <td>0.48888089537924</td>
+    </tr>
+    <tr>
+      <td>16</td>
+      <td>burnt</td>
+      <td>0.486868788031278</td>
+    </tr>
+    <tr>
+      <td>17</td>
+      <td>merry</td>
+      <td>0.485100059230911</td>
+    </tr>
+    <tr>
+      <td>18</td>
+      <td>fears</td>
+      <td>0.479196256885631</td>
+    </tr>
+    <tr>
+      <td>19</td>
+      <td>stressed</td>
+      <td>0.47693203784829</td>
+    </tr>
+    <tr>
+      <td>20</td>
+      <td>forget</td>
+      <td>0.475067958970451</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These results surprised me. I was originally thinking that both the graduating classes would have different similar words relating to “stress” because I assumed that the stress relating to new, unknown coronavirus would look different from the more predictable stressors of the college application process. These tables, however, are strikingly similar. The only notable difference is that the class of 2020’s table had the word “uncertainty”, which is expected in the time that COVID-19 was new. This word, however, is only the 17th closest word so it’s not that drastic of a difference.</p>
+
+<h1 id="conclusion">Conclusion</h1>
+
+<p>The differences between graduating classes weren’t as stark as I initially thought. Although there were some clear differences relating to COVID-19 and uncertainty, the overall stress of the students were described similarly. This finding just goes to show how the college application process is relatively stable. So although both the class of 2020 and class of 2021 had vastly different college application processes, the attitudes were relatively similar.</p>
+
+<p>If I were to do further research on this topic, I would like to explore more specifics. For example, I would clean the data to remove all websites that linked to either photo or Reddit itself so I could compare the usage of other college-related web pages across the years. I would also focus on the differences in elite compared to non-elite institutions. How was the process of applying to elite (and non-elite) schools different than in previous years? Lastly, I would explore the different majors and career paths. Are more people attracted to medical programs since the COVID-19 pandemic hit?</p>
+
+<h1 id="works-cited">Works Cited</h1>
+
+<p>“Operational Strategy for K-12 Schools through Phased Prevention.” Centers for Disease Control and Prevention, Centers for Disease Control and Prevention, 19 Mar. 2021, www.cdc.gov/coronavirus/2019-ncov/community/schools-childcare/operation-strategy.html.</p>
+
+<p>Tampa Publishing Company. “’Not Going to Lie. It Hurts.’ Class of 2021 Tries to Stay Positive.” Tampa Bay Times, 1 Feb. 2021, www.tampabay.com/news/education/2021/02/01/not-going-to-lie-it-hurts-class-of-2021-tries-to-stay-positive/.</p>
+
+
+
+
+<h1>Comments</h1>
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    var disqus_config = function () {
+        this.page.url = "https://ericchapdelaine.com/articles/word2vec.html";  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = "https://ericchapdelaine.com/articles/word2vec.html"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://ericchapdelaine.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+</div>
+
+    <!-- Have links go to correct location (even when in details tag) -->
+<script>
+
+    $("[href^='#']").on("click", function() {
+    var $targetDIV = $(this.getAttribute("href"));
+    if ($targetDIV.is(":hidden")) {
+        $targetDIV.closest("details").prop("open", true);
+    }
+    });
+</script>
+
+  </body>
+</html>

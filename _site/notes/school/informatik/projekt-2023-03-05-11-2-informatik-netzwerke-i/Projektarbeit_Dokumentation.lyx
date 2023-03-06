@@ -1,0 +1,258 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing other 1.5
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Projektarbeit Netzwerke
+\end_layout
+
+\begin_layout Author
+Niklas von Hirschfeld, Mikael Siggel
+\end_layout
+
+\begin_layout Date
+05.03.2023
+\end_layout
+
+\begin_layout Part
+Begriffe
+\end_layout
+
+\begin_layout Description
+Netz:
+\end_layout
+
+\begin_layout Description
+Internet:
+\end_layout
+
+\begin_layout Description
+IP-Adresse:
+\end_layout
+
+\begin_layout Description
+Subnetze:
+\end_layout
+
+\begin_layout Description
+Webadresse:
+\end_layout
+
+\begin_layout Description
+Webserver:
+\end_layout
+
+\begin_layout Description
+Gateways:
+\end_layout
+
+\begin_layout Description
+URL:
+\end_layout
+
+\begin_layout Description
+Domain:
+\end_layout
+
+\begin_layout Description
+Domainname:
+\end_layout
+
+\begin_layout Description
+Router:
+\end_layout
+
+\begin_layout Description
+DNS:
+\end_layout
+
+\begin_layout Description
+Protokoll:
+\end_layout
+
+\begin_layout Part
+Aufgabe
+\end_layout
+
+\begin_layout Section
+Einfaches Rechnernetz
+\end_layout
+
+\begin_layout Quote
+Entwickeln Sie ein einfaches Rechnernetz aus zwei Rechnern, welche sich
+ im Netz 192.168.0 befinden.
+ Prüfen Sie die Erreichbarkeit des jeweils anderen Rechners durch einen
+ ping Aufruf mit der jeweiligen Adresse.
+\end_layout
+
+\begin_layout Section
+Erweiterung durch Webserver
+\end_layout
+
+\begin_layout Quote
+Entwickeln Sie ein einfaches Rechnernetz aus zwei Rechnern, welche sich
+ im Netz 192.168.0 befinden.
+ Prüfen Sie die Erreichbarkeit des jeweils anderen Rechners durch einen
+ ping-Aufruf mit der jeweiligen Adresse.
+\end_layout
+
+\begin_layout Section
+Seperates Netz
+\end_layout
+
+\begin_layout Quote
+Verschieben Sie den Webserver in ein anderes Netz, welches durch einen Router
+ (Vermittlungsrechner) mit dem vorhandenen Netz verbunden ist.
+ Rufen Sie die Webseite mithilfe der IP-Adresse durch den Client auf, nachdem
+ im Client der Gateway festgelegt ist.
+\end_layout
+
+\begin_layout Section
+DNS-Server
+\end_layout
+
+\begin_layout Quote
+Richten Sie einen DNS-Server in einem weiteren Netz ein, der einen Aufruf
+ der Webseite des Webservers über dessen URL 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.filius.de
+\end_layout
+
+\end_inset
+
+ ermöglicht.
+ Legen Sie den DNS-Server im Client fest.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filius Netzwerk DNS
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename assets/aufgabe_6.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Whois und Traceroute
+\end_layout
+
+\begin_layout Quote
+Recherchieren Sie IP-Adressen bzw.
+ die zugehörigen Domainnamen mit einem whois-Tool.
+ Recherchieren Sie den Weg von Daten zu einem Server mit dem tracert-Befehl
+\end_layout
+
+\begin_layout Section
+Mail-Server
+\end_layout
+
+\begin_layout Quote
+Integrieren Sie Mail-Serverund simulieren Sie hiermit den Mailversand und
+ Mailempfang
+\end_layout
+
+\end_body
+\end_document

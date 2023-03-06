@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eric Chapdelaine</title>
+    <description>Computer Science student at Northeastern University</description>
+    <link>https://www.ericchapdelaine.com/</link>
+    
+    
+    
+    
+      
+        <item>
+          <title>Comparing the Class of 2020 and 2021 with Machine Learning and Reddit</title>
+          <description># Introduction The college application process is stressful. Any student knows that it will be overwhelming even in the best of cases. On top of that, the many students that graduated high school in the past two years had another...</description>
+          <pubDate>2021-04-10T00:00:00+02:00</pubDate>
+          <link>/articles/word2vec.html</link>
+          <guid isPermaLink="true">https://www.ericchapdelaine.com/articles/word2vec.html</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>How I Take Notes</title>
+          <description>A while ago I read a [great piece](https://castel.dev/post/lecture-notes-1/) by [Gilles Castel](https://castel.dev/) on how to take notes using $\LaTeX$ and Vim. The resulting notes are stunning. Everything from mathematical formulae to figures are created real-time by Castel. I knew I wanted...</description>
+          <pubDate>2021-03-31T00:00:00+02:00</pubDate>
+          <link>/articles/how-i-take-notes.html</link>
+          <guid isPermaLink="true">https://www.ericchapdelaine.com/articles/how-i-take-notes.html</guid>
+        </item>
+      
+    
+      
+        <item>
+          <title>Rampant Media&amp;#58; A Threat to Our Unity</title>
+          <description>Our world is becoming significantly more polarized and the media is to blame. People like seeing media that agrees with their views and, with the growth of media in the past 40 years, there is now so much that people...</description>
+          <pubDate>2021-01-13T00:00:00+01:00</pubDate>
+          <link>/articles/rampant-media.html</link>
+          <guid isPermaLink="true">https://www.ericchapdelaine.com/articles/rampant-media.html</guid>
+        </item>
+      
+    
+  </channel>
+</rss>
+

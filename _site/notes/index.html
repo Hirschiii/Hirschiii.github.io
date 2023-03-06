@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>
+      
+    Niklas von Hirschfeld
+  </title>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet-custom.css">
+
+  <!-- KaTeX --!>    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+          });
+      });
+  </script>
+
+
+  <script type="text/javascript" src="/js/custom.js"></script>
+
+  <!-- Highlight all code blocks -->
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.highlightAll();</script>
+</head>
+
+  <body>
+    <div class="sidenav">
+    <a href="/">Eric Chapdelaine</a><br />
+  <meta>Student at Northeastern University Studying Computer Science.<meta>
+  <hr />
+  <a  style="font-weight: bold;"  href="/notes">Notes</a><br />
+  <a  href="/topics">Topics</a><br />
+  <a  href="/projects">Projects</a><br />
+  <a  href="/articles">Articles</a><br />
+  <a  href="/resume">Resume</a><br />
+  <hr />
+  <a href="mailto:chapdelaine.e@northeastern.edu">Email</a><br />
+  <a href="http://github.com/eric-chapdelaine">GitHub</a><br />
+  <a href="https://www.linkedin.com/in/eric-chapdelaine/">LinkedIn</a><br />
+</div>
+
+<div hidden class="topbar">
+<div class="ui secondary pointing menu">
+  <a href="/" class=" item">Home</a>
+  <a href="/notes" class="active item">Notes</a>
+  <a href="/projects" class=" item">Projects</a>
+  <a href="/articles" class=" item">Articles</a>
+  <a href="/resume" class=" item">Resume</a>
+</div></div>
+
+
+<head>
+    <link href="minimal-table.css" rel="stylesheet" type="text/css">
+</head>
+
+ <style>
+        tbody {
+          font-size: 90%;
+          font-style: italic;
+        }
+
+        tfoot {
+          font-weight: bold;
+        }
+        .tbl { overflow-x: auto; }
+th, td { min-width: 100px; }
+    </style>
+    <!-- 
+        .tbl { overflow-x: scroll; } -->
+  </head>
+<div style="margin-top: 20px; margin-bottom: 20px" class="ui text container">
+  <body>
+    <div class="tbl">
+      <table>
+        <thead>
+          <tr>
+            <th>Schulhalbjahr</th>
+            <th>Mathe</th>
+            <th>Physik</th>
+            <th>Informatik</th>
+            <th>Deutsch</th>
+          </tr>
+        </thead>
+        <tbody>
+        <!-- Mathe -->
+          <tr>
+            <td rowspan="4">2. HJ</td>
+            <td><a href="schule/mathe/aufgaben">Discrete Structures</a></td>
+            <td><a href="cs2510">Fundamentals of Computer Science II</a></td>
+            <td><a href="cs3500">Object-Oriented Design</a></td>
+            <td><a href="phil2325">Ancient Philosophy & Political Thought</a></td>
+          </tr>
+          <tr>
+              <td><a href="engw1111">First Year Writing</a></td>
+              <td><a href="math1341">Calculus 1 for Science & Engineering</a></td>
+              <td><a href="math1342">Calculus 2 for Science & Engineering</a></td>
+              <td><a href="math2331">Linear Algebra</a></td>
+          </tr>
+          <tr>
+              <td><a href="hist1215">Origins of Today</a></td>
+              <td><a href="psyc1101">Foundations of Psychology</a></td>
+              <!-- <td />
+              <td /> -->
+          </tr>
+          <tr>
+              <td><a href="cs2500">Fundamentals of Computer Science I</a></td>
+              <td><a href="engl2150">Literature & Digital Diversity</a></td>
+              <!-- <td />
+              <td /> -->
+          </tr>
+          <tr>
+              <td colspan="5"/>
+          </tr>
+          <!-- Second Year -->
+          <tr>
+            <td rowspan="4">2nd Year</td>
+            <td><a href="math1365">Introduction to Mathematical Reasoning</a></td>
+            <td rowspan="4" colspan="2" >co-op</td>
+            <td><a href="engw3302">Advanced Writing in the Technical Professions</a></td>
+          </tr>
+          <tr>
+            <td><a href="cs2810">Mathematics of Data Models</a></td>
+            <td><a href="cs3800">Theory of Computation</a></td>
+          </tr>
+          <tr>
+            <td><a href="cs5800">Algorithms</a></td>
+          </tr>
+          <tr>
+            <td><a href="comm1112">Public Speaking</a></td>
+          </tr>
+          <tr>
+              <td colspan="5"/>
+          </tr>
+          <!-- Third Year -->
+          <tr>
+            <td rowspan="4">3rd Year</td>
+            <td><a href="/notes/cs7800">Advanced Algorithms</a></td>
+          </tr>
+          <tr>
+              <td><a href="/notes/cy2550">Foundations of Cybersecurity</a></td>
+          </tr>
+          <tr>
+              <td><a href="/notes/eece2322">Fundamentals of Digital Design & Computer Organization</a></td>
+          </tr>
+          <tr>
+              <td><a href="/notes/math3081">Probability & Statistics</a></td>
+          </tr>
+        </tbody>
+    </table>
+    </div>
+    <p>
+    Mein Dateinformat: <br>
+    <h3>Schulnotizen</h3><br>
+    note-jahr-monat-tag-klasse-halbjahr-fach-thema-i(inhalt)/a(aufgaben).md
+    </p>
+
+  </body>
+</div>
+
+
+    <!-- Have links go to correct location (even when in details tag) -->
+<script>
+
+    $("[href^='#']").on("click", function() {
+    var $targetDIV = $(this.getAttribute("href"));
+    if ($targetDIV.is(":hidden")) {
+        $targetDIV.closest("details").prop("open", true);
+    }
+    });
+</script>
+
+  </body>
+</html>

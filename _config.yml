@@ -1,0 +1,8 @@
+url: ""
+baseurl: ""
+
+markdown: kramdown
+kramdown:
+    parse_block_html: true
+excerpt_seperator: ""
+include: [_data]
