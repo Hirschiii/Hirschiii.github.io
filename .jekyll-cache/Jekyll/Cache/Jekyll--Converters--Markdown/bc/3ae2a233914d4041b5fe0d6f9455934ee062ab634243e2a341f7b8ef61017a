@@ -1,98 +1,80 @@
----
-layout: note
-type: note
-title: Ganzrationale Funktionen und ihre Graphen
-date: 
-status: In Progress
-labels:
----
+I"�<h1 id="gleichungssystem">Gleichungssystem</h1>
 
-# Gleichungssystem
+<h2 id="aufgabe">Aufgabe</h2>
 
-## Aufgabe
+<h3 id="s-78-nr-4b">S. 78 Nr 4b</h3>
 
-### S. 78 Nr 4b
+\[A(-2|16);\:B(0|0);\: C(1|4);\: D(2|-8)\\
+f(x)=ax^3+bx^2+cx+d\]
 
-$$
-A(-2|16);\:B(0|0);\: C(1|4);\: D(2|-8)\\
-f(x)=ax^3+bx^2+cx+d
-$$
+<hr />
 
----
-
-$$
-\begin{equation}
+\[\begin{equation}
 \begin{aligned}
-&
 \begin{matrix}
 1.\\
 2.\\
 3.\\
 4.\\
 \end{matrix}
-&
+&amp;
 \begin{vmatrix}
-16&=&-8a+4b-2c\\
-0&=&d\\
-4&=&a+b+c\\
--8&=&8a+4b+2c
+16&amp;=-8a+4b-2c\\
+0&amp;=d\\
+4&amp;=a+b+c\\
+-8&amp;=8a+4b+2c
 \end{vmatrix}
-&
 \begin{matrix}
 1. + 4.\\
-\Leftrightarrow \\
+\Leftrightarrow\\
 \end{matrix}
 \\
-&
 \begin{matrix}
 1.\\
 2.\\
 3.\\
 \end{matrix}
-&
+&amp;
 \begin{vmatrix}
-8&=&8b\\
-0&=&d\\
-4&=&a+b+c\\
+8&amp;=8b\\
+0&amp;=d\\
+4&amp;=a+b+c\\
 \end{vmatrix}
-&
 \begin{matrix}
-\Leftrightarrow \\
+\Leftrightarrow\\
 \end{matrix}
 \\
-&
 \begin{matrix}
 1.\\
 2.\\
 3.\\
 4.\\
 \end{matrix}
-&
+&amp;
 \begin{vmatrix}
-1&=&1b\\
-0&=&d\\
-4&=&a+1+c\\
+1&amp;=1b\\
+0&amp;=d\\
+4&amp;=a+1+c\\
 \end{vmatrix}
-&
 \begin{matrix}
 \Leftrightarrow\\
 \end{matrix}
 \\
 \end{aligned}
-\end{equation}
-$$
+\end{equation}\]
 
-## Über CAS
+<h2 id="über-cas">Über CAS</h2>
 
-Funktion:
-: linsolve = Lineares solve
+<dl>
+  <dt>Funktion:</dt>
+  <dd>linsolve = Lineares solve</dd>
+</dl>
 
-## S. 78 Nr. 5
+<h2 id="s-78-nr-5">S. 78 Nr. 5</h2>
 
-$$
-\begin{equation}
+\[\begin{equation}
 \begin{aligned}
-&
+&amp;
 \begin{matrix}
 1.\\
 2.\\
@@ -100,18 +82,18 @@ $$
 \end{matrix}
 \begin{vmatrix}
 \begin{aligned}
--20&=100*a-10b+c&&\\
--7&=25a-5b+c&&\\
--7&=25b+5b+c&&\\
+-20&amp;=100*a-10b+c&amp;&amp;\\
+-7&amp;=25a-5b+c&amp;&amp;\\
+-7&amp;=25b+5b+c&amp;&amp;\\
 \end{aligned}
-&&
+&amp;&amp;
 \end{vmatrix}
 \begin{matrix}
 3.-2.\\
 \Leftrightarrow\\
 \end{matrix}
 \\
-&
+&amp;
 \begin{matrix}
 1.\\
 2.\\
@@ -119,49 +101,49 @@ $$
 \end{matrix}
 \begin{vmatrix}
 \begin{aligned}
--20&=100*a-10b+c&&\\
--7&=25a-5b+c&&\\
-0&=-10b&&\\
+-20&amp;=100*a-10b+c&amp;&amp;\\
+-7&amp;=25a-5b+c&amp;&amp;\\
+0&amp;=-10b&amp;&amp;\\
 \end{aligned}
-&&
+&amp;&amp;
 \end{vmatrix}
 \begin{matrix}
 b=0\\
 \Leftrightarrow\\
 \end{matrix}
 \\
-&
+&amp;
 \begin{matrix}
 1.\\
 2.\\
 \end{matrix}
 \begin{vmatrix}
 \begin{aligned}
--20&=100a+c&&\\
-25a&=7-c
+-20&amp;=100a+c&amp;&amp;\\
+25a&amp;=7-c
 \end{aligned}
-&&
+&amp;&amp;
 \end{vmatrix}
 \begin{matrix}
 b=0\\
 \Leftrightarrow\\
 \end{matrix}
 \\
-&
+&amp;
 \begin{matrix}
 1.\\
 2.\\
 \end{matrix}
 \begin{vmatrix}
 \begin{aligned}
--20&=100a+c&&\\
-a&=\frac{7}{25}-\frac{c}{25}
+-20&amp;=100a+c&amp;&amp;\\
+a&amp;=\frac{7}{25}-\frac{c}{25}
 \end{aligned}
-&&
+&amp;&amp;
 \end{vmatrix}
 \begin{matrix}
 \Leftrightarrow\\
 \end{matrix}
 \end{aligned}
-\end{equation}
-$$
+\end{equation}\]
+:ET
