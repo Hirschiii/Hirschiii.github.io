@@ -17,7 +17,9 @@ $$
 A(-2|16);\:B(0|0);\: C(1|4);\: D(2|-8)\\
 f(x)=ax^3+bx^2+cx+d
 $$
+
 ---
+
 $$
 \begin{equation}
 \begin{aligned}
