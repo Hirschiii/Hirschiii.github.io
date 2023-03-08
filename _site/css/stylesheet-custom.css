@@ -110,3 +110,15 @@ td, th {
 img {
     width: 100%
 }
+
+.note {
+    background: #6acf65;
+    border: 2px solid #046307;
+    border-radius: 10px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.note dt {
+    font-weight: bold;
+}

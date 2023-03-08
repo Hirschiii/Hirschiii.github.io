@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <title>
+      
+      Wurf |
+      
+    Niklas von Hirschfeld
+  </title>
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js" integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw==" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/stylesheet-custom.css">
+
+  <!-- KaTeX --!>    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+  <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '$', right: '$', display: false},
+              {left: '\\(', right: '\\)', display: false},
+              {left: '\\[', right: '\\]', display: true}
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+          });
+      });
+  </script>
+
+
+  <script type="text/javascript" src="/js/custom.js"></script>
+
+  <!-- Highlight all code blocks -->
+  <link rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+  
+  <script>hljs.highlightAll();</script>
+</head>
+
+  <body>
+    <div class="sidenav">
+    <a href="/">Eric Chapdelaine</a><br />
+  <meta>Student at Northeastern University Studying Computer Science.<meta>
+  <hr />
+  <a  style="font-weight: bold;"  href="/notes">Notes</a><br />
+  <a  href="/resources">Resources</a><br />
+  <a  href="/topics">Topics</a><br />
+  <a  href="/projects">Projects</a><br />
+  <a  href="/articles">Articles</a><br />
+  <a  href="/resume">Resume</a><br />
+  <hr />
+  <a href="mailto:chapdelaine.e@northeastern.edu">Email</a><br />
+  <a href="http://github.com/eric-chapdelaine">GitHub</a><br />
+  <a href="https://www.linkedin.com/in/eric-chapdelaine/">LinkedIn</a><br />
+</div>
+
+<div hidden class="topbar">
+<div class="ui secondary pointing menu">
+  <a href="/" class=" item">Home</a>
+  <a href="/notes" class="active item">Notes</a>
+  <a href="/resources" class=" item">Resources</a>
+  <a href="/projects" class=" item">Projects</a>
+  <a href="/articles" class=" item">Articles</a>
+  <a href="/resume" class=" item">Resume</a>
+</div></div>
+
+
+<div class="contents nonprintable"></div>
+
+
+<div class="segment ui text container document">
+  <h1 id=""><span class="half-background">Wurf</span></h1>
+  <hr>
+        <button class="ui button" onClick="setDetails(false);">Close all sections</button>
+        <button class="ui button" onClick="setDetails(true);">Open all sections</button>
+    
+    <div class="cnote">
+    
+        <h1 id="klausur-2023-2-hj">Klausur 2023 2 HJ.</h1>
+
+<ul>
+  <li>Freier Fall</li>
+  <li>Waagerechter Wurf</li>
+  <li>Kräfte
+    <ul>
+      <li>insbes. $F=m*a$</li>
+      <li>Aufprall</li>
+    </ul>
+  </li>
+  <li>Geschwindigkeit als <em>Vektor</em></li>
+  <li>Auswertung mit Taschenrechner</li>
+</ul>
+
+<h1 id="aufgaben-2023-03-08">Aufgaben 2023-03-08</h1>
+
+<h2 id="waagerechter-wurf-station-5">Waagerechter Wurf Station 5</h2>
+
+<h3 id="bewegung-horizontale">Bewegung horizontale</h3>
+
+<blockquote>
+  <p>Die Bewegung in horizontaler Richtung ist gemäß Auswertung eine <strong>glechförmige 
+Bewegung</strong></p>
+</blockquote>
+
+<div style="width: 60%; margin: 0 auto" class="ui rounded images">
+  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/horizontale_Bewegung_gleichförmig.png" /></p>
+</div>
+
+<h2 id="bewegung-vertikal">Bewegung vertikal</h2>
+
+<blockquote>
+  <p>Die Bewegung in vertikaler Richtung ist gemäß Auswertung ein <strong>exponetieller Fall</strong></p>
+</blockquote>
+
+<div style="width: 60%; margin: 0 auto" class="ui rounded images">
+  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/vertikale_bewegung_gleichförmig.png" /></p>
+</div>
+
+<h2 id="wagerechter-wurf-übung">Wagerechter Wurf Übung</h2>
+
+<blockquote>
+  <p>Im Schwimbad springt jemand mit Anlauf ($v=5\frac{m}{s}$) von einem $10$m-Turm</p>
+</blockquote>
+
+<h3 id="a">a)</h3>
+
+<blockquote>
+  <p>Bestimmen Sie die Zeit vom Absprung zum Aufprall auf dam Wasser.</p>
+</blockquote>
+
+<dl>
+  <dt>Formel:</dt>
+  <dd>$s(t)=\frac{1}{2}<em>a</em>t^2+y_0$</dd>
+</dl>
+
+<p>\(\begin{aligned}
+y_0&amp;=10m&amp;&amp;\\
+a&amp;=9.81\frac{m}{s^2}&amp;&amp;\\
+\end{aligned}\)
+\(0m=-\frac{1}{2}*9.81\frac{m}{s^2}*t^2+10 \Rightarrow t\approx 1.43s\)</p>
+
+<blockquote>
+  <p>Gelöst mit <strong>cas</strong> und <strong>solve</strong></p>
+</blockquote>
+
+<p>Bis zum Aufprall dauert es ungefähr $1.43s$.</p>
+
+<h4 id="links">Links</h4>
+
+<ul>
+  <li><a href="https://www.leifiphysik.de/mechanik/waagerechter-und-schraeger-wurf/grundwissen/waagerechter-wurf">Waagerechter Wurf Leifi</a></li>
+</ul>
+
+<h3 id="b">b)</h3>
+
+<blockquote>
+  <p>Bestimmen Sie damit, wie weit die Person sich bis zum Aufrpall vom Turm bewegt hat.</p>
+</blockquote>
+
+<dl>
+  <dt>Formel:</dt>
+  <dd>$s(t)=t*v$</dd>
+</dl>
+
+\[s(t)=1.43s*5\frac{m}{s}=7.15m\]
+
+<p>Bis zum Aufprall werden $7.15m$ zurück gelegt.</p>
+
+<h3 id="c-fma">c) $F=m*a$</h3>
+
+\[a=\dot{v}\]
+
+<p>Es wird die Gesammtgeschwindigkeit gebraucht:</p>
+
+\[\begin{aligned}
+v_{ges}^2&amp;=v_x^2+v_y^2&amp;&amp;\\
+v_y&amp;=9.81\frac{m}{s^2}*t; t=1.43s&amp;&amp;\\
+&amp;\approx14\frac{m}{s}&amp;&amp;\\
+v_{ges}&amp;\approx14.87\frac{m}{s}&amp;&amp;\\
+a&amp;=\frac{v_{ges}}{\Delta t_{Brems}}; \Delta t_{Brems}=1s&amp;&amp;\\
+&amp;\approx14.87\frac{m}{s^2}
+\end{aligned}\]
+
+<hr />
+
+\[\begin{aligned}
+F&amp;=m*a; \: m=60kg&amp;&amp;\\
+&amp;=892.2N&amp;&amp;\\
+\end{aligned}\]
+
+<p>Die wirkende Kragt beträgt ungefähr $892.2N$</p>
+
+<h2 id="sil">Sil</h2>
+
+<p>Grafik auf itslearnign</p>
+
+<p>An jedem Pfeil, soweut möglich höhe, Ges, besch notieren</p>
+
+    
+    </div>
+    
+</div>
+
+<script>
+    
+    var contents = "<nav>In Open Sections:";
+    betweenH1 = /<h1.*?(?=<h1|$)/gs;
+    anyHeaderID = /(?<=<h[1-3][^>]*id=").*?(?=")/gs;
+    anyHeaderText = /(?<=<h[123][^>]*>).*?(?=<\/h[123])/gs;
+    var newHTML, curIDs, curHeaders;
+
+    allCollapseableSections = document.getElementsByClassName("cnote");
+
+    for (var curBlock = 0; curBlock < allCollapseableSections.length; curBlock++) {
+        // Onetime:
+        //Create sections which are defined as area between two h1's
+        var doc = allCollapseableSections[curBlock].innerHTML;
+        var sectionsBody = doc.match(betweenH1);
+
+        allCollapseableSections[curBlock].innerHTML = "";
+        for (var i = 0; i < sectionsBody.length ; i++) {
+            //contents
+            curHeaders = sectionsBody[i].match(anyHeaderText);
+            curIDs = sectionsBody[i].match(anyHeaderID);
+            contents += "<div data-id='" + curIDs[0] + "' hidden>";
+
+            for (var j = 0; j < curHeaders.length ; j++){
+                contents += "<a href='#" + curIDs[j] + "'>" + curHeaders[j] + "</a><br />";
+            }
+            contents += "</div>";
+
+            // Body
+            allCollapseableSections[curBlock].innerHTML += "<details id='" + curIDs[0] + "'><summary>" + sectionsBody[i].match(anyHeaderText)[0] + "</summary>" + sectionsBody[i] + "</details>";
+        }
+    }
+    contents += "</nav";
+    document.getElementsByClassName("contents")[0].innerHTML = contents;
+    
+    // Auto showing of sub-sections
+    function showSubsections(e) {
+        const item = document.querySelector(`[data-id='${e.target.id}']`);
+        item.toggleAttribute('hidden');
+    }
+
+    const sections = document.querySelectorAll('details');
+    sections.forEach((section) => {
+        section.addEventListener('toggle', showSubsections);
+    });
+</script>
+
+
+    <!-- Have links go to correct location (even when in details tag) -->
+<script>
+
+    $("[href^='#']").on("click", function() {
+    var $targetDIV = $(this.getAttribute("href"));
+    if ($targetDIV.is(":hidden")) {
+        $targetDIV.closest("details").prop("open", true);
+    }
+    });
+</script>
+
+  </body>
+</html>

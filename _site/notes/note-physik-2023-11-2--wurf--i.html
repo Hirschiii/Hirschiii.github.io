@@ -8,6 +8,8 @@
 
   <title>
       
+      Wurf |
+      
     Niklas von Hirschfeld
   </title>
 
@@ -76,103 +78,70 @@
 </div></div>
 
 
-<head>
-    <link href="minimal-table.css" rel="stylesheet" type="text/css">
-</head>
+<div class="contents nonprintable"></div>
 
-<style>
-    tbody {
-        font-size: 90%;
-        font-style: italic;
-    }
 
-    tfoot {
-        font-weight: bold;
-    }
+<div class="segment ui text container document">
+  <h1 id=""><span class="half-background">Wurf</span></h1>
+  <hr>
+        <button class="ui button" onClick="setDetails(false);">Close all sections</button>
+        <button class="ui button" onClick="setDetails(true);">Open all sections</button>
+    
+    <div class="cnote">
+    
+        
 
-    .tbl {
-        overflow-x: auto;
-    }
-
-    th,
-    td {
-        min-width: 100px;
-    }
-</style>
-<!-- 
-        .tbl { overflow-x: scroll; } -->
-<div style="margin-top: 20px; margin-bottom: 20px" class="ui text container">
-
-    <body>
-        <div class="tbl">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fach</th>
-                        <th>2. HJ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Mathe -->
-                    <tr>
-                        <td rowspan="1">Informatik</td>
-                        <td><a href='note-informatik-2023-11-2--scratch--i.html'>Scratch</a></td>
-                        <td><a href='note-informatik-2023-11-2--Verschlüsselung--i.html'>Scratch</a></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="1">Geschichte</td>
-                        <td><a href='note-geschichte-2023-11-2--20-21-als-zeitenwende--i.html'>20./21. Jh. als Zeitenwende</a></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="1">English</td>
-                        <td><a href='note-english-2023-11-2--writing--a.html'>Writing</a></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td rowspan="1">Erdkunde</td>
-                        <td><a href='note-erdkunde-2023-11-2--klimawandel--i.html'>Klimawandel</a></td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="tbl">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Fach</th>
-                        <th>Ressourcen</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td rowspan="1">Allgemein</td>
-                        <td><a href='./note-allgemein-2023-11-2--begriffe--i.html'>Begriffe und Methoden</a></td>
-                    </tr>
-                    <!-- Mathe -->
-                    <tr>
-                        <td rowspan="1">Mathe</td>
-                        <td><a href='note-mathe-2023-11-2--formeln--i.html'>Formeln</a></td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <ul>
-<li><a href='note-2023-02-22-11-2-mathe--p-q-formel--i.html'>p-q-formel i</a></li>
-<li><a href='note-2023-03-06-11-2-geschichte--20-21-als-zeitenwende--a.html'>20-21-als-zeitenwende a</a></li>
-<li><a href='note-2023-03-06-11-2-geschichte--20-21-als-zeitenwende--i.html'>20-21-als-zeitenwende i</a></li>
-</ul>
-
-        <p>
-            Mein Dateinformat: <br>
-        <h3>Schulnotizen</h3><br>
-        note-jahr-monat-tag-klasse-halbjahr-fach-thema-i(inhalt)/a(aufgaben).md
-        </p>
-        <a href="toc.html">TOC</a>
-
-    </body>
+    
+    </div>
+    
 </div>
+
+<script>
+    
+    var contents = "<nav>In Open Sections:";
+    betweenH1 = /<h1.*?(?=<h1|$)/gs;
+    anyHeaderID = /(?<=<h[1-3][^>]*id=").*?(?=")/gs;
+    anyHeaderText = /(?<=<h[123][^>]*>).*?(?=<\/h[123])/gs;
+    var newHTML, curIDs, curHeaders;
+
+    allCollapseableSections = document.getElementsByClassName("cnote");
+
+    for (var curBlock = 0; curBlock < allCollapseableSections.length; curBlock++) {
+        // Onetime:
+        //Create sections which are defined as area between two h1's
+        var doc = allCollapseableSections[curBlock].innerHTML;
+        var sectionsBody = doc.match(betweenH1);
+
+        allCollapseableSections[curBlock].innerHTML = "";
+        for (var i = 0; i < sectionsBody.length ; i++) {
+            //contents
+            curHeaders = sectionsBody[i].match(anyHeaderText);
+            curIDs = sectionsBody[i].match(anyHeaderID);
+            contents += "<div data-id='" + curIDs[0] + "' hidden>";
+
+            for (var j = 0; j < curHeaders.length ; j++){
+                contents += "<a href='#" + curIDs[j] + "'>" + curHeaders[j] + "</a><br />";
+            }
+            contents += "</div>";
+
+            // Body
+            allCollapseableSections[curBlock].innerHTML += "<details id='" + curIDs[0] + "'><summary>" + sectionsBody[i].match(anyHeaderText)[0] + "</summary>" + sectionsBody[i] + "</details>";
+        }
+    }
+    contents += "</nav";
+    document.getElementsByClassName("contents")[0].innerHTML = contents;
+    
+    // Auto showing of sub-sections
+    function showSubsections(e) {
+        const item = document.querySelector(`[data-id='${e.target.id}']`);
+        item.toggleAttribute('hidden');
+    }
+
+    const sections = document.querySelectorAll('details');
+    sections.forEach((section) => {
+        section.addEventListener('toggle', showSubsections);
+    });
+</script>
 
 
     <!-- Have links go to correct location (even when in details tag) -->
