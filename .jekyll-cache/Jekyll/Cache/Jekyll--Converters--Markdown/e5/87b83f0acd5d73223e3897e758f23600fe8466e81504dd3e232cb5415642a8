@@ -1,0 +1,160 @@
+I"�<h1 id="einleitung">Einleitung</h1>
+
+<p>Installation und Vergleich von verschiedenen <code class="language-plaintext highlighter-rouge">DAV</code> Servern und Clients.</p>
+
+<h1 id="installation">Installation</h1>
+
+<h2 id="radicale">Radicale</h2>
+
+<p>Einfach per pip installieren</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the following command as root or</span>
+<span class="c"># add the --user argument to only install for the current user</span>
+<span class="nv">$ </span>python3 <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">--upgrade</span> radicale
+<span class="nv">$ </span>python3 <span class="nt">-m</span> radicale <span class="nt">--storage-filesystem-folder</span><span class="o">=</span>~/.var/lib/radicale/collections
+</code></pre></div></div>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Radicale list die Konfigurationsdatei von <code class="language-plaintext highlighter-rouge">/etc/radicale/config</code> und <code class="language-plaintext highlighter-rouge">~/.config/radicale/config</code>.
+Es koennen noch eigene Pfade mit <code class="language-plaintext highlighter-rouge">--config</code> angegeben werden.</p>
+
+<h4 id="authentifizierung">Authentifizierung</h4>
+
+<p>Standardmaessig wird der Benutzername und das Password <strong>nicht</strong> ueberprueft.
+Wenn der Server online zugaenglich ist, sollte das geaendert werden.</p>
+
+<p>Eine sichere moeglichkeit dies zu erreichen, ist eine <code class="language-plaintext highlighter-rouge">user</code>-Datei die mit 
+<code class="language-plaintext highlighter-rouge">htpasswd</code> generiert wird.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new htpasswd file with the user "user1"</span>
+<span class="nv">$ </span>htpasswd <span class="nt">-c</span> /path/to/users user1
+
+<span class="c"># Add another user</span>
+<span class="nv">$ </span>htpasswd /path/to/users user2
+</code></pre></div></div>
+
+<p>Die Authentifizierungsmethode kann wie folgt eingestellt werden.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">auth</span>]
+<span class="n">type</span> = <span class="n">htpasswd</span>
+<span class="n">htpasswd_filename</span> = /<span class="n">path</span>/<span class="n">to</span>/<span class="n">users</span>
+<span class="c"># encryption method used in the htpasswd file
+</span><span class="n">htpasswd_encryption</span> = <span class="n">md5</span>
+</code></pre></div></div>
+
+<h4 id="addresse">Addresse</h4>
+
+<p>Die Standardeinstellung als Addresse ist <code class="language-plaintext highlighter-rouge">localhost</code>. Wenn man das aendern moechte
+kann man das auch in der Konfigurationsdatei:</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">server</span>]
+<span class="n">hosts</span> = <span class="m">0</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">0</span>:<span class="m">5232</span>, [::]:<span class="m">5232</span>
+</code></pre></div></div>
+
+<h4 id="dateinordner">Dateinordner</h4>
+
+<p>Auch der Ordner sollte angegeben werden:</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">storage</span>]
+<span class="n">filesystem_folder</span> = /<span class="n">path</span>/<span class="n">to</span>/<span class="n">storage</span>
+</code></pre></div></div>
+
+<h4 id="limits">Limits</h4>
+
+<p>Man hat die Möglichkeit eine Limitierung für verschiedene Dinge einzustellen:</p>
+
+<pre><code class="language-$HOME/.config/radicale/config">[server]
+max_connections = 20
+# 100 Megabyte
+max_content_length = 100000000
+# 30 seconds
+timeout = 30
+
+[auth]
+# Average delay after failed login attempts in seconds
+delay = 1
+</code></pre>
+
+<h4 id="service">Service</h4>
+
+<blockquote>
+  <p>Auf Uberspace</p>
+</blockquote>
+
+<pre><code class="language-~/etc/services.d/radicale.ini">[program:radicale]
+command=radicale
+</code></pre>
+
+<p>Nach dem Konfigurieren kann der Service mit <code class="language-plaintext highlighter-rouge">supervisord</code>
+gestartet werden.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>supervisorctl reread
+
+<span class="nv">$ </span>supervisorctl update
+
+<span class="nv">$ </span>supervisorctl status
+SERVICE         RUNNING   pid 26020, <span class="nb">uptime </span>0:03:14
+</code></pre></div></div>
+
+<p>Um den Webserver zum Laufen zu bringen, muss das Backend auf der Domain eingestellt werden.</p>
+
+<p><strong>ACHTUNG</strong> Setze die Domain <code class="language-plaintext highlighter-rouge">/</code> weise. Falls du andere Protokolle (wie Apache)
+auf <code class="language-plaintext highlighter-rouge">/</code> laufen hast. Werden diese einfach überschrieben.</p>
+
+<p>Um eine liste der laufenden Backends zu bekommen: <code class="language-plaintext highlighter-rouge">uberspace web backend list</code></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uberspace web backend <span class="nb">set</span> / <span class="nt">--http</span> <span class="nt">--port</span> 8000
+</code></pre></div></div>
+
+<h2 id="sabre">Sabre</h2>
+
+<p>An der “Wurzel” des Projektes <code class="language-plaintext highlighter-rouge">sabre/dav</code> per <code class="language-plaintext highlighter-rouge">composer</code> installieren. Das kann 
+man auch in dem unterordner des Webservers.</p>
+
+<p>Beispiel: <code class="language-plaintext highlighter-rouge">vonhirschfeld.eu/webdav/</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require sabre/dav ~3.2.0
+
+composer update sabre/dav
+</code></pre></div></div>
+
+<p>Jetzt kann man einen simplen Server erstellen. Dafuer muss aber der genaue Weg zu
+<code class="language-plaintext highlighter-rouge">vendor/autoload.php</code> bekannt sein. Dieser befindet sich Standardmaessig im dem 
+Ordener sein, in dem man zuvor <code class="language-plaintext highlighter-rouge">sabre/dav</code> installiert hat.</p>
+
+<h3 id="ein-einfacher-server">Ein einfacher Server</h3>
+
+<p>Zuerst muessen die Ordner <code class="language-plaintext highlighter-rouge">data</code> und <code class="language-plaintext highlighter-rouge">public</code> erstellt werden:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>data
+<span class="nb">mkdir </span>public
+</code></pre></div></div>
+
+<p>Der <code class="language-plaintext highlighter-rouge">data</code> Ordner beinhaltet spaeter informationen die von <code class="language-plaintext highlighter-rouge">SabreDAV</code> benoetigt werden,</p>
+
+<p>Jetzt muessen beide Order zugaenglich gemcht werden:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>a+rwx data public
+</code></pre></div></div>
+
+<h2 id="baikal">Baikal</h2>
+
+<h2 id="cyrus-imap">Cyrus imap</h2>
+
+<h2 id="zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</h2>
+
+<h1 id="clients">Clients</h1>
+
+<h2 id="webdavbrücken">Webdavbrücken</h2>
+
+<h2 id="todo">Todo</h2>
+
+<h2 id="kalender">Kalender</h2>
+
+<h2 id="kontakte">Kontakte</h2>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<h1 id="zusammenfassung-1">Zusammenfassung</h1>
+:ET

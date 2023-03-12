@@ -21,3 +21,8 @@ labels:
 4. zentrales Schlüsselwort
 5. Themengebiete
 6. Pfeile einzeichnen
+
+# Lyrik
+
+- Prefix -> Vorsilbe
+- Diphtong -> Doppellaut

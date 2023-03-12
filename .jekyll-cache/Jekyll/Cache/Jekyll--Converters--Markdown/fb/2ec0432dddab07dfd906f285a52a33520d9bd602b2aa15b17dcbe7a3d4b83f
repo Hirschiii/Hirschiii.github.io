@@ -1,0 +1,38 @@
+I"<h1 id="einleitung">Einleitung</h1>
+
+<p>Installation und Vergleich von verschiedenen <code class="language-plaintext highlighter-rouge">DAV</code> Servern und Clients.</p>
+
+<h1 id="installation">Installation</h1>
+
+<h2 id="radicale">Radicale</h2>
+
+<p>Einfach per pip installieren</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the following command as root or</span>
+<span class="c"># add the --user argument to only install for the current user</span>
+<span class="nv">$ </span>python3 <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">--upgrade</span> radicale
+<span class="nv">$ </span>python3 <span class="nt">-m</span> radicale <span class="nt">--storage-filesystem-folder</span><span class="o">=</span>~/.var/lib/radicale/collections
+</code></pre></div></div>
+
+<h2 id="sabre">Sabre</h2>
+
+<h2 id="baikal">Baikal</h2>
+
+<h2 id="cyrus-imap">Cyrus imap</h2>
+
+<h2 id="zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</h2>
+
+<h1 id="clients">Clients</h1>
+
+<h2 id="webdavbrücken">Webdavbrücken</h2>
+
+<h2 id="todo">Todo</h2>
+
+<h2 id="kalender">Kalender</h2>
+
+<h2 id="kontakte">Kontakte</h2>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<h1 id="zusammenfassung-1">Zusammenfassung</h1>
+:ET

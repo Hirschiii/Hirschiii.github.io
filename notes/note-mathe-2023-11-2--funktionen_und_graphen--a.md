@@ -165,3 +165,50 @@ a&=\frac{7}{25}-\frac{c}{25}
 \end{aligned}
 \end{equation}
 $$
+
+# Klausur
+
+- Ganz rat. Fkt: $x \rightarrow \pm \infty$
+    - S. 63 ff.
+- Symmetrie von Graphen S. 66 ff
+- Nullstellen S. 69 ff
+    - Linearfaktoren S. 73 ff
+- Ermitteln von Funktionesgleichungen S. 76 ff (mit CAS)
+    - Polynomdivision
+    - Ausklammern
+
+## Aufgaben:
+
+- S. 65
+    - Nr. 4
+    - Nr. 5
+    - Nr. 6
+- S. 67
+    - Nr. 1
+    - Nr. 2
+    - Nr. 4
+- S. 70
+
+- S. 71
+    - Nr. 8
+    - Nr. 9
+    - Nr. 10
+- S. 72
+    - Nr. 17
+    - Nr. 18
+
+
+## S. 65 Nr. 4
+
+- A) $i(x)$
+- B) $h(x)$
+
+## S. 67 Nr. 1
+
+| funktion | gerade | Begründung                  |
+| ---      | ---    | ---                         |
+| a)       | 1      | größter Exponent ist gerade |
+| b)       | 0      | Exponent ist ungerade       |
+| c)       | 1      | $-$ vor dem $x$             |
+| d)       | 0      | ungerader Exponent          |
+| e)       |        |                             |

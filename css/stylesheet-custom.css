@@ -122,3 +122,15 @@ img {
 .note dt {
     font-weight: bold;
 }
+
+.arrow {
+    display: flex;
+}
+
+.profile {
+    display: flex;
+}
+
+.profile img {
+    width: 10rem;
+}

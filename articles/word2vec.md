@@ -10,6 +10,9 @@ labels:
   - Word2vec
   - Machine Learning
   - College
+links:
+    - title: "Test"
+      url: "www.google.de"
 ---
 
 <style>

@@ -4,11 +4,7 @@ layout: articles
 
 <div class="segment ui text container document">
     <h1><span class="half-background">{{ page.title }}</span></h1>
+    {% include toc.html html=content %}
     {{ content }}
-
-{% if page.comments %}
-
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-{% endif %}
 </div>
+

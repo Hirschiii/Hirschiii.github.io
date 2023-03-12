@@ -60,7 +60,7 @@
   <a  href="/topics">Topics</a><br />
   <a  href="/projects">Projects</a><br />
   <a  style="font-weight: bold;"  href="/articles">Articles</a><br />
-  <a  href="/resume">Resume</a><br />
+  <a  href="/wiki">Wiki</a><br />
   <hr />
   <a href="http://github.com/hirschiii">GitHub</a><br />
 </div>
@@ -72,12 +72,20 @@
   <a href="/resources" class=" item">Resources</a>
   <a href="/projects" class=" item">Projects</a>
   <a href="/articles" class="active item">Articles</a>
-  <a href="/resume" class=" item">Resume</a>
+  <a href="/wiki" class=" item">Wiki</a>
 </div></div>
 
 
 <div class="segment ui text container document">
     <h1><span class="half-background">How I Take Notes</span></h1>
+    <nav class="toc" style="border: 1px solid #a2a9b1; background-color: #f8f9fa; display: inline-block; padding: 10px; margin: 10px;">
+  <h4>Table of Contents</h4>
+<ul><li><a href="#whats-going-on">What’s Going On</a></li><li><a href="#technical-details">Technical Details</a></li><li><a href="#jekyll-getting-it-on-the-web">Jekyll: Getting it on the Web</a><ul><li><a href="#kramdown-compiling-to-html">Kramdown: Compiling to HTML</a></li><li><a href="#example-markdown">Example Markdown</a></li><li><a href="#javascript-adding-features">JavaScript: Adding Features</a></li></ul></li></ul></li><li><a href="#inkscape-drawing-figures">Inkscape: Drawing Figures</a></li><li><a href="#vim-writing-the-notes">Vim: Writing the Notes</a><ul><li><a href="#snippets-speeds-up-process">Snippets: Speeds up Process</a></li><li><a href="#key-commands-connects-to-inkscape">Key Commands: Connects to Inkscape</a></li></ul></li></ul></li><li>1.*?(?=</li><li>1|$)/gs;
+    var doc = document.getElementById('doc').innerHTML;
+    var sectionsBody = doc.match(betweenH1);
+
+    anyHeaderID = /(?<=</li></ul></nav>
+
     <p>A while ago I read a <a href="https://castel.dev/post/lecture-notes-1/">great piece</a> by <a href="https://castel.dev/">Gilles Castel</a> on how to take notes using $\LaTeX$ and Vim. The resulting notes are stunning. Everything from mathematical formulae to figures are created real-time by Castel. I knew I wanted to do something similar with my lecture notes.</p>
 
 <p>I, however, wanted to change two things:</p>
@@ -389,13 +397,9 @@ i3-msg workspace number <span class="nv">$PREVWORKSPACE</span>
 </script>
 
 
-
-
-
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-
-
 </div>
+
+
 
     <!-- Have links go to correct location (even when in details tag) -->
 <script>
