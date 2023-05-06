@@ -1,0 +1,890 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass book
+\use_default_options true
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing other 1.5
+\use_hyperref false
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\rightmargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Projektarbeit Netzwerke
+\end_layout
+
+\begin_layout Author
+Niklas von Hirschfeld, Mikael Siggel
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+Begriffe - Mikael / Niklas
+\end_layout
+
+\begin_layout Section*
+Netz: 
+\end_layout
+
+\begin_layout Standard
+Ein Netz ist ein zusammenschluss von mehreren Rechnern.
+ Dieses ist da, damit die Rechner eine möglichkeit bekommen, miteinander
+ zu kommunizieren.
+ 
+\end_layout
+
+\begin_layout Section*
+Internet: 
+\end_layout
+
+\begin_layout Standard
+Ein globales Netzwerk aus verbunden Computern.
+ 
+\end_layout
+
+\begin_layout Section*
+IP-Adresse: 
+\end_layout
+
+\begin_layout Standard
+Eine eindeutige zuweiseung.
+ IPv4 besteht aus jeweils 4 teilen (z.B.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+0.0.0.0
+\begin_inset Quotes grd
+\end_inset
+
+) wobei die einzelnen Teile verschiedene Bedeutungen haben.
+ und IPv6 aus 6 (z.
+ B.
+ 
+\begin_inset Quotes gld
+\end_inset
+
+2001:410:0:39:221:28ff:fe46:eef4
+\begin_inset Quotes grd
+\end_inset
+
+) 
+\end_layout
+
+\begin_layout Section*
+Subnetze: 
+\end_layout
+
+\begin_layout Standard
+Ein Netzwerk inerhabl eines anderem.
+ Dadaurch kann der Netzwerk-Trafic optimiert werden.
+ 
+\end_layout
+
+\begin_layout Section*
+Webadresse: 
+\end_layout
+
+\begin_layout Standard
+Eine Adresse die eine Ressource in einem Netzwerk beschreibt.
+ 
+\end_layout
+
+\begin_layout Section*
+Webserver: 
+\end_layout
+
+\begin_layout Standard
+Ein Computer der an ein Netzwerk angeschlossen ist und die möglichkeit hat,
+ anderen Computern Dokumente zur verfügung zu stellen.
+ 
+\end_layout
+
+\begin_layout Section*
+Gateways: 
+\end_layout
+
+\begin_layout Standard
+Ein stück Hardware oder Software welches zwischen zwei Netzwerken vermittelt.
+ Dies ist notwendig, wenn beide Netzwerke nicht miteinander Kompatibel sind,
+ zum Beispiel durch das Nutzen von verschiedenen Protokollen.
+ 
+\end_layout
+
+\begin_layout Section*
+URL: 
+\end_layout
+
+\begin_layout Standard
+Eine 
+\shape italic
+Uniform Resource Locator
+\shape default
+ ist eine klartext Webadresse die zu einer Ressource in einem Netzwerk zeigt.
+ 
+\end_layout
+
+\begin_layout Section*
+Domain: 
+\end_layout
+
+\begin_layout Standard
+Ein Teilbereich der URL.
+ Diese ist eim globalen Internet einmalig und wird von einem [DNS-Server](#DNS)
+ Vergeben.
+ 
+\end_layout
+
+\begin_layout Section*
+Domainname: 
+\end_layout
+
+\begin_layout Standard
+Klartext der auf einen Computer, ein Netzwerk oder eine andere Ressource
+ in einem Netzwerk verweist.
+ 
+\end_layout
+
+\begin_layout Section*
+Router: 
+\end_layout
+
+\begin_layout Standard
+Ein Computer der zwischen mehreren Rechnernetzen geschaltet ist und ziwschen
+ diesen vermittelt.
+ 
+\end_layout
+
+\begin_layout Section*
+DNS: 
+\end_layout
+
+\begin_layout Standard
+Das 
+\shape italic
+Domain Name System
+\shape default
+ ist eine hierachische unterteilung in einem Netzwerk um anfrage zu verarbeiten
+ und an den richtigen Computer weiterzuleiten.
+ 
+\end_layout
+
+\begin_layout Section*
+Verschiedene Protokolle
+\end_layout
+
+\begin_layout Standard
+Ein Protokoll ist ein Überbegriff für Standards und Normen, in denen die
+ Art und Weise von Datenübertragungen zwischen verschiedenen Computer-Komponente
+n, Rechnersystemen, Netzwerken oder Im Internet festgeschrieben ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Beispiele dafür sind Folgende:
+\end_layout
+
+\begin_layout Itemize
+TCP/IP 
+\end_layout
+
+\begin_layout Itemize
+UPD 
+\end_layout
+
+\begin_layout Itemize
+SSH 
+\end_layout
+
+\begin_layout Itemize
+TLS 
+\end_layout
+
+\begin_layout Itemize
+FTP 
+\end_layout
+
+\begin_layout Itemize
+IPsec 
+\end_layout
+
+\begin_layout Itemize
+HTTPS 
+\end_layout
+
+\begin_layout Itemize
+SMTP 
+\end_layout
+
+\begin_layout Itemize
+IMAP 
+\end_layout
+
+\begin_layout Itemize
+PTP
+\end_layout
+
+\begin_layout Standard
+Verschiedenen Protokolle laufen auf verschiedenen Ebenen.
+ Diese werden im dem ISO/OSI-Modell dargestellt.
+\end_layout
+
+\begin_layout Chapter
+Aufgabe
+\end_layout
+
+\begin_layout Section
+Einfaches Rechnernetz - Mikael
+\end_layout
+
+\begin_layout Quote
+Entwickeln Sie ein einfaches Rechnernetz aus zwei Rechnern, welche sich
+ im Netz 192.168.0 befinden.
+ Prüfen Sie die Erreichbarkeit des jeweils anderen Rechners durch einen
+ ping Aufruf mit der jeweiligen Adresse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufgabe Nr.
+ 1 Lösung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename assets/aufgabe_1.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In Aufgabe eins haben wir zwei Rechner genommen und diese mit einem Kabel
+ verbunden.
+ Nachdem wir die Rechner verbunden haben, haben wir die IP-Adresse von dem
+ einen Rechner geändert, sodass ein Ping-Aufruf möglich ist.
+ Danach haben wir auf den einen Rechner die Befehlszeile installiert, womit
+ der ping-Aufruf stattfindet.
+ Danach haben wir die Befehlszeile Aufgerufen, wo wir 
+\begin_inset Quotes gld
+\end_inset
+
+ping
+\begin_inset Quotes grd
+\end_inset
+
+ mit der IP-Adresse eingegeben haben, wodurch wir die Erreichbarkeit der
+ Rechner überprüfen konnten.
+\end_layout
+
+\begin_layout Section
+Erweiterung durch Webserver - Mikael
+\end_layout
+
+\begin_layout Quote
+Entwickeln Sie ein einfaches Rechnernetz aus zwei Rechnern, welche sich
+ im Netz 192.168.0 befinden.
+ Prüfen Sie die Erreichbarkeit des jeweils anderen Rechners durch einen
+ ping-Aufruf mit der jeweiligen Adresse.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufgabe Nr.
+ 2 Lösung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename assets/aufgabe_2.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der zweiten Aufgabe haben wir auf den einen Rechner den Webserver installiert
+ und auf den anderen den Webbrowser.
+ Alle Rechner sind dabei in dem selben Netzwerk und durch einen 
+\begin_inset Quotes gld
+\end_inset
+
+Switch
+\begin_inset Quotes grd
+\end_inset
+
+ verbunden.
+ Nach der Installation haben wir den Webserver aktiviert und die IP-Adresse
+ des anderen Computers in den Webbrowser eingefügt.
+ Dabei haben wir gesehen das der Webbrowser erreichbar ist.
+ 
+\end_layout
+
+\begin_layout Section
+Seperates Netz - Mikael
+\end_layout
+
+\begin_layout Quote
+Verschieben Sie den Webserver in ein anderes Netz, welches durch einen Router
+ (Vermittlungsrechner) mit dem vorhandenen Netz verbunden ist.
+ Rufen Sie die Webseite mithilfe der IP-Adresse durch den Client auf, nachdem
+ im Client der Gateway festgelegt ist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufgabe Nr.
+ 3 Lösung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename assets/aufgabe_3.png
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei der dritten Aufgabe haben wir zu den zwei Rechnern einen Switch und
+ einen Vermittlungsrechner hinzugefügt.
+ Nachdem haben wir das Gateway eines Rechners geändert.
+ Dabei haben 2 Rechner das gleiche Gateway und einer ein anderes.
+ Danach haben wir den Webserver in ein anderes Netz verschoben und die IP-Adress
+e des Rechners mit dem einzelnen Gateway über den Webbrowser aufgerufen.
+\end_layout
+
+\begin_layout Section
+DNS-Server - Niklas
+\end_layout
+
+\begin_layout Quote
+Richten Sie einen DNS-Server in einem weiteren Netz ein, der einen Aufruf
+ der Webseite des Webservers über dessen URL 
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://www.filius.de
+\end_layout
+
+\end_inset
+
+ ermöglicht.
+ Legen Sie den DNS-Server im Client fest.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filius Netzwerk DNS
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename assets/aufgabe_4.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In diesem Beispielnetzwerk haben wir drei getrennte Netzwerke:
+\end_layout
+
+\begin_layout Enumerate
+192.168.0
+\end_layout
+
+\begin_layout Enumerate
+192.168.1
+\end_layout
+
+\begin_layout Enumerate
+192.168.2
+\end_layout
+
+\begin_layout Standard
+In dem ersten Netzwerk befinden sich die Klienten, im zweiten der Web-Server
+ und im dritten der DNS-Serve.
+ Alle drei Netzwerke sind über einen Vermittlungsrechner verbunden.
+ Diesen haben auch alle Klienten als Gateway eingetragen.
+ So hat der Rechner mit der IP-Adresse 
+\begin_inset Quotes gld
+\end_inset
+
+192.168.0.10
+\begin_inset Quotes grd
+\end_inset
+
+ als Gateway 
+\begin_inset Quotes gld
+\end_inset
+
+192.168.0.1
+\begin_inset Quotes grd
+\end_inset
+
+ eingetragen.
+ Dadurch ist die Kommunikation über verschiedene Netzwerke hinaus möglich.
+\end_layout
+
+\begin_layout Standard
+In dem DNS-Server sind die URL 
+\begin_inset Quotes gld
+\end_inset
+
+www.filius.de
+\begin_inset Quotes grd
+\end_inset
+
+ und die Addresse des Web-Server 
+\begin_inset Quotes gld
+\end_inset
+
+192.168.1.13
+\begin_inset Quotes grd
+\end_inset
+
+ mit einander verknüpft.
+ Bei den Klienten ist der DNS-Server, also 
+\begin_inset Quotes gld
+\end_inset
+
+192.168.2.10
+\begin_inset Quotes grd
+\end_inset
+
+, als DNS-Server eingetragen.
+\end_layout
+
+\begin_layout Standard
+Wenn jetzt auf einem der Klienten ein Anfrage über den Browser an 
+\begin_inset Quotes gld
+\end_inset
+
+www.filius.de
+\begin_inset Quotes grd
+\end_inset
+
+ gestellt wird, geht diese zuerst an den DNS-Server.
+ Dieser gibt die Addresse des Web-Server zurück.
+ Die Addresse wird dann auf dem Klienten gepeichert und es kann eine direkte
+ verbindung hergestellt werden.
+\end_layout
+
+\begin_layout Section
+Whois und Traceroute - Niklas
+\end_layout
+
+\begin_layout Quote
+Recherchieren Sie IP-Adressen bzw.
+ die zugehörigen Domainnamen mit einem whois-Tool.
+ Recherchieren Sie den Weg von Daten zu einem Server mit dem tracert-Befehl.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+Tracroute
+\shape default
+ und 
+\shape italic
+whois
+\shape default
+ sind programme mit denen man Information über verbindung zu einem Computer
+ im Internet herraus finden kann.
+ 
+\shape italic
+Tracroute
+\shape default
+ gibt die Route eines IP-Pakets an, welches durch ein Netzwerk gesendet
+ wird, und 
+\shape italic
+whois
+\shape default
+ gibt informationen über einen Computer, wie die IP-Addresse, wo die URL
+ vermerkt ist oder auf welchem DNS-Server diese liegt.
+ Zum beispiel liegt 
+\begin_inset Quotes gld
+\end_inset
+
+www.google.de
+\begin_inset Quotes grd
+\end_inset
+
+ auf 
+\begin_inset Quotes gld
+\end_inset
+
+142.250.217.67
+\begin_inset Quotes grd
+\end_inset
+
+.
+ Und der Output von 
+\begin_inset Quotes gld
+\end_inset
+
+traceroute www.google.de
+\begin_inset Quotes grd
+\end_inset
+
+ aus meinem lokale Netzwerk ist folgender:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+traceroute to www.google.de (142.250.181.195), 30 hops max, 60 byte packets 
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+1  fritz.box (192.168.188.1)
+\end_layout
+
+\begin_layout Plain Layout
+
+2  OPNsense.localdomain (192.168.1.1)
+\end_layout
+
+\begin_layout Plain Layout
+
+3  leasedline-static-091-249-208-109.ewe-ip-backbone.de (91.249.208.109)  
+\end_layout
+
+\begin_layout Plain Layout
+
+4  85.16.121.252 (85.16.121.252) 
+\end_layout
+
+\begin_layout Plain Layout
+
+5 bbrt-sev-1-72730202-ae27.ewe-ip-backbone.de (85.16.253.66)
+\end_layout
+
+\begin_layout Plain Layout
+
+6  bbrt-hb-2-70730201-ae22.ewe-ip-backbone.de (80.228.90.141)
+\end_layout
+
+\begin_layout Plain Layout
+
+7  bbrt-ffm-0-23730205-ae10.ewe-ip-backbone.de (212.6.114.22)
+\end_layout
+
+\begin_layout Plain Layout
+
+8  72.14.222.41 (72.14.222.41)  
+\end_layout
+
+\begin_layout Plain Layout
+
+9  * * 108.170.253.49 (108.170.253.49)  98.936 ms 
+\end_layout
+
+\begin_layout Plain Layout
+
+10  ham02s21-in-f3.1e100.net (142.250.181.195)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das ist zwar nicht der komplette output, denn ich habe ihn auf das wesendliche
+ begrenzt, aber es sind die verschiedenen 
+\begin_inset Quotes gld
+\end_inset
+
+Zwischenstaionen
+\begin_inset Quotes grd
+\end_inset
+
+ deutlich zu sehen.
+\end_layout
+
+\begin_layout Standard
+Der erste (
+\begin_inset Quotes gld
+\end_inset
+
+firtz.box
+\begin_inset Quotes grd
+\end_inset
+
+) ist mein W-LAN-Router, der Zweite mein Internet-Router.
+ Ab da wird mein lokales Netz verlassen.
+ 
+\end_layout
+
+\begin_layout Section
+Mail-Server - Niklas
+\end_layout
+
+\begin_layout Quote
+Integrieren Sie einen Mail-Server und simulieren Sie hiermit den Mailversand
+ und Mailempfang.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Filius Netzwerk DNS
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename assets/aufgabe_6.png
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aufgabe Nr.
+ 6 besitzt den selben Aufbau wie Aufgabe Nr.
+ 4.
+ Es kommen nur Konfigurationen hinzu.
+ In meinem Beispiel ist der Mail-Server auf dem selben Server konfiguriert
+ wie der Web-Server.
+ Als Maildomain habe ich 
+\begin_inset Quotes gld
+\end_inset
+
+filius.de
+\begin_inset Quotes grd
+\end_inset
+
+ angegeben.
+ Damit jetzt andere Rechner auf diese Mails zugreifen können, muss die Domain
+ auch bei dem DNS-Server eingetragen werden.
+ Dabei wird auch ähnlich wie bei NR.4 vorgegeangen.
+ Die Maildomain und IP-Addresse wird im DNS-Server unter dem Reiter 
+\begin_inset Quotes gld
+\end_inset
+
+Mailaustausch (MX)
+\begin_inset Quotes grd
+\end_inset
+
+ eingetragen.
+ Jetzt müssen nur noch die Konten auf dem Mail-Server eingetragen werden.
+ Danach kann man sich mit den jeweiliegen Konten auf dem Klienten anmelden
+ und Mail versenden und bekommen.
+\end_layout
+
+\end_body
+\end_document

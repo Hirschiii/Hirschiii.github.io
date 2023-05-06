@@ -1,0 +1,128 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Vorspann für mit LaTeX formatierte Versuchsberichte im Physikpraktium
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diese Datei steht unter der Lizenz CC0 1.0 . Sie darf kopiert, verändert
+% und weitergegeben werden. Zu den Details siehe
+% https://creativecommons.org/publicdomain/zero/1.0/deed.en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Optionen für die Dokumentenklasse scartcl von KOMAscript.
+\KOMAoptions{
+	DIV=11,
+	BCOR=0mm,
+	paper=a4,
+	fontsize=12pt,
+	parskip=half,
+	twoside=false,
+	titlepage=false
+}
+
+% Papierformat: DIN-A4, mit wenig Rand
+\usepackage[
+	a4paper,
+	left=20mm,
+	right=20mm,
+	top=23mm,
+	bottom=15mm,
+	includefoot,
+	footskip=8mm
+	]{geometry}
+
+% Zeilenabstand, andere Werte: onehalfspacing, doublespacing
+\usepackage[singlespacing]{setspace}
+
+% Definition der Kopf- und Fußzeile
+\usepackage[headsepline,automark]{scrlayer-scrpage}
+\clearpairofpagestyles
+\setlength{\headheight}{2.5\baselineskip}
+\setlength{\footheight}{1\baselineskip}
+\ihead[]{\includegraphics[width=4cm]{Images/ap-logo_bw.pdf}}
+\chead[]{\authA \\ \authB}
+\ohead[]{Datum: \today \\ Gruppe:~\grpnr}
+\ofoot[]{\pagemark}
+
+%---Language and umlauts
+\usepackage[utf8]{inputenc}       % UTF-8 Kodierung - ä, ö, ü, ß direkt eingeben
+\usepackage[ngerman]{babel}                      % Neue deutsche Rechtschreibung
+\usepackage[expansion=true, protrusion=true]{microtype} % Bessere Silbentrennung
+
+% Formelsatz
+\usepackage{amsmath}		% Mathematik-Umgebungen - z.B. align
+\usepackage{amsthm}		% Umgebung "theorem"
+\usepackage{amsfonts}	% Schriften
+\usepackage{amssymb}		% Symbole
+\usepackage{upgreek}		% Griechische Sonderzeichen z.B. \upmu
+
+% Einheiten
+\usepackage{siunitx}
+\sisetup{
+	locale = DE,
+	separate-uncertainty,
+	range-units = brackets,
+	list-units = single,
+	per-mode=fraction
+}
+
+% Bilder und Tabellen
+\usepackage{graphicx}			% Bilder als PDF einbinden
+\usepackage{epstopdf}			% Bilder im EPS-Format
+\usepackage{caption}				% Unterschriften für Bilder und Tapellen
+\usepackage{booktabs}			% Zusätzliche Schönheitslinien für Tabellen
+\usepackage{multirow}			% Mehrere Felder in einer Tabelle zusammenfassen
+\usepackage[table]{xcolor}		% Für farbig unterlegte Tabellenzeilen
+  \definecolor{lightgray}{gray}{0.9}
+  \rowcolors{1}{}{lightgray}	% jede zweite Zeile in einer Tabelle leicht grau
+
+
+% Positionierung von Bildern und Tabellen
+\usepackage{float}				% Option 'H', also "hier-egal-wie-das-aussieht"
+\usepackage[section]{placeins}	% Platzierung spätestens am Ende eines Kapitels
+\renewcommand{\floatpagefraction}{.75}	% standard: .5
+\renewcommand{\textfraction}{.1}			% standard: .2
+\renewcommand{\topfraction}{.8}			% standard: .7
+\renewcommand{\bottomfraction}{.5}		% standard: .3
+\setcounter{topnumber}{3}				% standard: 2
+\setcounter{bottomnumber}{2}				% standard: 1
+\setcounter{totalnumber}{5}				% standard: 3
+
+\usepackage{caption}
+\captionsetup[figure]{name=Abbildung,format=plain}
+\captionsetup[table]{name=Tabelle,format=plain}
+
+\usepackage{copyrightbox}		% Nachweis der Bildquelle
+
+% Schrift für die Bildquelle
+\makeatletter
+\renewcommand{\CRB@setcopyrightfont}{%
+\usefont{T1}{cmr}{m}{n}\fontsize{10}{10}\selectfont }
+\makeatother
+
+
+% Hyperlinks
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	breaklinks=true,
+	citecolor=darkgray,
+	linkcolor=darkgray,
+	menucolor=red,
+	urlcolor=cyan,
+	bookmarksopen=false,
+	bookmarksopenlevel=0,
+	plainpages=false,			% zur korrekten Erstellung der Bookmarks
+	hypertexnames=false			% zur korrekten Erstellung der Bookmarks
+}
+
+\usepackage{pdfpages} 		% Einfügen von Vollseiten-PDFs (z.B. das Deckblatt)
+\pdfminorversion=7			% Das Deckblatt-Formular ist ein PDF, version 1.7
+\usepackage{csquotes}		% Zitate
+
+% Literaturverzeichnis
+\usepackage[style=alphabetic,sorting=ynt,backend=biber]{biblatex}
+
+% Eine Abkürzung, die Computerbefehle im Fließtext mit einer Mono-Schrift setzt
+% (funktioniert leider nicht für Backslash \ . Da hilft dann der Befehl \verb )
+\providecommand*{\code}[1]{{\texttt{#1}}}
+
+

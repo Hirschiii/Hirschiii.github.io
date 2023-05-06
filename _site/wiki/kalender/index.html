@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        Kalender |
+        
+        My Blog
+    </title>
+
+    <meta name="description" content="Personal blog from Niklas von Hirschfeld">
+    <meta name="author" content="Niklas von Hirschfeld">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
+        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
+        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <header>
+        <h1>This is <span>my Website</span></h1>
+        <nav>
+            <span><a href="/">Home</a></span>|
+            <span><a href="/about">About</a></span>|
+            <span><a href="/wiki">Blog</a></span>|
+            <span><a href="/notes">Notes</a></span>|
+            <span><a href="https://github.com/Hirschiii">Git</a></span>
+        </nav>
+        <div class="search-container">
+            <input id="search" type="search" placeholder="🔎 Site Search">
+            <button>go</button>
+            <div class="search-results">
+                <div class="search-results__items"></div>
+            </div>
+        </div>
+    </header>
+    <hr />
+    <main>
+
+
+<body>
+    <nav class="toc" style="border: 1px solid #a2a9b1; background-color: #f8f9fa; display: inline-block; padding: 10px; margin: 10px;">
+<!--   <h4>Table of Contents</h4> -->
+<!-- <ul><li><a href="#einleitung">Einleitung</a><ul><li><a href="#was-ist-caldav-bzw-wie-funktioniert-es">Was ist CalDAV bzw wie funktioniert es?</a></li><li><a href="#icalendar">iCalendar</a><ul><li><a href="#einschraenkungen">Einschraenkungen</a></li><li><a href="#kernobjekt">Kernobjekt</a></li></ul></li></ul></li><li><a href="#installation">Installation</a><ul><li><a href="#radicale">Radicale</a><ul><li><a href="#configuration">Configuration</a><ul><li><a href="#authentifizierung">Authentifizierung</a></li><li><a href="#addresse">Addresse</a></li><li><a href="#dateinordner">Dateinordner</a></li><li><a href="#limits">Limits</a></li><li><a href="#service">Service</a></li></ul></li></ul></li><li><a href="#sabre">Sabre</a><ul><li><a href="#ein-einfacher-server">Ein einfacher Server</a><ul><li><a href="#die-basis-url">Die basis URL</a></li></ul></li><li><a href="#authentifizierung-1">Authentifizierung</a></li></ul></li><li><a href="#administration">Administration:</a><ul><li><a href="#neuer-benutzer">Neuer Benutzer:</a></li></ul></li><li><a href="#baikal">Baikal</a></li><li><a href="#cyrus-imap">Cyrus imap</a></li><li><a href="#zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</a></li></ul></li><li><a href="#clients">Clients</a><ul><li><a href="#webdavbrücken">Webdavbrücken</a></li><li><a href="#todo">Todo</a></li><li><a href="#kalender">Kalender</a></li><li><a href="#kontakte">Kontakte</a></li><li><a href="#zusammenfassung">Zusammenfassung</a></li></ul></li><li><a href="#zusammenfassung-1">Zusammenfassung</a></li></ul>-->
+* TOC
+{:toc}
+</nav>
+
+
+<h1 id="einleitung">Einleitung</h1>
+
+<p>Installation und Vergleich von verschiedenen <code class="language-plaintext highlighter-rouge">DAV</code> Servern und Clients.</p>
+
+<h2 id="was-ist-caldav-bzw-wie-funktioniert-es">Was ist CalDAV bzw wie funktioniert es?</h2>
+
+<ul>
+  <li>Dateinbasiert (ics/vcf)</li>
+  <li>erweitert <code class="language-plaintext highlighter-rouge">http</code> um Methode
+    <ul>
+      <li>bzw erweiterung von <code class="language-plaintext highlighter-rouge">WebDAV</code></li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">iCalendar</code> Format</li>
+</ul>
+
+<h2 id="icalendar">iCalendar</h2>
+
+<ul>
+  <li>ein Datenformat</li>
+  <li></li>
+</ul>
+
+<h3 id="einschraenkungen">Einschraenkungen</h3>
+
+<ul>
+  <li>nich mit “Mondkalendern” kompatibel (wird in Israel und Saudi-Arabien genutzt)</li>
+  <li>Todos (VTODO) und Journales (VJOURNAL) werden nicht von allen Serven / Clients unterstuezt</li>
+</ul>
+
+<h3 id="kernobjekt">Kernobjekt</h3>
+
+<p>Die Datei muss mit “BEGIN:VCALENDAR” beginnen und mit “END:VCALENDAR” auf hoeren.
+Der Inhalt zwischen diesen Zeilen wird als “icalbody” bezeichnent. Der Body <strong>muss</strong>
+die Kalendereigenschaften “PRODID:” und “VERSION” enthalten. Darueber hinaus muss es mindestens
+eine Kalenderkomponente enthalten.</p>
+
+<p>Hier ein Beispiel fuer das Event “Treffen XY” welchen vom 14. Juli 1997 um 17:00
+Uhr (UTC) bis zum 15. Juli 1997 um 02:59:59 Uhr statt findet.</p>
+
+<pre><code class="language-CalDAV">BEGIN:VCALENDAR
+
+VERSION:2.0
+PRODID:-//hacksw/handcal//NONSGML v1.0//EN
+
+BEGIN:VEVENT
+
+UID:uid1@example.com
+DTSTAMP:19970714T170000ZORGANIZER;CN=John
+Doe:
+MAILTO:john.doe@example.com
+DTSTART:19970714T170000Z
+DTEND:19970715T035959Z
+SUMMARY:Treffen XY
+GEO:48.85299;2.36885
+
+END:VEVENT
+END:VCALENDAR
+</code></pre>
+
+<h1 id="installation">Installation</h1>
+
+<h2 id="radicale">Radicale</h2>
+
+<p>Einfach per pip installieren</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the following command as root or</span>
+<span class="c"># add the --user argument to only install for the current user</span>
+<span class="nv">$ </span>python3 <span class="nt">-m</span> pip <span class="nb">install</span> <span class="nt">--upgrade</span> radicale
+<span class="nv">$ </span>python3 <span class="nt">-m</span> radicale <span class="nt">--storage-filesystem-folder</span><span class="o">=</span>~/.var/lib/radicale/collections
+</code></pre></div></div>
+
+<h3 id="configuration">Configuration</h3>
+
+<p>Radicale list die Konfigurationsdatei von <code class="language-plaintext highlighter-rouge">/etc/radicale/config</code> und <code class="language-plaintext highlighter-rouge">~/.config/radicale/config</code>.
+Es koennen noch eigene Pfade mit <code class="language-plaintext highlighter-rouge">--config</code> angegeben werden.</p>
+
+<h4 id="authentifizierung">Authentifizierung</h4>
+
+<p>Standardmaessig wird der Benutzername und das Password <strong>nicht</strong> ueberprueft.
+Wenn der Server online zugaenglich ist, sollte das geaendert werden.</p>
+
+<p>Eine sichere moeglichkeit dies zu erreichen, ist eine <code class="language-plaintext highlighter-rouge">user</code>-Datei die mit 
+<code class="language-plaintext highlighter-rouge">htpasswd</code> generiert wird.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create a new htpasswd file with the user "user1"</span>
+<span class="nv">$ </span>htpasswd <span class="nt">-c</span> /path/to/users user1
+
+<span class="c"># Add another user</span>
+<span class="nv">$ </span>htpasswd /path/to/users user2
+</code></pre></div></div>
+
+<p>Die Authentifizierungsmethode kann wie folgt eingestellt werden.</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">auth</span>]
+<span class="n">type</span> = <span class="n">htpasswd</span>
+<span class="n">htpasswd_filename</span> = /<span class="n">path</span>/<span class="n">to</span>/<span class="n">users</span>
+<span class="c"># encryption method used in the htpasswd file
+</span><span class="n">htpasswd_encryption</span> = <span class="n">md5</span>
+</code></pre></div></div>
+
+<h4 id="addresse">Addresse</h4>
+
+<p>Die Standardeinstellung als Addresse ist <code class="language-plaintext highlighter-rouge">localhost</code>. Wenn man das aendern moechte
+kann man das auch in der Konfigurationsdatei:</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">server</span>]
+<span class="n">hosts</span> = <span class="m">0</span>.<span class="m">0</span>.<span class="m">0</span>.<span class="m">0</span>:<span class="m">5232</span>, [::]:<span class="m">5232</span>
+</code></pre></div></div>
+
+<h4 id="dateinordner">Dateinordner</h4>
+
+<p>Auch der Ordner sollte angegeben werden:</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[<span class="n">storage</span>]
+<span class="n">filesystem_folder</span> = /<span class="n">path</span>/<span class="n">to</span>/<span class="n">storage</span>
+</code></pre></div></div>
+
+<h4 id="limits">Limits</h4>
+
+<p>Man hat die Möglichkeit eine Limitierung für verschiedene Dinge einzustellen:</p>
+
+<pre><code class="language-$HOME/.config/radicale/config">[server]
+max_connections = 20
+# 100 Megabyte
+max_content_length = 100000000
+# 30 seconds
+timeout = 30
+
+[auth]
+# Average delay after failed login attempts in seconds
+delay = 1
+</code></pre>
+
+<h4 id="service">Service</h4>
+
+<blockquote>
+  <p>Auf Uberspace</p>
+</blockquote>
+
+<pre><code class="language-~/etc/services.d/radicale.ini">[program:radicale]
+command=radicale
+</code></pre>
+
+<p>Nach dem Konfigurieren kann der Service mit <code class="language-plaintext highlighter-rouge">supervisord</code>
+gestartet werden.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>supervisorctl reread
+
+<span class="nv">$ </span>supervisorctl update
+
+<span class="nv">$ </span>supervisorctl status
+SERVICE         RUNNING   pid 26020, <span class="nb">uptime </span>0:03:14
+</code></pre></div></div>
+
+<p>Um den Webserver zum Laufen zu bringen, muss das Backend auf der Domain eingestellt werden.</p>
+
+<p><strong>ACHTUNG</strong> Setze die Domain <code class="language-plaintext highlighter-rouge">/</code> weise. Falls du andere Protokolle (wie Apache)
+auf <code class="language-plaintext highlighter-rouge">/</code> laufen hast. Werden diese einfach überschrieben.</p>
+
+<p>Um eine liste der laufenden Backends zu bekommen: <code class="language-plaintext highlighter-rouge">uberspace web backend list</code></p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uberspace web backend <span class="nb">set</span> / <span class="nt">--http</span> <span class="nt">--port</span> 8000
+</code></pre></div></div>
+
+<h2 id="sabre">Sabre</h2>
+
+<p>An der “Wurzel” des Projektes <code class="language-plaintext highlighter-rouge">sabre/dav</code> per <code class="language-plaintext highlighter-rouge">composer</code> installieren. Das kann 
+man auch in dem unterordner des Webservers.</p>
+
+<p>Beispiel: <code class="language-plaintext highlighter-rouge">vonhirschfeld.eu/webdav/</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>composer require sabre/dav ~3.2.0
+
+composer update sabre/dav
+</code></pre></div></div>
+
+<p>Jetzt kann man einen simplen Server erstellen. Dafuer muss aber der genaue Weg zu
+<code class="language-plaintext highlighter-rouge">vendor/autoload.php</code> bekannt sein. Dieser befindet sich Standardmaessig im dem 
+Ordener sein, in dem man zuvor <code class="language-plaintext highlighter-rouge">sabre/dav</code> installiert hat.</p>
+
+<h3 id="ein-einfacher-server">Ein einfacher Server</h3>
+
+<p>Zuerst muessen die Ordner <code class="language-plaintext highlighter-rouge">data</code> und <code class="language-plaintext highlighter-rouge">public</code> erstellt werden:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir </span>data
+<span class="nb">mkdir </span>public
+</code></pre></div></div>
+
+<p>Der <code class="language-plaintext highlighter-rouge">data</code> Ordner beinhaltet spaeter informationen die von <code class="language-plaintext highlighter-rouge">SabreDAV</code> benoetigt werden,</p>
+
+<p>Jetzt muessen beide Order zugaenglich gemcht werden:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">chmod </span>a+rwx data public
+</code></pre></div></div>
+
+<p>Als naechstes erstellen wir den server mit der Datei <code class="language-plaintext highlighter-rouge">server.php</code> welche wie folgt aussehen kann:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span>
+
+<span class="kn">use</span>
+    <span class="no">Sabre\DAV</span><span class="p">;</span>
+
+<span class="c1">// The autoloader</span>
+<span class="k">require</span> <span class="s1">'vendor/autoload.php'</span><span class="p">;</span>
+
+<span class="c1">// Now we're creating a whole bunch of objects</span>
+<span class="nv">$rootDirectory</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DAV\FS\Directory</span><span class="p">(</span><span class="s1">'public'</span><span class="p">);</span>
+
+<span class="c1">// The server object is responsible for making sense out of the WebDAV protocol</span>
+<span class="nv">$server</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DAV\Server</span><span class="p">(</span><span class="nv">$rootDirectory</span><span class="p">);</span>
+
+<span class="c1">// If your server is not on your webroot, make sure the following line has the</span>
+<span class="c1">// correct information</span>
+<span class="nv">$server</span><span class="o">-&gt;</span><span class="nf">setBaseUri</span><span class="p">(</span><span class="s1">'/url/to/server.php'</span><span class="p">);</span>
+
+<span class="c1">// The lock manager is reponsible for making sure users don't overwrite</span>
+<span class="c1">// each others changes.</span>
+<span class="nv">$lockBackend</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DAV\Locks\Backend\File</span><span class="p">(</span><span class="s1">'data/locks'</span><span class="p">);</span>
+<span class="nv">$lockPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DAV\Locks\Plugin</span><span class="p">(</span><span class="nv">$lockBackend</span><span class="p">);</span>
+<span class="nv">$server</span><span class="o">-&gt;</span><span class="nf">addPlugin</span><span class="p">(</span><span class="nv">$lockPlugin</span><span class="p">);</span>
+
+<span class="c1">// This ensures that we get a pretty index in the browser, but it is</span>
+<span class="c1">// optional.</span>
+<span class="nv">$server</span><span class="o">-&gt;</span><span class="nf">addPlugin</span><span class="p">(</span><span class="k">new</span> <span class="nc">DAV\Browser\Plugin</span><span class="p">());</span>
+
+<span class="c1">// All we need to do now, is to fire up the server</span>
+<span class="nv">$server</span><span class="o">-&gt;</span><span class="nb">exec</span><span class="p">();</span>
+</code></pre></div></div>
+
+<h4 id="die-basis-url">Die basis URL</h4>
+
+<p>Es ist wichtig die basis URL richtig zu setzen.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$server</span><span class="o">-&gt;</span><span class="nf">setBaseUri</span><span class="p">(</span><span class="s1">'/url/to/server.php'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Diese Pfad soll direkt zu dem server Script zeigen.</p>
+
+<p>Wenn also die domain zu dem script folgende ist:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://mydomain/sabredav/server.php
+</code></pre></div></div>
+
+<p>Dann sollte die basis URL folgende sein:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/sabredav/server.php
+</code></pre></div></div>
+
+<p>Wenn alles korrekt aufgesetzt wurde, sollte man jetzt schon eine Oberflaeche sehen,
+wenn man den Server in einem Brower aufruft.</p>
+
+<h3 id="authentifizierung-1">Authentifizierung</h3>
+
+<ul>
+  <li><a href="https://sabre.io/dav/authentication/">Officielle Dokumentation</a></li>
+</ul>
+
+<p>Es gibt verschiedenen Authentifizierungsbackends.</p>
+
+<p>Ich habe mich hier fuer ein PDO backend entschieden, welches entweder mit <code class="language-plaintext highlighter-rouge">MySQL</code>
+oder <code class="language-plaintext highlighter-rouge">SQLite</code> funktioniert.</p>
+
+<p>Andere Moeglichkeiten sind:</p>
+
+<ul>
+  <li>File</li>
+  <li>IMAP</li>
+  <li>Apache</li>
+  <li>BasicCallBack</li>
+</ul>
+
+<p>Beispiele fuer die SQL Tabellen finden sie <a href="https://github.com/sabre-io/dav/tree/master/examples/sql">hier</a>.</p>
+
+<p>Um das <code class="language-plaintext highlighter-rouge">Plugin</code> anzuwenden kannd er folgende Code zu dem Server (<code class="language-plaintext highlighter-rouge">server.php</code>) 
+hinzugefuegt werden:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">use</span> <span class="nc">Sabre\DAV\Auth</span><span class="p">;</span>
+
+<span class="nv">$pdo</span> <span class="o">=</span> <span class="k">new</span> <span class="err">\</span><span class="nf">PDO</span><span class="p">(</span><span class="s1">'sqlite:data/db.sqlite'</span><span class="p">);</span>
+<span class="c1">// or alternatively:</span>
+<span class="c1">// $pdo = new \PDO('mysql:dbname=sabredav','username','password');</span>
+
+<span class="c1">// Throwing exceptions when PDO comes across an error:</span>
+<span class="nv">$pdo</span><span class="o">-&gt;</span><span class="nf">setAttribute</span><span class="p">(</span><span class="no">PDO</span><span class="o">::</span><span class="no">ATTR_ERRMODE</span><span class="p">,</span><span class="no">PDO</span><span class="o">::</span><span class="no">ERRMODE_EXCEPTION</span><span class="p">);</span>
+
+<span class="c1">// Creating the backend.</span>
+<span class="nv">$authBackend</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Auth\Backend\PDO</span><span class="p">(</span><span class="nv">$pdo</span><span class="p">);</span>
+
+<span class="c1">// We're assuming that the realm name is called 'SabreDAV'.</span>
+<span class="nv">$authBackend</span><span class="o">-&gt;</span><span class="nf">setRealm</span><span class="p">(</span><span class="s1">'SabreDAV'</span><span class="p">);</span>
+
+<span class="c1">// Creating the plugin.</span>
+<span class="nv">$authPlugin</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Auth\Plugin</span><span class="p">(</span><span class="nv">$authBackend</span><span class="p">);</span>
+
+<span class="c1">// Adding the plugin to the server.</span>
+<span class="nv">$server</span><span class="o">-&gt;</span><span class="nf">addPlugin</span><span class="p">(</span><span class="nv">$authPlugin</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Den Code kann man einfache nach der einbindung des Browserplugins einfuegen.</p>
+
+<p>Also nach folgender Zeile:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// This ensures that we get a pretty index in the browser, but it is</span>
+<span class="c1">// optional.</span>
+<span class="nv">$server</span><span class="o">-&gt;</span><span class="nf">addPlugin</span><span class="p">(</span><span class="k">new</span> <span class="nc">DAV\Browser\Plugin</span><span class="p">());</span>
+</code></pre></div></div>
+
+<h2 id="administration">Administration:</h2>
+
+<h3 id="neuer-benutzer">Neuer Benutzer:</h3>
+
+<p>Falls es noch keine Tabelle fuer Benutzer gitb, kann sie wie folgt erstellt werde:</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">CREATE</span> <span class="k">TABLE</span> <span class="n">users</span> <span class="p">(</span>
+        <span class="n">id</span> <span class="nb">INTEGER</span> <span class="nb">UNSIGNED</span> <span class="k">NOT</span> <span class="k">NULL</span> <span class="k">PRIMARY</span> <span class="k">KEY</span> <span class="n">AUTO_INCREMENT</span><span class="p">,</span>
+        <span class="n">username</span> <span class="nb">VARBINARY</span><span class="p">(</span><span class="mi">50</span><span class="p">),</span>
+        <span class="n">digesta1</span> <span class="nb">VARBINARY</span><span class="p">(</span><span class="mi">32</span><span class="p">),</span>
+        <span class="k">UNIQUE</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+        <span class="p">)</span> <span class="n">ENGINE</span><span class="o">=</span><span class="n">InnoDB</span> <span class="k">DEFAULT</span> <span class="n">CHARSET</span><span class="o">=</span><span class="n">utf8mb4</span><span class="p">;</span>
+
+</code></pre></div></div>
+
+<p>Neue Benutzer koennen wie folgt eingetragen werden. Dabei wird das Password als</p>
+
+<div class="language-sql highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">INSERT</span> <span class="k">INTO</span> <span class="n">users</span> <span class="p">(</span><span class="n">username</span><span class="p">,</span><span class="n">digesta1</span><span class="p">)</span> <span class="k">VALUES</span>
+<span class="p">(</span><span class="s1">'admin'</span><span class="p">,</span>  <span class="s1">'87fd274b7b6c01e48d7c2f965da8ddf7'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>Das Password bzw <code class="language-plaintext highlighter-rouge">digesta1</code> ist der <code class="language-plaintext highlighter-rouge">md5</code> hash aus <code class="language-plaintext highlighter-rouge">username:realm:password</code>.</p>
+
+<p>Der Reaml kann selber ausgewaehlt werden, muss aber einmal festgelegt werden.
+Dies geschieht in der <code class="language-plaintext highlighter-rouge">server.php</code> Datei in der Zeile:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$authBackend</span><span class="o">-&gt;</span><span class="nf">setRealm</span><span class="p">(</span><span class="s1">'SabreDAV'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<h2 id="baikal">Baikal</h2>
+
+<p>Baikal ist ein erweitertes Webinterface fuer SabreDAV. Die Installation und Administration sind stark vereinfacht.</p>
+
+<p>Zur Installation wird Baikal als Zip heruntergeladen. Der entpackte Ordner sollte</p>
+
+<h2 id="cyrus-imap">Cyrus imap</h2>
+
+<h2 id="zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</h2>
+
+<h1 id="clients">Clients</h1>
+
+<h2 id="webdavbrücken">Webdavbrücken</h2>
+
+<h2 id="todo">Todo</h2>
+
+<h2 id="kalender">Kalender</h2>
+
+<h2 id="kontakte">Kontakte</h2>
+
+<h2 id="zusammenfassung">Zusammenfassung</h2>
+
+<h1 id="zusammenfassung-1">Zusammenfassung</h1>
+
+
+    </main>
+<hr />
+<footer>
+    <nav>
+        <a href="https://landchad.net" target="_blank">
+            <img src="/images/link-buttons/landchad.gif" target="_blank" alt="landchad.net">
+        </a>
+        <a href="https://www.freebsd.org" target="_blank">
+            <img src="/images/link-buttons/freebsd.gif" target="_blank" alt="freebsd.org">
+        </a>
+        <a href="https://wiby.me" target="_blank">
+            <img src="/images/link-buttons/wiby.gif" target="_blank" alt="wiby.me">
+        </a>
+    </nav><br>
+    <span>
+        <!-- &copy Copyright 2023 <a href="https://vonhirschfeld.eu">Niklas von Hirschfeld</a>. All rights reserved. -->
+    </span>
+</footer>
+
+</body>
+
+</html>

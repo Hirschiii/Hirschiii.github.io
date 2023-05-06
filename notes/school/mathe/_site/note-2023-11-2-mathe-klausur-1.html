@@ -1,0 +1,160 @@
+<h1 id="ganzrationale-funktionen">Ganzrationale Funktionen</h1>
+
+<ul>
+  <li>S. 63 ff.</li>
+</ul>
+
+<dl class="defi">
+  <dt>Definition:</dt>
+  <dd>Eine Funktion $f$ der Form $f(x)=a_n \cdot x^n + a_{n-1} \cdot x^{n-1}+…+a_1 \cdot x + a_0$ mit $D_f = \mathbb{R}$
+heisst <strong>ganzrationale Funktion von Grad $n$</strong> ($n \in \mathbb{N}, a_n \ne 0$).
+Die reellen Zahlen $a_0,a_1,…,a_n$ heissen <strong>Koeffizient</strong>.</dd>
+</dl>
+
+<ul>
+  <li>Eigenschaften können am <em>Grad</em> und am <em>Koeffiziente</em> abgelesen werden</li>
+</ul>
+
+<h2 id="beispiel">Beispiel</h2>
+
+\[\begin{aligned}
+f(x)=x^2
+\end{aligned}\]
+
+<p>Dann gilt fuer positive Werte:</p>
+
+<p><strong>Fuer $x \rightarrow + \infty$ gilt $f(x) \rightarrow + \infty$</strong></p>
+
+<p>Und fuer negative Werte:</p>
+
+<p><strong>Fuer $x \rightarrow - \infty$ gilt $f(x) \rightarrow + \infty$</strong></p>
+
+<hr />
+
+\[\begin{aligned}
+f(x)=x^3
+\end{aligned}\]
+
+<p>Dann gilt fuer positive Werte:</p>
+
+<p><strong>Fuer $x \rightarrow + \infty$ gilt $f(x) \rightarrow + \infty$</strong></p>
+
+<p>Und fuer negative Werte:</p>
+
+<p><strong>Fuer $x \rightarrow - \infty$ gilt $f(x) \rightarrow - \infty$</strong></p>
+
+<div class="defi">
+Satz:
+: Bei einer ganzrationalen Funktion $f$ mit $f(x)=a_n \cdot x^n + a_{n-1} \cdot x^{n-1}+...+a_1 \cdot x + a_0 \quad (a_n \ne 0)$ wird das **Verhalten fuer $x \rightarrow \pm \infty$** von dem Summanden $a_nx^n$ (der hoechste) bestimmt.
+
+Bei den Graphen ganzrationaler Funktionen unterscheidet man in vier Faellen:
+
+<div class="tbl">
+
+| n        | $a_n$ | $x \rightarrow - \infty; x \rightarrow - \infty;$       |
+| ---      | ---   | ---                                                     |
+| gerade   | $&gt;0$  | $f(x) \rightarrow + \infty; f(x) \rightarrow + \infty;$ |
+| gerade   | $&lt;0$  | $f(x) \rightarrow - \infty; f(x) \rightarrow - \infty;$ |
+| ungerade | $&gt;0$  |  $f(x) \rightarrow - \infty; f(x) \rightarrow + \infty;$                                                       |
+| ungerade | $&lt;0$  |   $f(x) \rightarrow + \infty; f(x) \rightarrow - \infty;$                                                      |
+
+</div>
+</div>
+
+<h1 id="symmetrie-von-graphen">Symmetrie von Graphen</h1>
+
+<ul>
+  <li>S. 66 ff</li>
+</ul>
+
+<div class="defi">
+Satz:
+Der Graph einer Funktion ist nur unter folgenden Bedingungen:
+
+- **Achsensymetrisch zur y-Achse:** Wenn fuer all $x \in D_f$ auch $f(-x)=f(x)$ gilt.
+- **Punktsymmetrisch** Wenn fuer all $x \in D_f$ auch $f(-x)=-f(x)$ gilt.
+</div>
+
+<h2 id="fuer-genzrationale-funktionen">Fuer genzrationale Funktionen</h2>
+
+<p>Der Graph ist immer:</p>
+
+<ul>
+  <li><strong>Achsensymetrisch</strong>, wenn alle Exponen <strong>gerade</strong> sind.</li>
+  <li><strong>Punktsymmetrisch</strong>, wenn alle Exponenten <strong>ungerade</strong> sind.</li>
+</ul>
+
+<h1 id="nullstellen">Nullstellen</h1>
+
+<ul>
+  <li>S. 69 ff</li>
+</ul>
+
+<dl class="defi">
+  <dt>Definition:</dt>
+  <dd>Eine Zahl $x^1$ heisst <em>Nullstelle</em> einer Funktion $f$, wenn $f(x^1) = 0$ ist.</dd>
+</dl>
+
+<h3 id="1-p-q-formel">(1) p-q-Formel</h3>
+
+\[f(x) = x^2 + px + q \Rightarrow x_{1,2}=-\frac{p}{2}\pm \sqrt{(\frac{p}{2})^2 - q}\]
+
+<p>Eine Funktion $f$ mit $f(x)=ax^2 - 4x +3$ laesst sich auf (1) bzw die <em>p-q-Formel</em> zurueck fuehren, indem man
+durch $a$ dividiert.</p>
+
+<p>Also fuer:</p>
+
+\[f(x)=2x^2-8x+6=0 \\
+\big\downarrow \\
+x^2-4x+3=0\]
+
+<blockquote>
+  <p>Sonnst kann auch der <em>CAS</em> mit <em>solve($f(x)=0$)</em> verwendet werden.</p>
+</blockquote>
+
+<h1 id="linearfaktoren">Linearfaktoren</h1>
+
+<ul>
+  <li>S. 75 ff</li>
+</ul>
+
+<dl class="defi">
+  <dt>Satz:</dt>
+  <dd>Eine ganzrationale Funktion $f$ vom Grad $n$ hat hoechstens $n$ Nullstellen.</dd>
+</dl>
+
+<p>Eine ganzrationale Funktion laesst sich umformen:</p>
+
+\[f(x)=(x-1)(x+3) = x^2 + 2x -3\]
+
+<p>Vorteile der beiden:</p>
+
+<div class="tbl">
+
+| Ablesbar | polynom | linearfaktoren |
+| ---|---|---|
+| Nullstellen | <i class="fa-regular fa-square-check fa-xl"></i> | <i class="fa-regular fa-square fa-xl"></i> |
+| Symmetrie | <i class="fa-regular fa-square fa-xl"></i> | <i class="fa-regular fa-square-check fa-xl"></i> |
+
+</div>
+
+<h1 id="ermitteln-von-funktionsgleichungen">Ermitteln von Funktionsgleichungen</h1>
+
+<ul>
+  <li>S. 76 ff</li>
+</ul>
+
+\[\begin{aligned}
+f(x)=ax^2+bx+c
+\end{aligned}\]
+
+\[A(-1 | 4) \quad B(0 | 0) \quad C(2 | 4)\\
+\big\downarrow\\
+\begin{aligned}
+\begin{vmatrix}
+&amp; 4 &amp; = &amp; a &amp; \cdot &amp; (-1)^2 &amp; + &amp; b &amp; \cdot &amp; (-1) &amp; + &amp; c &amp;  &amp;  \\
+&amp; 0 &amp; = &amp; a &amp; \cdot &amp; 0^2    &amp; + &amp; b &amp; \cdot &amp; 0    &amp; + &amp; c &amp;  &amp;  \\
+&amp; 2 &amp; = &amp; a &amp; \cdot &amp; 4^2    &amp; + &amp; b &amp; \cdot &amp; 4    &amp; + &amp; c &amp;  &amp;  \\
+\end{vmatrix}
+\end{aligned}\]
+

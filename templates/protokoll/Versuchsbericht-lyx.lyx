@@ -1,0 +1,1677 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+% Vorspann für mit LaTeX formatierte Versuchsberichte
+
+% Zeilenabstand, andere Werte: onehalfspacing, doublespacing
+\usepackage[singlespacing]{setspace}
+
+\newcommand{\authA}{*Author1*}
+\newcommand{\authB}{*Author2*}
+\newcommand{\grpnr}{*Grp.-Nr.*}
+
+% Definition der Kopf- und Fußzeile
+\usepackage[headsepline,automark]{scrlayer-scrpage}
+\clearscrheadings
+\setlength{\headheight}{2.5\baselineskip}
+\setlength{\footheight}{1\baselineskip}
+\ihead[]{\includegraphics[width=4cm]{Images/ap-logo_bw.pdf}}
+\chead[]{\authA \\ \authB}
+\ohead[]{Datum: \today \\ Gruppe:~\grpnr}
+\ofoot[]{\pagemark}
+
+% Formelsatz
+\usepackage{amsthm}		% Umgebung "theorem"
+\usepackage{amsfonts}	% Schriften
+\usepackage{upgreek}		% Griechische Sonderzeichen z.B. \upmu
+
+% Einheiten
+\usepackage{siunitx}
+\sisetup{
+	locale = DE,
+	separate-uncertainty,
+	range-units = brackets,
+	list-units = single,
+	per-mode=fraction
+}
+
+% Bilder und Tabellen
+\usepackage{epstopdf}		% Bilder im EPS-Format
+\usepackage{caption}			% Unterschriften für Bilder und Tapellen
+\usepackage{booktabs}		% Zusätzliche Schönheitslinien für Tabellen
+\usepackage{multirow}		% Mehrere Felder in einer Tabelle zusammenfassen
+\usepackage[table]{xcolor}	% Für farbig unterlegte Tabellenzeilen
+  \definecolor{lightgray}{gray}{0.9}
+  \rowcolors{1}{}{lightgray}	% jede zweite Zeile in einer Tabelle leich grau
+
+
+% Positionierung von Bildern und Tabellen
+\usepackage{float}		% für die Option 'H', also "hier-egal-wie-das-aussieht"
+\usepackage[section]{placeins}	% Platzierung spätestens am Ende eines Kapitels
+\renewcommand{\floatpagefraction}{.75}		% standard: .5
+\renewcommand{\textfraction}{.1}				% standard: .2
+\renewcommand{\topfraction}{.8}				% standard: .7
+\renewcommand{\bottomfraction}{.5}			% standard: .3
+\setcounter{topnumber}{3}					% standard: 2
+\setcounter{bottomnumber}{2}					% standard: 1
+\setcounter{totalnumber}{5}					% standard: 3
+
+\usepackage{caption}
+\captionsetup[figure]{name=Abb.}
+\captionsetup[table]{name=Tab.}
+
+\usepackage{csquotes}% Zitate
+
+%%%%%%%%%%%%%%%%%%%%%Vorspann für das Deckblatt%%%%%%%%%%%%%%%%%%%%%
+\usepackage{afterpage}	% Seitennummern nach dem Deckblatt beginnen
+
+% für die Ankreuz-Felder
+\newcounter{irow}
+\setcounter{irow}{0}
+\usepackage{tcolorbox}
+\newcommand {\janein}{\llap{Ja \: Nein \, n.a. \hspace*{0.5mm}}}
+\newcommand {\kaestchen}{\hfill{\llap{
+			\CheckBox[name=\theirow*3,charsize=10pt,width=8pt,height=8pt]{}
+			$\quad$ \CheckBox[name=\theirow*3+1,charsize=10pt,width=8pt,height=8pt]{}
+			$\quad$ \CheckBox[name=\theirow*3+2,charsize=10pt,width=8pt,height=8pt]{}}
+			}\hspace*{3mm}
+			\stepcounter{irow}}
+
+\usepackage{tikz}		% für den Strich unter dem Stempelfeld
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end_preamble
+\options DIV=11,BCOR=0mm,paper=a4,fontsize=12pt,parskip=half,twoside=false,titlepage=false
+\use_default_options true
+\begin_modules
+theorems-ams
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "citecolor=darkgray,linkcolor=darkgray,menucolor=red,urlcolor=cyan,bookmarksopen=false,bookmarksopenlevel=0,plainpages=false,hypertexnames=false"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine biblatex
+\cite_engine_type authoryear
+\biblio_style plain
+\biblatex_bibstyle alphabetic
+\biblatex_citestyle alphabetic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 20mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 30mm
+\footskip 10mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+input{Deckblatt-formular.tex}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Versuchsbericht mit \SpecialChar LyX
+
+\end_layout
+
+\begin_layout Author
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+authA,
+\backslash
+authB
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Einleitung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+Die Einleitung leitet den jeweiligen Text ein.
+ Sie enthält noch nichts vom eigentlichen Inhalt
+\end_layout
+
+\end_inset
+
+ Naturwissenschaftliche Fachtexte sind etwas speziell.
+ Sie sind vergleichsweise stark strukturiert und enthalten Formeln, Tabellen,
+ Fußnoten und Literaturverweise.
+ Vor diesem Hintergrund hat Donald Knuth bereits Anfang der 1980er Jahre
+ das Satzprogramm \SpecialChar TeX
+ entwickelt, das diese Bedürfnisse erfüllt und im Buch
+\shape italic
+ The TeXbook
+\shape default
+ beschrieben.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "knuthtexbook"
+literal "false"
+
+\end_inset
+
+ Zusammen mit dem Werkzeug MetaFont zur Handhabung von Schriften liefert
+ \SpecialChar TeX
+ Ergebnisse, die bis ins Detail den über Jahrhunderte gewachsenen Regeln
+ der Druckkunst entsprechen.
+ Es war allerdings etwas sperrig zu benutzen.
+ Daher hat wenig später Leslie Lamport eine Sammlung von TeX-Makros zusammengest
+ellt und als \SpecialChar LaTeX
+ der Allgemeinheit zur Verfügung gestellt.
+\begin_inset CommandInset citation
+LatexCommand citet
+key "leslielamportlatex"
+literal "false"
+
+\end_inset
+
+ Auch mit diesen Makros ähnelt die Erstellung eines Dokuments noch der Anwendung
+ einer Programmiersprache.
+ Text und Formeln werden erst nach einem an einen Compiler erinnernden Lauf
+ zu einem graphisch befriedigenden Dokument gesetzt.
+ \SpecialChar LyX
+ erweitert dieses System um eine Darstellung am Bildschirm unmittelbar
+ bei der Eingabe.
+ Damit ähnelt die Erstellung eines Dokuments der Arbeit mit einer Office-Anwendu
+ng.
+\end_layout
+
+\begin_layout Standard
+Die Versuchsberichte zum Physikpraktikum sind eine gute Gelegenheit, einen
+ eigenen Umgang mit \SpecialChar LaTeX
+ zu lernen.
+ Dieser Text kann dafür als Kopiervorlage dienen und auf diese Weise den
+ Einstieg erleichtern.
+\end_layout
+
+\begin_layout Section
+Die Quelldateien dieses Dokuments
+\end_layout
+
+\begin_layout Standard
+Die PDF-Form dieses Dokuments benötigt zur Erstellung die folgenden Dateien:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Versuchsbericht-lyx.lyx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Vorspann.tex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Deckblatt-formular.tex
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Literatur.bib
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Unterordner
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Images
+\end_layout
+
+\end_inset
+
+ mit den Bildern
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+ap-logo_bw.pdf
+\end_layout
+
+\end_inset
+
+ und
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+orangen.jpg
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Andere Dateien, die Sie möglicherweise in dem Ordner des Dokuments finden,
+ wurden automatisch erstellt.
+ Sie können sie ohne Schaden löschen.
+ Bei Bedarf werden die Dateien beim nächsten Export eines PDFs durch \SpecialChar LyX
+ wiederherg
+estellt.
+\end_layout
+
+\begin_layout Section
+Arbeiten mit \SpecialChar LyX
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset href
+LatexCommand href
+name "LyX"
+target "https://www.lyx.org/"
+literal "false"
+
+\end_inset
+
+ ist ein Editor für Latex mit einer Benutzeroberfläche, die recht ähnlich
+ zu Office-Anwendungen anmutet.
+ Bei \SpecialChar LyX
+ muss man keine Latex-Befehle eingeben.
+ Formelzeichen sind in einem Formel-Editor mit einem Mausklick erreichbar.
+ Alternativ kann man den jeweiligen Latex-Befehl für das Formelzeichen eingeben.
+ Der Befehl wird dann von \SpecialChar LyX
+ erkannt und am Bildschirm durch das jeweilige
+ mathematische Zeichen ersetzt.
+ Dabei ist die Darstellung von Text und Formeln für das Arbeiten am Bildschirm
+ optimiert und zunächst unabhängig von Latex.
+ Erst beim Export wird im Hintergrund Latex eingesetzt, um ein nach den
+ Regeln der Druckkunst gesetztes PDF-Dokument zu erstellen ([ctrl-R], oder
+ Klick auf den Knopf mit den beiden Augen).
+\end_layout
+
+\begin_layout Standard
+\SpecialChar LyX
+ ist für die üblichen Betriebssysteme verfügbar (Linux, Windows, MacOS).
+ Offene oder versteckte Kosten fallen nicht an.
+ Installer sind von der Downloadseite des Projekts erhältlich:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.lyx.org/Download
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tutorials und Nachschlagwerke
+\end_layout
+
+\begin_layout Standard
+Für LyX befindet sich die erste Anlaufstelle für Tutorials direkt in der
+ Anwendung im Menü 'Hilfe'.
+ Eine Liste mit weiteren Hilfen findet sich unter
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://wiki.lyx.org/LyX/Tutorials
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Deckblatt
+\end_layout
+
+\begin_layout Standard
+Ein Versuchsbericht ist erst mit dem Deckblatt des Physikpraktikums fertig
+ für eine Abgabe.
+ Seit Herbst 2020 ist das Deckblatt als PDF-Formular mit Textfeldern zum
+ nachträglichen, digitalen Ausfüllen gestaltet.
+ Leider gehen diese ausfüllbaren Textfelder bei der Einbindung eines PDFs
+ verloren.
+ Deshalb wird das Deckblatt in dieser Vorlage als Latex-Code mit Hilfe des
+ Befehls 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+input{Deckblatt-formular.tex}
+\end_layout
+
+\end_inset
+
+ eingebunden.
+ 
+\end_layout
+
+\begin_layout Section
+Bilder und Graphen
+\end_layout
+
+\begin_layout Standard
+So ziemlich jeder Versuchsbericht wird in der einen oder anderen Form Graphen
+ und Bilder präsentieren.
+ Dafür eignet sich die figure-Umgebung (Insert → Float → Figure).
+ Es erscheint ein roter Kasten mit der Möglichkeit, eine Bildunterschrift
+ zu ergänzen.
+ Nach einem Linke-Mausklick in den freien Platz links neben der Bildunterschrift
+ kann man dort ein Bild im einfügen (Insert → Graphics).
+ Ähnlich wie bei Gleichungen kann man in der figure-Umgebung eine Markierung
+ setzen (Insert → Label...).
+ Auf diese Markierung kann dann im Fließtext verwiesen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement htbp!
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename Images/orangen.jpg
+	lyxscale 50
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Für die Platzierung ist bei diesem Bild die Option
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+[htbp!]
+\end_layout
+
+\end_inset
+
+ angegeben.
+ Es wird daher von Latex dorthin geschoben, wohin es nach vorgegebenen Regeln
+ passt.
+ Mit der Option [H] würde das Bild ohne Rücksicht auf Schönheit genau an
+ die Stelle dargestellt, an der es im Latex-Text steht.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Platzhalter"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Abbildung
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Platzhalter"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ könnte eine Grafik zeigen, die mit einem externen Programm erzeugt wurde.
+ 
+\end_layout
+
+\begin_layout Standard
+Es ist empfehlenswert, die Bilder in einem eigenen Unterordner zu sammeln
+ – zum Beispiel in einem Ordner 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Images
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Die Platzierung der figure-Umgebung und damit das Bilder im Textfluss ist
+ genau wie der Zeilenumbruch und allgemein die Verteilung des Inhalts auf
+ eine Aufgabe von Latex.
+ Dabei orientiert sich Latex an bestimmten harten Grundregeln, wie etwa
+ der, dass Bilder nicht mit Text überlappen sollten und gewissen einprogrammiert
+en Schönheitsregeln.
+ So vermeidet Latex nach Möglichkeit große leere Bereiche.
+ Die Priorität der Schönheitsregeln kann mit Optionen beeinflusst werden,
+ die nach Rechte-Mausklick auf den grauen Knopf in der linken, oberen Ecke
+ der Umgebung erreichbar sind.
+ Die meisten dieser Optionen werden von Latex als Wunsch interpretiert.
+ Das heißt, Latex setzt sich über den Wunsch hinweg, wenn es meint, dass
+ das Ergebnis nur schlecht passt.
+ Mit der Option 
+\begin_inset Quotes gld
+\end_inset
+
+here, definitely
+\begin_inset Quotes grd
+\end_inset
+
+ wird das Bild genau an dieser Stelle in den Fließtext eingefügt, selbst
+ dann, wenn es eigentlich nicht mehr auf die Seite passt.
+ 
+\end_layout
+
+\begin_layout Standard
+Wenn keine Wunsch-Platzierung möglich erscheint, dann stellt Latex das betreffen
+de Bild zurück.
+ Dieses Bild 'blockiert' dann zunächst alle weiteren Bilder, denn Latex
+ wird immer die Reihenfolge beibehalten.
+ Im Ergebnis würden dann alle Bilder auf eigenen Seiten ganz hinten an das
+ Dokument angehängt.
+ Da das fast immer unerwünscht ist, ist im Vorspann zu diesem Dokument das
+ Paket
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+placeins
+\end_layout
+
+\end_inset
+
+ eingebunden.
+ Es sorgt dafür, dass spätestens nach am Ende eines Abschnitts (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+end{section}
+\end_layout
+
+\end_inset
+
+) alle noch nicht platzierten Bilder und Tabellen abgeladen werden.
+\end_layout
+
+\begin_layout Standard
+Es gibt in Latex noch viele weitere Gestaltungsmöglichkeiten im Zusammenhang
+ mit Bildern.
+ Einen guten Überblick gibt dieses Kapitel im englischen Wikibook:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+https://en.wikibooks.org/wiki/LaTeX/Floats,_Figures_and_Captions
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Tabellen
+\end_layout
+
+\begin_layout Standard
+Tabellen werden in Latex üblicherweise wie Bilder in einer verschiebbaren
+ Umgebung angelegt.
+ In diesem Fall handelt es sich um eine table-Umgebung (
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+begin{tabular}...
+\backslash
+end{tabular}
+\end_layout
+
+\end_inset
+
+).
+ Die table-Umgebung enthält dann mit der tabular-Umgebung die eigentliche
+ Tabelle und dazu mit
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+caption{}
+\end_layout
+
+\end_inset
+
+ die Tabellenunterschrift.
+\end_layout
+
+\begin_layout Standard
+Die Darstellung von Tabellen kann man mit den Optionen und Parametern in
+ vielfältiger Weise gestaltet werden.
+ In der Tabelle
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Rohdaten"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ wurden drei der besonders häufigen Bedürfnisse berücksichtigt:
+\end_layout
+
+\begin_layout Itemize
+Vereinigung von waagerecht nebeneinander liegenden Zellen
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Mehrere nebeneinander liegende Zellen auswählen, dann Rechte-Mausklick-Menü
+ → Settings → Multicolumn
+\end_layout
+
+\begin_layout Itemize
+Ausrichtung der Werte auf das Dezimalkomma
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Rechte-Mausklick-Menü → Settings → Latex_argument
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+
+.
+ Für diese Funktion wird das Paket siunitx gebraucht.
+\end_layout
+
+\begin_layout Itemize
+Jede zweite Zeile wird leicht grau unterlegt
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\Rightarrow$
+\end_inset
+
+ Der Vorspann dieses Dokuments enthält den Befehl
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+rowcolors{1}{}{lightgray}
+\end_layout
+
+\end_inset
+
+ aus dem Paket xcolor.
+\end_layout
+
+\begin_layout Standard
+Tabellen sollten als 
+\begin_inset Quotes gld
+\end_inset
+
+Float
+\begin_inset Quotes grd
+\end_inset
+
+ eingefügt werden.
+ In dieser Form haben sie ähnlich wie Bilder eine eigene Unterschrift und
+ eine eigene Nummer.
+ Außerdem entscheidet Latex bei der Erstellung des PDF wo die Tabelle relativ
+ zum Text erscheint.
+ Diese Entscheidung kann man in einem Menü beeinflussen, das man in LyX
+ mit einem rechten Mausklick auf den grau unterlegten Knopf oberhalb der
+ Tabelle erhält.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement htbp!
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="8">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0pt">
+<column alignment="none" valignment="top" special="S">
+<column alignment="none" valignment="top" special="S">
+<column alignment="none" valignment="top" special="S">
+<column alignment="none" valignment="top" special="S">
+<column alignment="none" valignment="top" special="S">
+<column alignment="none" valignment="top" special="S">
+<column alignment="none" valignment="top" special="S">
+<row>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="none" valignment="top" usebox="none" special="c">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Versuchsläufe
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{white}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,434
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,428
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,422
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,434
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,421
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,430
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,416
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,378
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,376
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,360
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,379
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,366
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,375
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,355
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,326
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,309
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,330
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,313
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,328
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0,352
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+24,284
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12,2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12,266
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23,286
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12,269
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12,288
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13,222
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Messergebnisse: Gemessen wurden jeweils vier Zeiten zwischen aufeinander
+ folgenden Stößen
+\begin_inset Formula $t_{i}$
+\end_inset
+
+.
+ Die Messung wurde sieben Mal wiederholt.
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Rohdaten"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Quellenangaben
+\end_layout
+
+\begin_layout Standard
+Literaturverweise werden von Latex aus einer externen Datenquelle zusammen
+ gesammelt.
+ Im einfachsten Fall besteht diese Datenquelle aus einer Datei mit einer
+ Reihe von Einträgen im Bibtex-Format.
+ Für dieses Dokument hier ist dies die Datei
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+Literatur.bib
+\end_layout
+
+\end_inset
+
+.
+ Um das Literaturverzeichnis einzufügen nutzt man den zugehörigen Menü-Eintrag
+ (Insert → List/TOC → Bibtex_Bibliography).
+\end_layout
+
+\begin_layout Standard
+Die Einträge aus der Datenquelle werden vom Programm
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+biber
+\end_layout
+
+\end_inset
+
+ eingesammelt und in eine für Latex lesbare Form gebracht.
+ Diese Vorgänge erledigt \SpecialChar LyX
+ beim Erstellen eines PDFs automatisch im Hintergrund.
+\end_layout
+
+\begin_layout Section
+Formeln
+\end_layout
+
+\begin_layout Standard
+Formeln können direkt in den Fließtext gesetzt werden: 
+\begin_inset Formula $\alpha=\beta+\Delta$
+\end_inset
+
+.
+ Um sie in einer eigenen Zeile abgesetzt darzustellen, setzt man im Rechte-Mausk
+lick-Menü der Formel den Haken 
+\begin_inset Quotes gld
+\end_inset
+
+Displayed Formula
+\begin_inset Quotes grd
+\end_inset
+
+:
+\begin_inset Formula 
+\begin{equation}
+e^{i\pi}+1=0\label{euler}
+\end{equation}
+
+\end_inset
+
+Diese Gleichung wurde mit dem Label 
+\begin_inset Quotes gld
+\end_inset
+
+euler
+\begin_inset Quotes grd
+\end_inset
+
+ markiert (Insert → Label...).
+ Damit kann im Fließtext auf die Gleichung verweisen: 'Gleichung
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "euler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+' (Insert → Cross-Reference).
+ Im Ausdruck wird das Label automatisch durch die passende Gleichungsnummer
+ ersetzt.
+\end_layout
+
+\begin_layout Standard
+Im Rechte-Mausklick-Menü lässt sich die Nummerierung einer Gleichung nach
+ Bedarf aktivieren oder abschalten:
+\begin_inset Formula 
+\[
+\langle X\rangle=\frac{1}{N}\sum\limits _{i=1}^{N}X_{i}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\langle X\rangle=\frac{1}{N}\sum\limits _{i=N}^{2N}X_{i}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Werte
+\end_layout
+
+\begin_layout Standard
+Durch Messungen ermittelte Werte haben meist eine Einheit und eine Unsicherheit.
+ Um dies korrekt darzustellen, eignet sich der Befehl 
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+SI{}{}
+\end_layout
+
+\end_inset
+
+ aus dem Latex-Paket siunitx.
+ Die Befehle in diesem Paket werden von \SpecialChar LyX
+ leider nicht automatisch erkannt.
+ Das heißt, man muss sie als Latex-Code eingeben (Insert → Tex_Code oder
+ [CTRL-L]).
+ Der Befehl erlaubt verschiedene Notationen für die Unsicherheit.
+ Beispiele:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+SI{3.14(4)}{m
+\backslash
+per
+\backslash
+second^{2}}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+SI{3.14(4)}{m
+\backslash
+per
+\backslash
+second^{2}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Flex Code
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+SI{3.14 +- 0,04}{
+\backslash
+kilogram
+\backslash
+metre
+\backslash
+per
+\backslash
+second}
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Formula $\rightarrow$
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+SI{3.14 +- 0,04}{
+\backslash
+kilogram
+\backslash
+metre
+\backslash
+per
+\backslash
+second}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Formatierung der Ausgabe lässt sich konfigurieren.
+ Wie sehr das ins Detail geht, kann man daran ablesen, dass die Dokumentation
+ des Pakets siunitx 96 Seiten umfasst:
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://mirrors.ctan.org/macros/latex/contrib/siunitx/siunitx.pdf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Zusammenfassung
+\end_layout
+
+\begin_layout Standard
+Mit \SpecialChar LyX
+ lassen sich Versuchsberichte im Physikpraktikum erstellen.
+ Formeln werden perfekt dargestellt, weil für die Ausgabe \SpecialChar LaTeX
+ verwendet wird.
+ Verzeichnisse werden automatisch aktualisiert.
+ Mit anderen Werkzeugen erstellte Grafiken und Fotos können als PDF eingebunden
+ werden.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "Literatur"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

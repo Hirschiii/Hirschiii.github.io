@@ -1,0 +1,13 @@
+---
+layout: default
+---
+
+
+<ul>
+    {% assign article_pages = site.pages | where: "type", "article" %}
+    {% for page in article_pages %}
+    {% unless page.hidden %}
+    <li>{% include article-list.html page=page %}</li>
+    {% endunless %}
+    {% endfor %}
+</ul>

@@ -1,0 +1,138 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2021 Gentoo Linux) (preloaded format=pdflatex 2023.3.1)  20 MAR 2023 14:14
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**note-deutsch-peom.tex
+(./note-deutsch-peom.tex
+LaTeX2e <2020-10-01> patch level 4
+L3 programming layer <2021-02-18>
+(/usr/share/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
+)
+\c@part=\count179
+\c@section=\count180
+\c@subsection=\count181
+\c@subsubsection=\count182
+\c@paragraph=\count183
+\c@subparagraph=\count184
+\c@figure=\count185
+\c@table=\count186
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+)
+(/usr/share/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2021/03/03 3.55 The Babel package
+
+(/usr/share/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2021/03/03 3.55 Babel common definitions
+\babel@savecnt=\count187
+\U@D=\dimen139
+\l@babelnohyphens=\language8
+
+(/usr/share/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count188
+
+(/usr/share/texmf-dist/tex/generic/babel-german/german.ldf
+Language: german 2021/02/27 v2.13 German support for babel (pre-1996 orthograph
+y)
+
+(/usr/share/texmf-dist/tex/generic/babel-german/germanb.ldf
+Language: germanb 2021/02/27 v2.13 German support for babel (pre-1996 orthograp
+hy)
+Package babel Info: Making " an active character on input line 139.
+)))
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2020/08/01 v1.3d Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/share/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/share/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count189
+\uc@combtoks=\toks17
+\uc@combtoksb=\toks18
+\uc@temptokena=\toks19
+)
+(/usr/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2021-03-18 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count190
+\l__pdf_internal_box=\box47
+)
+(./note-deutsch-peom.aux)
+\openout1 = `note-deutsch-peom.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 10.
+LaTeX Font Info:    ... okay on input line 10.
+ (/usr/share/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+)
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 11.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 11.
+
+
+LaTeX Warning: No \author given.
+
+(/usr/share/texmf-dist/tex/latex/ucs/data/uni-0.def
+File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
+)
+Underfull \hbox (badness 10000) in paragraph at lines 20--24
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--29
+ 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--34
+ 
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./note-deutsch-peom.aux) 
+) 
+Here is how much of TeX's memory you used:
+ 1975 strings out of 480901
+ 28606 string characters out of 5906050
+ 331569 words of memory out of 5000000
+ 19264 multiletter control sequences out of 15000+600000
+ 405239 words of font info for 33 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 55i,6n,62p,317b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb>
+Output written on note-deutsch-peom.pdf (1 page, 25063 bytes).
+PDF statistics:
+ 16 PDF objects out of 1000 (max. 8388607)
+ 10 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+

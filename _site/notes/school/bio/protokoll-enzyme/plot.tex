@@ -1,0 +1,72 @@
+\documentclass{standalone}
+ 
+\usepackage{pgfplots}
+ 
+\pgfplotsset{compat = newest}
+ 
+\begin{document}
+ 
+\begin{tikzpicture}
+ 
+\begin{axis}[
+    xmin = 0, xmax = 4.0,
+    ymin = 0, ymax = 1.2,
+    xtick distance = 2.5,
+    ytick distance = 0.5,
+    grid = both,
+    minor tick num = 1,
+    major grid style = {lightgray},
+    minor grid style = {lightgray!25},
+    width = \textwidth,
+    height = 0.5\textwidth,
+    xlabel = {$x$},
+    ylabel = {$y$},
+    legend pos=south east]
+ 
+% Plot a function
+% \addplot[
+%     domain = 0:30,
+%     samples = 200,
+%     smooth,
+%     thick,
+%     blue,
+% ] {exp(-x/10)*( cos(deg(x)) + sin(deg(x))/10 )};
+ 
+% Plot data from a file
+\addplot table [
+    x=x,
+    y=a,
+    smooth,
+    thin,
+    red,
+    dashed,
+    col sep=comma
+] {beobachtung.csv};
+\addplot table [
+    x=x,
+    y=b,
+    smooth,
+    thin,
+    red,
+    dashed,
+    col sep=comma
+] {beobachtung.csv};
+\addplot table [
+    x=x,
+    y=c,
+    smooth,
+    thin,
+    red,
+    dashed,
+    col sep=comma
+] {beobachtung.csv};
+
+\addlegendentry{Reagenzglas 1}
+\addlegendentry{Reagenzglas 2}
+\addlegendentry{Reagenzglas 3}
+ 
+\end{axis}
+ 
+\end{tikzpicture}
+ 
+\end{document}

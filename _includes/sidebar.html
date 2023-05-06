@@ -1,0 +1,74 @@
+<div class="sidenav">
+    <a href="/">Niklas von Hirschfeld</a><br />
+    <meta>{{ site.data.resume.basics.summary }}
+    </meta>
+    <hr />
+    <a {% if include.active=="notes" %} style="font-weight: bold;" {% endif %} href="/notes">Notes</a><br />
+    <a {% if include.active=="resources" %} style="font-weight: bold;" {% endif %} href="/resources">Resources</a><br />
+    <a {% if include.active=="topics" %} style="font-weight: bold;" {% endif %} href="/topics">Topics</a><br />
+    <a {% if include.active=="articles" %} style="font-weight: bold;" {% endif %} href="/articles">Articles</a><br />
+    <a {% if include.active=="wiki" %} style="font-weight: bold;" {% endif %} href="/wiki">Wiki</a><br />
+    <a {% if include.active=="school" %} style="font-weight: bold;" {% endif %} href="/school">School</a><br />
+    <span>&nbsp;&nbsp;- &nbsp;&nbsp;</span><a {% if include.active=="klausur" %} style="font-weight: bold;" {% endif %}
+        href="/school/klausuren">Klausuren</a><br />
+    <span>&nbsp;&nbsp;- &nbsp;&nbsp;</span><a {% if include.active=="erdkunde" %} style="font-weight: bold;" {% endif %}
+        href="/school/erdkunde">Erdkunde</a><br />
+    <span>&nbsp;&nbsp;- &nbsp;&nbsp;</span><a {% if include.active=="physik" %} style="font-weight: bold;" {% endif %}
+        href="/school/physik">Physik</a><br />
+    <span>&nbsp;&nbsp;- &nbsp;&nbsp;</span><a {% if include.active=="mathe" %} style="font-weight: bold;" {% endif %}
+        href="/school/mathe">Mathe</a><br />
+    <span>&nbsp;&nbsp;- &nbsp;&nbsp;</span><a {% if include.active=="geschichte" %} style="font-weight: bold;" {% endif
+        %} href="/school/geschichte">Geschichte</a><br />
+    <hr />
+    <a href="http://github.com/hirschiii">GitHub</a><br />
+</div>
+
+<div hidden class="topbar">
+    <div class="ui secondary pointing menu">
+        <a href="/" class="{% if include.active == " home" %}active{% endif %} item">Home</a>
+        <a href="/notes" class="{% if include.active == " notes" %}active{% endif %} item">Notes</a>
+        <a href="/resources" class="{% if include.active == " resources" %}active{% endif %} item">Resources</a>
+        <a href="/articles" class="{% if include.active == " articles" %}active{% endif %} item">Articles</a>
+        <a href="/wiki" class="{% if include.active == " wiki" %}active{% endif %} item">Wiki</a>
+        <div class="ui dropdown  item">
+            <div class=" text">
+                School
+            </div>
+            <i class="dropdown icon"></i>
+
+            <div class="menu">
+                <a class="item" data-value="home" href="/school/">Index</a>
+                <a class="item" data-value="kl" href="/school/klausuren">Klausuren</a>
+                <a class="item" data-value="ed" href="/school/erdkunde">Erdkunde</a>
+                <a class="item" data-value="ge" href="/school/geschichte">Geschichte</a>
+                <a class="item" data-value="en" href="/school/english">English</a>
+                <a class="item" data-value="ma" href="/school/mathe">Mathe</a>
+            </div>
+        </div>
+        <script>
+            $('.ui.dropdown').dropdown();
+
+            {% if include.active == "geschichte" %}
+            $('.ui.dropdown').dropdown('set selected', "ge");
+            {% endif %}
+            {% if include.active == "mathe" %}
+            $('.ui.dropdown').dropdown('set selected', "ma");
+            {% endif %}
+            {% if include.active == "english" %}
+            $('.ui.dropdown').dropdown('set selected', "en");
+            {% endif %}
+            {% if include.active == "erdkunde" %}
+            $('.ui.dropdown').dropdown('set selected', "ed");
+            {% endif %}
+
+            {% if include.active == "klausur" %}
+            $('.ui.dropdown').dropdown('set selected', "kl");
+            {% endif %}
+
+            {% if include.type == "english" %}
+            $('.ui.dropdown').dropdown('set selected', "en");
+            {% endif %}
+
+        </script>
+    </div>
+</div>

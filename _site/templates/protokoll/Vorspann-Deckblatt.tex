@@ -1,0 +1,26 @@
+% Latex-Vorspann für das Deckblatt des Physikpraktiums in Hannover
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diese Datei steht unter der Lizenz CC-BY-SA 4.0 . Sie darf kopiert, verändert
+% und weitergegeben werden. Dabei müssen die Urheber genannt werden und die
+% Lizenz beibehalten bleiben. Zu den Details siehe
+% https://creativecommons.org/licenses/by-sa/4.0/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Autoren: Kim Weber, Kai-Martin Knaak, beide Leibniz-Universität Hannover
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{afterpage}	% die Seitennummerierung nach dem Deckblatt beginnen
+
+% für die Ankreuz-Felder
+\newcounter{irow}
+\setcounter{irow}{0}
+\usepackage{tcolorbox}
+\newcommand {\janein}{\llap{Ja \: Nein \, n.a. \hspace*{0.5mm}}}
+\newcommand {\kaestchen}{\hfill{\llap{
+			\CheckBox[name=\theirow*3,charsize=10pt,width=8pt,height=8pt]{}
+			$\quad$ \CheckBox[name=\theirow*3+1,charsize=10pt,width=8pt,height=8pt]{}
+			$\quad$ \CheckBox[name=\theirow*3+2,charsize=10pt,width=8pt,height=8pt]{}}
+			}\hspace*{3mm}
+			\stepcounter{irow}}
+
+\usepackage{tikz}		% um den Strich unter dem Stempelfeld zu malen
+

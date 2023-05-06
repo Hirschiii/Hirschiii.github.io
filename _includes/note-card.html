@@ -1,0 +1,9 @@
+<a class="card" href="{{ site.baseurl }}{{ include.page.url | split: '.html'[0] }}">
+  <div class="content">
+    <span class="title">{{ include.page.title }}</span>
+    <div class="meta">
+        <span class="tags">{{ include.page.type | join: ", " }}</span><br />
+      <span class="date">{{ include.page.date | date_to_string }}</span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,97 @@
+%!TeX encoding=utf8
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Vorlage für mit LaTeX formatierte Versuchsberichte im Physikpraktium
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Diese Datei steht unter der Lizenz CC0 1.0 . Sie darf kopiert, verändert
+% und weitergegeben werden. Zu den Details siehe
+% https://creativecommons.org/publicdomain/zero/1.0/deed.en
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[ngerman]{scrartcl}
+
+% Passen Sie hier *Author1*, *Author2* und *Grp.-Nr.* an.
+\newcommand{\authA}{*Author1*}
+\newcommand{\authB}{*Author2*}
+\newcommand{\grpnr}{*Grp.-Nr.*}
+
+\input{Vorspann.tex}
+\input{Vorspann-Deckblatt.tex}
+
+\addbibresource{Literatur.bib}
+
+
+\begin{document}
+
+\input{Deckblatt-Formular.tex}	% Das Praktikumsdeckblatt einbinden
+
+\shorthandoff{"}			% Anführungszeichen nicht als Befehl interpretieren
+
+\subject{\includegraphics[width=8cm]{Images/ap-logo_bw.pdf}}
+\title{Umgang mit Messunsicherheiten (A01)}
+\subtitle{Gruppe \grpnr}
+\author{\authA \and \authB}
+
+\maketitle					% erst den Titel des Berichts
+\pagenumbering{gobble}		% ohne eigene Seitenzahlen
+\tableofcontents			% dann das Inhaltsverzeichnis darstellen.
+\clearpage					% die Einleitung auf einer neuen Seite beginnen
+\pagenumbering{arabic}		% ab hier die Seiten nummerieren
+
+\section{Einleitung}
+Schreiben Sie hier eine Einleitung zum Thema dieses Versuchabschnitts. (Einleitungen enthalten noch nichts zur konkreten Durchführung, keine Ergebnisse)
+
+\section{Federdehnung}
+Hier die Auswertung der Teilaufgaben zur Federdehnung
+\begin{itemize}
+	\item Ein Graph, in dem Sie die Auslenkungen gegen die Masse auftragen
+	\item Ein linerare Fit der aufgetragenen Messwerte
+	\item Berechnung der Federkonstanten
+	\item Bestimmung der statistischen Unsicherheiten
+	\item \ldots
+\end{itemize}
+
+\section{Federkonstande aus der Schwingung einer simulierten Feder}
+Hier eine kurze Übersicht, was in diesem Abschnitt betrachtet wird.
+
+\section{Periodendauer}
+
+\begin{table}[htbp!]
+  \rowcolors{1}{}{white} % Alle Zeilen der Tabellen einheitlich mit weißem Hintergrund
+  \begin{center}
+    \caption{Hier eine kurze Beschreibung, was die folgenden Tabellen enthalten.}
+    \begin{tabular}{l|SSSSSSSSSS}
+      & 1  & 2  & 3  & 4  & 5  & 6  & 7  & 8  & 9  & 10  \\
+      \hline
+      $T_{20}$ in \si{\second}    & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx \\
+      $T$ in \si{\second}& xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx \\
+    \end{tabular}
+    \\            % ein explziter Zeilenumbruch, damit das folgende vspace wie erwartet wirkt
+    \vspace{1cm}  % ein Zentimeter vertikaler Abstand
+    \begin{tabular}{l|SSSSSSSSSS}
+       & 11  & 12  & 13  & 14  & 15  & 16  & 17  & 18  & 19  & 20  \\
+      \hline
+      $T_{20}$ in \si{\second}    & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx \\
+      $T$ in \si{\second} & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx & xxxx \\
+    \end{tabular}
+    \label{tab:Rohdaten}
+  \end{center}
+\end{table}
+
+\begin{figure}[htbp!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Images/dummy.png}
+    \caption{Hier der für die sechste Teilaufgabe angefertigte Graph. Exportieren Sie die Darstellung als PDF, legen sie im Unterordner \code{Images} ab und ändern den Befehl oben entsprechend}
+\end{figure}
+
+\section{Unsicherheiten}
+Diskutieren Sie hier die Unsicherheiten des Versuchs: $\operatorname{u}(T_{20})$, $\operatorname{u}(m_F)$, ...
+
+\section{Federkonstante und Masse der Feder}
+Bitte geben Sie hier Ihre Ergebnisse für Federkonstante und Masse aus der Regression an. Bitte denken Sie auch an die Angabe der zugehörigen Messunsicherheiten.
+
+Zum Beispiel: \underline{\underline{$k_1=\SI{3,1415\pm0,0005}{\newton\per\meter}\;.$}}
+
+\section{Zusammenfassung}
+Hier nennen Sie kurz den Inhalt der vorherigen Abschnitte (keine neuen Erkenntnisse).
+
+\end{document}

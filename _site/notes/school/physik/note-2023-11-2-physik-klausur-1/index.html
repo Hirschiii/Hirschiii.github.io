@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        
+        1. Physik Klausur |
+        
+        My Blog
+    </title>
+
+    <meta name="description" content="Personal blog from Niklas von Hirschfeld">
+    <meta name="author" content="Niklas von Hirschfeld">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="icon" type="image/png" href="/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
+        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
+        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
+        crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
+        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+        crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            renderMathInElement(document.body, {
+                // customised options
+                // • auto-render specific keys, e.g.:
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                // • rendering keys, e.g.:
+                throwOnError: false
+            });
+        });
+    </script>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+
+    <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+    <header>
+        <h1>This is <span>my Website</span></h1>
+        <nav>
+            <span><a href="/">Home</a></span>|
+            <span><a href="/about">About</a></span>|
+            <span><a href="/wiki">Blog</a></span>|
+            <span><a href="/notes">Notes</a></span>|
+            <span><a href="https://github.com/Hirschiii">Git</a></span>
+        </nav>
+        <div class="search-container">
+            <input id="search" type="search" placeholder="🔎 Site Search">
+            <button>go</button>
+            <div class="search-results">
+                <div class="search-results__items"></div>
+            </div>
+        </div>
+    </header>
+    <hr />
+    <main>
+
+
+<body>
+    <nav class="toc" style="border: 1px solid #a2a9b1; background-color: #f8f9fa; display: inline-block; padding: 10px; margin: 10px;">
+<!--   <h4>Table of Contents</h4> -->
+<!-- <ul><li><a href="#themen">Themen</a><ul><li><a href="#waagerechter-wurf">Waagerechter Wurf</a><ul><li><a href="#zeit-ort-gesetz">Zeit-Ort-Gesetz</a></li></ul></li></ul></li><li><a href="#freier-fall">Freier Fall</a><ul><li><a href="#zeit-fuer-zurueckgelegte-strecke">Zeit fuer zurueckgelegte Strecke</a></li></ul></li></ul></li><li><a href="#kraefte-berechnen">Kraefte berechnen</a></li><li><a href="#kompetenzen">Kompetenzen</a><ul><li><a href="#t-v-tabelle-im-cas-per-regression-auswerten">$t-v$-Tabelle im CAS per Regression auswerten</a></li><li><a href="#situation-skizzieren">Situation <strong>Skizzieren</strong></a></li></ul></li></ul>-->
+* TOC
+{:toc}
+</nav>
+
+
+<h1 id="themen">Themen</h1>
+
+<h2 id="waagerechter-wurf">Waagerechter Wurf</h2>
+
+<h4 id="zeit-ort-gesetz">Zeit-Ort-Gesetz</h4>
+
+<ul>
+  <li>Die Bewegung in vertikaler Richtung ($y$) ist ein <strong>freier Fall</strong></li>
+  <li>Die Bewegung in horizontale Richtung ($x$) ist eine <strong>gleichfoermige Bewegung</strong></li>
+</ul>
+
+<dl class="note">
+  <dt>Tafelwerk</dt>
+  <dd>S. 93</dd>
+</dl>
+
+<p>Startgeschwindigkeit berechnen:</p>
+
+\[\begin{aligned}
+v_0=\frac{s_x}{t_{Fallzeit}}
+\end{aligned}\]
+
+<p>Wenn $t$ nicht vorhanden ist, kann $w$ bzw die Wurfweite trozdem Berechnet werden:</p>
+
+\[\begin{aligned}
+w=v_0 \cdot \sqrt{\frac{2 \cdot h}{g}}
+\end{aligned}\]
+
+<h2 id="freier-fall">Freier Fall</h2>
+
+\[\begin{aligned}
+s=\frac{1}{2} &amp;at^2 &amp;&amp;\\
+&amp;\big\downarrow &amp;&amp;\\
+a=&amp;g=9.81\frac{m}{s^2}
+\end{aligned}\]
+
+<blockquote>
+  <p>Die Beschleunigung $a$ ist der Ortsfaktor. Also auf der Erde $9.81$</p>
+</blockquote>
+
+<p>Die Formel fuer Geschwindigkeit lautet:</p>
+
+\[\begin{aligned}
+v&amp;=at \\
+a&amp;=\frac{v}{t}
+\end{aligned}\]
+
+<h3 id="zeit-fuer-zurueckgelegte-strecke">Zeit fuer zurueckgelegte Strecke</h3>
+
+<ol>
+  <li>Fassung: Formal mit Zwischenschritt</li>
+</ol>
+
+\[\begin{aligned}
+s_y=-\frac{1}{2} \cdot g \cdot t^2+h_0 \Rightarrow t = \sqrt{\frac{-2 \cdot (s_y-h_0)}{g}}
+\end{aligned}\]
+
+<h1 id="kraefte-berechnen">Kraefte berechnen</h1>
+
+<dl class="note">
+  <dt>Tafelwerk</dt>
+  <dd>S. 97</dd>
+</dl>
+
+<ol>
+  <li>$x$ und $y$ Geschwindigkeit berechnen
+    <ul>
+      <li>$x$ bleibt $v_0$</li>
+    </ul>
+  </li>
+  <li>Gesammtgeschwindigkeit berechnen</li>
+  <li>$a$ also die Beschleunigung berechnen</li>
+  <li>Die Kraft berechnen</li>
+</ol>
+
+<p>Die Geschwindigkeit in $y$-Richtung berechnet man mit:</p>
+
+\[\begin{aligned}
+v_y=g \cdot t = 9.81\frac{m}{s^2} \cdot t
+\end{aligned}\]
+
+<p>Die Gesammtgeschwindigkeit berechnet man mit dem Satz des Pythagoras, da sich die beiden Ge-schwindigkeiten wie zwei Kräfte addieren lassen.</p>
+
+\[\begin{aligned}
+v_{ges}=\sqrt{v^2_x + v^2_x}
+\end{aligned}\]
+
+<p>Die Kraft wird wie folgt berechnet:</p>
+
+\[\begin{aligned}
+F=m \cdot a
+\end{aligned}\]
+
+<p>Die Beschleunigung $a$ muss man mit Hilfe der Geschwindigkeitsaenderung berechnen:
+berechnet man mit dem Satz des Pythagoras, da sich die beiden Ge-schwindigkeiten wie zwei Kräfte addieren lassen.</p>
+
+\[\begin{aligned}
+a = \frac{\Delta v}{\Delta t}
+\end{aligned}\]
+
+<h1 id="kompetenzen">Kompetenzen</h1>
+
+<h2 id="t-v-tabelle-im-cas-per-regression-auswerten">$t-v$-Tabelle im CAS per Regression auswerten</h2>
+
+<blockquote>
+  <p>Uebungsblatt Aufgabe Nr. 1</p>
+</blockquote>
+
+<h2 id="situation-skizzieren">Situation <strong>Skizzieren</strong></h2>
+
+<blockquote>
+  <p>Uebungsblatt Aufgabe Nr. 2</p>
+</blockquote>
+
+
+    </main>
+<hr />
+<footer>
+    <nav>
+        <a href="https://landchad.net" target="_blank">
+            <img src="/images/link-buttons/landchad.gif" target="_blank" alt="landchad.net">
+        </a>
+        <a href="https://www.freebsd.org" target="_blank">
+            <img src="/images/link-buttons/freebsd.gif" target="_blank" alt="freebsd.org">
+        </a>
+        <a href="https://wiby.me" target="_blank">
+            <img src="/images/link-buttons/wiby.gif" target="_blank" alt="wiby.me">
+        </a>
+    </nav><br>
+    <span>
+        <!-- &copy Copyright 2023 <a href="https://vonhirschfeld.eu">Niklas von Hirschfeld</a>. All rights reserved. -->
+    </span>
+</footer>
+
+</body>
+
+</html>

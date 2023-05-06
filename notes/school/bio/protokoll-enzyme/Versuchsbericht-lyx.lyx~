@@ -1,0 +1,686 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass scrartcl
+\begin_preamble
+% Vorspann für mit LaTeX formatierte Versuchsberichte
+
+% Zeilenabstand, andere Werte: onehalfspacing, doublespacing
+\usepackage[singlespacing]{setspace}
+
+\newcommand{\authA}{Niklas}
+\newcommand{\authB}{Benjamin}
+\newcommand{\authC}{Imanuel}
+\newcommand{\authD}{Magnus}
+\newcommand{\authE}{Danylo}
+\newcommand{\grpnr}{1}
+
+% Definition der Kopf- und Fußzeile
+\usepackage[headsepline,automark]{scrlayer-scrpage}
+\clearscrheadings
+\setlength{\headheight}{2.5\baselineskip}
+\setlength{\footheight}{1\baselineskip}
+%\ihead[]{\includegraphics[width=4cm]{Images/ap-logo_bw.pdf}}
+\ihead[]{\includegraphics[width=4cm]{Images/logo_glh.pdf}}
+\chead[]{\authA, \authB, \\ \authC, \authD, \\ \authE}
+\ohead[]{Datum: \today \\ Gruppe:~\grpnr}
+\ofoot[]{\pagemark}
+
+% Formelsatz
+\usepackage{amsthm}		% Umgebung "theorem"
+\usepackage{amsfonts}	% Schriften
+\usepackage{upgreek}		% Griechische Sonderzeichen z.B. \upmu
+
+% Einheiten
+\usepackage{siunitx}
+\sisetup{
+	locale = DE,
+	separate-uncertainty,
+	range-units = brackets,
+	list-units = single,
+	per-mode=fraction
+}
+
+% Bilder und Tabellen
+\usepackage{epstopdf}		% Bilder im EPS-Format
+\usepackage{caption}			% Unterschriften für Bilder und Tapellen
+\usepackage{booktabs}		% Zusätzliche Schönheitslinien für Tabellen
+\usepackage{multirow}		% Mehrere Felder in einer Tabelle zusammenfassen
+\usepackage[table]{xcolor}	% Für farbig unterlegte Tabellenzeilen
+  \definecolor{lightgray}{gray}{0.9}
+  \rowcolors{1}{}{lightgray}	% jede zweite Zeile in einer Tabelle leich grau
+
+
+% Positionierung von Bildern und Tabellen
+\usepackage{float}		% für die Option 'H', also "hier-egal-wie-das-aussieht"
+\usepackage[section]{placeins}	% Platzierung spätestens am Ende eines Kapitels
+\renewcommand{\floatpagefraction}{.75}		% standard: .5
+\renewcommand{\textfraction}{.1}				% standard: .2
+\renewcommand{\topfraction}{.8}				% standard: .7
+\renewcommand{\bottomfraction}{.5}			% standard: .3
+\setcounter{topnumber}{3}					% standard: 2
+\setcounter{bottomnumber}{2}					% standard: 1
+\setcounter{totalnumber}{5}					% standard: 3
+
+\usepackage{caption}
+\captionsetup[figure]{name=Abb.}
+\captionsetup[table]{name=Tab.}
+
+\usepackage{csquotes}% Zitate
+
+%%%%%%%%%%%%%%%%%%%%%Vorspann für das Deckblatt%%%%%%%%%%%%%%%%%%%%%
+\usepackage{afterpage}	% Seitennummern nach dem Deckblatt beginnen
+
+% für die Ankreuz-Felder
+\newcounter{irow}
+\setcounter{irow}{0}
+\usepackage{tcolorbox}
+\newcommand {\janein}{\llap{Ja \: Nein \, n.a. \hspace*{0.5mm}}}
+\newcommand {\kaestchen}{\hfill{\llap{
+			\CheckBox[name=\theirow*3,charsize=10pt,width=8pt,height=8pt]{}
+			$\quad$ \CheckBox[name=\theirow*3+1,charsize=10pt,width=8pt,height=8pt]{}
+			$\quad$ \CheckBox[name=\theirow*3+2,charsize=10pt,width=8pt,height=8pt]{}}
+			}\hspace*{3mm}
+			\stepcounter{irow}}
+
+\usepackage{tikz}		% für den Strich unter dem Stempelfeld
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end_preamble
+\options DIV=11,BCOR=0mm,paper=a4,fontsize=12pt,parskip=half,twoside=false,titlepage=false
+\use_default_options true
+\begin_modules
+theorems-ams
+logicalmkup
+\end_modules
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding default
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref true
+\pdf_bookmarks false
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder false
+\pdf_colorlinks true
+\pdf_backref false
+\pdf_pdfusetitle false
+\pdf_quoted_options "citecolor=darkgray,linkcolor=darkgray,menucolor=red,urlcolor=cyan,bookmarksopen=false,bookmarksopenlevel=0,plainpages=false,hypertexnames=false"
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 2
+\use_package amssymb 2
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 0
+\use_package undertilde 0
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 20mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 30mm
+\footskip 10mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style german
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Enzyme und Temperatur
+\end_layout
+
+\begin_layout Author
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+authA, 
+\backslash
+authB, 
+\backslash
+authC, 
+\backslash
+authD, 
+\backslash
+authE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Date
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+today
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Einleitung
+\end_layout
+
+\begin_layout Conjecture
+Desto wärmer es ist, desto schneller 
+\begin_inset Quotes gld
+\end_inset
+
+arbeiten
+\begin_inset Quotes grd
+\end_inset
+
+ die Enzyme.
+ Also wird auch die Reaktion schneller ablaufen.
+\end_layout
+
+\begin_layout Section
+Durchführung
+\end_layout
+
+\begin_layout Standard
+Sechs Reagenzgläser werden befüllt und auf verschiedene Temperaturen gebracht.
+ Jeweils drei mit Harnstoff und drei mit Sojakonzentrat.
+\end_layout
+
+\begin_layout Subsection
+Materialien
+\end_layout
+
+\begin_layout Itemize
+6 x Reagenzglas
+\end_layout
+
+\begin_layout Itemize
+Kühlbehälter
+\end_layout
+
+\begin_layout Itemize
+Heißes Wasserbad
+\end_layout
+
+\begin_layout Itemize
+Harnstoff
+\end_layout
+
+\begin_layout Itemize
+Sojakonzentrat
+\end_layout
+
+\begin_layout Subsection
+Aufbau
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Reagenzglas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Inhalt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Temp in °C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Harnstoff + Sojakonzentrat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+55
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Harnstoff + Sojakonzentrat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+23
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Harnstoff + Sojakonzentrat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Beobachtung
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alle drei Reagenzgläser nach 1 min
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/niklas/Hirschiii.github.io/notes/note-bio-2023-11-2--enzyme--a/versuch_nach_min_1.jpeg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alle drei Reagenzgläser nach 2 min
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/niklas/Hirschiii.github.io/notes/note-bio-2023-11-2--enzyme--a/versuch_nach_min_2.jpeg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alle drei Reagenzgläser nach 3 min
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/niklas/Hirschiii.github.io/notes/note-bio-2023-11-2--enzyme--a/versuch_nach_min_3.jpeg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alle drei Reagenzgläser nach 4 min
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/niklas/Hirschiii.github.io/notes/note-bio-2023-11-2--enzyme--a/versuch_nach_min_4.jpeg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Alle drei Reagenzgläser nach 5 min
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename /home/niklas/Hirschiii.github.io/notes/note-bio-2023-11-2--enzyme--a/versuch_nach_min_5.jpeg
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es lässt sich erkennen, dass das warme Reagenzglas (Nr.
+ 1) am schnellsten Reagiert.
+ Nach bestimmter Zeit geht die Reaktion nicht mehr weiter (die Färbung verändert
+ sich nicht).
+ Dies tritt bei allen Versuchen ein.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beobachtung verlauf visualisiert
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename plot.pdf
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Section
+Auswertung
+\end_layout
+
+\begin_layout Standard
+Insgesamt zeigt die Abhängigkeit der Enzymaktivität von der Temperatur,
+ dass Enzyme in einem bestimmten Temperaturbereich arbeiten müssen, um optimal
+ zu funktionieren.
+ Wenn die Temperatur zu niedrig oder zu hoch ist, kann dies die Enzymaktivität
+ beeinträchtigen und zu einer ineffizienten oder unzureichenden Reaktion
+ führen.
+\end_layout
+
+\end_body
+\end_document
