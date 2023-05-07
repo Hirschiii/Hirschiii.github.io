@@ -1,5 +1,5 @@
-url: "https://vonhirschfeld.eu/niklas"
-baseurl: "https://vonhirschfeld.eu/niklas"
+url: "/niklas/"
+baseurl: "/niklas/"
 safe: true
 markdown: kramdown
 kramdown:
