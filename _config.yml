@@ -1,5 +1,5 @@
 url: ""
-baseurl: ""
+baseurl: "https://vonhirschfeld.eu/niklas"
 markdown: kramdown
 kramdown:
     parse_block_html: true
