@@ -184,3 +184,11 @@ p:has(> img){
         display: none;
     }
 }
+
+#markdown-toc {
+    border: 1px solid #a2a9b1; 
+    background-color: #f8f9fa;
+    display: inline-block; 
+    padding: 10px 10px 10px 20px; 
+    margin: 10px;
+}

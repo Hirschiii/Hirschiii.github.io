@@ -70,10 +70,55 @@
 
 
 <body>
-    <nav class="toc" style="border: 1px solid #a2a9b1; background-color: #f8f9fa; display: inline-block; padding: 10px; margin: 10px;">
-  <h4>Table of Contents</h4>
-<ul><li><a href="#einleitung">Einleitung</a><ul><li><a href="#was-ist-caldav-bzw-wie-funktioniert-es">Was ist CalDAV bzw wie funktioniert es?</a></li><li><a href="#icalendar">iCalendar</a><ul><li><a href="#einschraenkungen">Einschraenkungen</a></li><li><a href="#kernobjekt">Kernobjekt</a></li></ul></li></ul></li><li><a href="#installation">Installation</a><ul><li><a href="#radicale">Radicale</a><ul><li><a href="#configuration">Configuration</a><ul><li><a href="#authentifizierung">Authentifizierung</a></li><li><a href="#addresse">Addresse</a></li><li><a href="#dateinordner">Dateinordner</a></li><li><a href="#limits">Limits</a></li><li><a href="#service">Service</a></li></ul></li></ul></li><li><a href="#sabre">Sabre</a><ul><li><a href="#ein-einfacher-server">Ein einfacher Server</a><ul><li><a href="#die-basis-url">Die basis URL</a></li></ul></li><li><a href="#authentifizierung-1">Authentifizierung</a></li></ul></li><li><a href="#administration">Administration:</a><ul><li><a href="#neuer-benutzer">Neuer Benutzer:</a></li></ul></li><li><a href="#baikal">Baikal</a></li><li><a href="#cyrus-imap">Cyrus imap</a></li><li><a href="#zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</a></li></ul></li><li><a href="#clients">Clients</a><ul><li><a href="#webdavbrücken">Webdavbrücken</a></li><li><a href="#todo">Todo</a></li><li><a href="#kalender">Kalender</a></li><li><a href="#kontakte">Kontakte</a></li><li><a href="#zusammenfassung">Zusammenfassung</a></li></ul></li><li><a href="#zusammenfassung-1">Zusammenfassung</a></li></ul></nav>
-
+    <ul id="markdown-toc">
+  <li><a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a>    <ul>
+      <li><a href="#was-ist-caldav-bzw-wie-funktioniert-es" id="markdown-toc-was-ist-caldav-bzw-wie-funktioniert-es">Was ist CalDAV bzw wie funktioniert es?</a></li>
+      <li><a href="#icalendar" id="markdown-toc-icalendar">iCalendar</a>        <ul>
+          <li><a href="#einschraenkungen" id="markdown-toc-einschraenkungen">Einschraenkungen</a></li>
+          <li><a href="#kernobjekt" id="markdown-toc-kernobjekt">Kernobjekt</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#installation" id="markdown-toc-installation">Installation</a>    <ul>
+      <li><a href="#radicale" id="markdown-toc-radicale">Radicale</a>        <ul>
+          <li><a href="#configuration" id="markdown-toc-configuration">Configuration</a>            <ul>
+              <li><a href="#authentifizierung" id="markdown-toc-authentifizierung">Authentifizierung</a></li>
+              <li><a href="#addresse" id="markdown-toc-addresse">Addresse</a></li>
+              <li><a href="#dateinordner" id="markdown-toc-dateinordner">Dateinordner</a></li>
+              <li><a href="#limits" id="markdown-toc-limits">Limits</a></li>
+              <li><a href="#service" id="markdown-toc-service">Service</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#sabre" id="markdown-toc-sabre">Sabre</a>        <ul>
+          <li><a href="#ein-einfacher-server" id="markdown-toc-ein-einfacher-server">Ein einfacher Server</a>            <ul>
+              <li><a href="#die-basis-url" id="markdown-toc-die-basis-url">Die basis URL</a></li>
+            </ul>
+          </li>
+          <li><a href="#authentifizierung-1" id="markdown-toc-authentifizierung-1">Authentifizierung</a></li>
+        </ul>
+      </li>
+      <li><a href="#administration" id="markdown-toc-administration">Administration:</a>        <ul>
+          <li><a href="#neuer-benutzer" id="markdown-toc-neuer-benutzer">Neuer Benutzer:</a></li>
+        </ul>
+      </li>
+      <li><a href="#baikal" id="markdown-toc-baikal">Baikal</a></li>
+      <li><a href="#cyrus-imap" id="markdown-toc-cyrus-imap">Cyrus imap</a></li>
+      <li><a href="#zusammenfassung-und-vergleich" id="markdown-toc-zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</a></li>
+    </ul>
+  </li>
+  <li><a href="#clients" id="markdown-toc-clients">Clients</a>    <ul>
+      <li><a href="#webdavbrücken" id="markdown-toc-webdavbrücken">Webdavbrücken</a></li>
+      <li><a href="#todo" id="markdown-toc-todo">Todo</a></li>
+      <li><a href="#kalender" id="markdown-toc-kalender">Kalender</a></li>
+      <li><a href="#kontakte" id="markdown-toc-kontakte">Kontakte</a></li>
+      <li><a href="#zusammenfassung" id="markdown-toc-zusammenfassung">Zusammenfassung</a></li>
+    </ul>
+  </li>
+  <li><a href="#zusammenfassung-1" id="markdown-toc-zusammenfassung-1">Zusammenfassung</a></li>
+</ul>
 
 <h1 id="einleitung">Einleitung</h1>
 
