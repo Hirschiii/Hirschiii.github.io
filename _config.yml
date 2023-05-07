@@ -1,5 +1,6 @@
 url: "https://vonhirschfeld.eu/niklas"
 baseurl: "https://vonhirschfeld.eu/niklas"
+safe: true
 markdown: kramdown
 kramdown:
     parse_block_html: true
