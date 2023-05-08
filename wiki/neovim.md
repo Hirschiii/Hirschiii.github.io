@@ -64,12 +64,12 @@ aufbauen. Manche unterstuetzen zum beispiel "Mathe Bloecke", andere
 - Automatic check for updates
 - Commit, branch, tag, version support
 
-## Requirements
+### Requirements
 
 - Neovim **>=0.8.0**
 - Git **>=2.19.0**
 
-## Installation
+### Installation
 
 Add this code to your `init.lua` to bootstrap **lazy.nvim:**
 
