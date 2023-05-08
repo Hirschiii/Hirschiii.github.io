@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html lang="en">
+
+
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>
         
@@ -16,40 +17,16 @@
     <meta name="author" content="Niklas von Hirschfeld">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/niklas/css/style.css">
+    <link rel="stylesheet" href="/niklas/css/syntax.css">
     <link rel="icon" type="image/png" href="/niklas/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
-        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
-        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
-        crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                // • rendering keys, e.g.:
-                throwOnError: false
-            });
-        });
-    </script>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 
-    <script>hljs.highlightAll();</script>
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
 <body>
     <header>
-        <h1>This is <span>my Website</span></h1>
+        <h1>This is <span>my Website</span>
+</h1>
         <nav>
             <span><a href="/niklas/">Home</a></span>|
             <span><a href="/niklas/about">About</a></span>|
@@ -65,11 +42,11 @@
             </div>
         </div>
     </header>
-    <hr />
+    <hr>
     <main>
 
 
-<body>
+
     <h1 id="themen">Themen</h1>
 
 <h2 id="waagerechter-wurf">Waagerechter Wurf</h2>
@@ -77,8 +54,10 @@
 <h4 id="zeit-ort-gesetz">Zeit-Ort-Gesetz</h4>
 
 <ul>
-  <li>Die Bewegung in vertikaler Richtung ($y$) ist ein <strong>freier Fall</strong></li>
-  <li>Die Bewegung in horizontale Richtung ($x$) ist eine <strong>gleichfoermige Bewegung</strong></li>
+  <li>Die Bewegung in vertikaler Richtung ($y$) ist ein <strong>freier Fall</strong>
+</li>
+  <li>Die Bewegung in horizontale Richtung ($x$) ist eine <strong>gleichfoermige Bewegung</strong>
+</li>
 </ul>
 
 <dl class="note">
@@ -88,23 +67,29 @@
 
 <p>Startgeschwindigkeit berechnen:</p>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 v_0=\frac{s_x}{t_{Fallzeit}}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <p>Wenn $t$ nicht vorhanden ist, kann $w$ bzw die Wurfweite trozdem Berechnet werden:</p>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 w=v_0 \cdot \sqrt{\frac{2 \cdot h}{g}}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <h2 id="freier-fall">Freier Fall</h2>
 
-\[\begin{aligned}
-s=\frac{1}{2} &amp;at^2 &amp;&amp;\\
-&amp;\big\downarrow &amp;&amp;\\
+<p>$$
+\begin{aligned}
+s=\frac{1}{2} &amp;at^2 &amp;&amp;<br>
+&amp;\big\downarrow &amp;&amp;<br>
 a=&amp;g=9.81\frac{m}{s^2}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <blockquote>
   <p>Die Beschleunigung $a$ ist der Ortsfaktor. Also auf der Erde $9.81$</p>
@@ -112,10 +97,12 @@ a=&amp;g=9.81\frac{m}{s^2}
 
 <p>Die Formel fuer Geschwindigkeit lautet:</p>
 
-\[\begin{aligned}
-v&amp;=at \\
+<p>$$
+\begin{aligned}
+v&amp;=at <br>
 a&amp;=\frac{v}{t}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <h3 id="zeit-fuer-zurueckgelegte-strecke">Zeit fuer zurueckgelegte Strecke</h3>
 
@@ -123,9 +110,11 @@ a&amp;=\frac{v}{t}
   <li>Fassung: Formal mit Zwischenschritt</li>
 </ol>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 s_y=-\frac{1}{2} \cdot g \cdot t^2+h_0 \Rightarrow t = \sqrt{\frac{-2 \cdot (s_y-h_0)}{g}}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <h1 id="kraefte-berechnen">Kraefte berechnen</h1>
 
@@ -147,28 +136,36 @@ s_y=-\frac{1}{2} \cdot g \cdot t^2+h_0 \Rightarrow t = \sqrt{\frac{-2 \cdot (s_y
 
 <p>Die Geschwindigkeit in $y$-Richtung berechnet man mit:</p>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 v_y=g \cdot t = 9.81\frac{m}{s^2} \cdot t
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <p>Die Gesammtgeschwindigkeit berechnet man mit dem Satz des Pythagoras, da sich die beiden Ge-schwindigkeiten wie zwei Kräfte addieren lassen.</p>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 v_{ges}=\sqrt{v^2_x + v^2_x}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <p>Die Kraft wird wie folgt berechnet:</p>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 F=m \cdot a
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <p>Die Beschleunigung $a$ muss man mit Hilfe der Geschwindigkeitsaenderung berechnen:
 berechnet man mit dem Satz des Pythagoras, da sich die beiden Ge-schwindigkeiten wie zwei Kräfte addieren lassen.</p>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 a = \frac{\Delta v}{\Delta t}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <h1 id="kompetenzen">Kompetenzen</h1>
 
@@ -178,7 +175,8 @@ a = \frac{\Delta v}{\Delta t}
   <p>Uebungsblatt Aufgabe Nr. 1</p>
 </blockquote>
 
-<h2 id="situation-skizzieren">Situation <strong>Skizzieren</strong></h2>
+<h2 id="situation-skizzieren">Situation <strong>Skizzieren</strong>
+</h2>
 
 <blockquote>
   <p>Uebungsblatt Aufgabe Nr. 2</p>
@@ -186,7 +184,7 @@ a = \frac{\Delta v}{\Delta t}
 
 
     </main>
-<hr />
+<hr>
 <footer>
     <nav>
         <a href="https://landchad.net" target="_blank">
@@ -204,6 +202,7 @@ a = \frac{\Delta v}{\Delta t}
     </span>
 </footer>
 
-</body>
 
+
+</body>
 </html>

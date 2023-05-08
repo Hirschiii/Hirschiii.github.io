@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html lang="en">
+
+
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>
         
@@ -16,40 +17,16 @@
     <meta name="author" content="Niklas von Hirschfeld">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/niklas/css/style.css">
+    <link rel="stylesheet" href="/niklas/css/syntax.css">
     <link rel="icon" type="image/png" href="/niklas/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
-        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
-        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
-        crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                // • rendering keys, e.g.:
-                throwOnError: false
-            });
-        });
-    </script>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 
-    <script>hljs.highlightAll();</script>
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
 <body>
     <header>
-        <h1>This is <span>my Website</span></h1>
+        <h1>This is <span>my Website</span>
+</h1>
         <nav>
             <span><a href="/niklas/">Home</a></span>|
             <span><a href="/niklas/about">About</a></span>|
@@ -65,11 +42,11 @@
             </div>
         </div>
     </header>
-    <hr />
+    <hr>
     <main>
 
 
-<body>
+
     <h1 id="ganzrationale-funktionen">Ganzrationale Funktionen</h1>
 
 <ul>
@@ -89,9 +66,11 @@ Die reellen Zahlen $a_0,a_1,…,a_n$ heissen <strong>Koeffizient</strong>.</dd>
 
 <h2 id="beispiel">Beispiel</h2>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 f(x)=x^2
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <p>Dann gilt fuer positive Werte:</p>
 
@@ -101,11 +80,13 @@ f(x)=x^2
 
 <p><strong>Fuer $x \rightarrow - \infty$ gilt $f(x) \rightarrow + \infty$</strong></p>
 
-<hr />
+<hr>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 f(x)=x^3
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <p>Dann gilt fuer positive Werte:</p>
 
@@ -171,8 +152,10 @@ f(x)=x^3
 Der Graph einer Funktion ist nur unter folgenden Bedingungen:</p>
 
   <ul>
-    <li><strong>Achsensymetrisch zur y-Achse:</strong> Wenn fuer all $x \in D_f$ auch $f(-x)=f(x)$ gilt.</li>
-    <li><strong>Punktsymmetrisch</strong> Wenn fuer all $x \in D_f$ auch $f(-x)=-f(x)$ gilt.</li>
+    <li>
+<strong>Achsensymetrisch zur y-Achse:</strong> Wenn fuer all $x \in D_f$ auch $f(-x)=f(x)$ gilt.</li>
+    <li>
+<strong>Punktsymmetrisch</strong> Wenn fuer all $x \in D_f$ auch $f(-x)=-f(x)$ gilt.</li>
   </ul>
 </div>
 
@@ -181,8 +164,10 @@ Der Graph einer Funktion ist nur unter folgenden Bedingungen:</p>
 <p>Der Graph ist immer:</p>
 
 <ul>
-  <li><strong>Achsensymetrisch</strong>, wenn alle Exponen <strong>gerade</strong> sind.</li>
-  <li><strong>Punktsymmetrisch</strong>, wenn alle Exponenten <strong>ungerade</strong> sind.</li>
+  <li>
+<strong>Achsensymetrisch</strong>, wenn alle Exponen <strong>gerade</strong> sind.</li>
+  <li>
+<strong>Punktsymmetrisch</strong>, wenn alle Exponenten <strong>ungerade</strong> sind.</li>
 </ul>
 
 <h1 id="nullstellen">Nullstellen</h1>
@@ -198,16 +183,20 @@ Der Graph einer Funktion ist nur unter folgenden Bedingungen:</p>
 
 <h3 id="1-p-q-formel">(1) p-q-Formel</h3>
 
-\[f(x) = x^2 + px + q \Rightarrow x_{1,2}=-\frac{p}{2}\pm \sqrt{(\frac{p}{2})^2 - q}\]
+<p>$$
+f(x) = x^2 + px + q \Rightarrow x_{1,2}=-\frac{p}{2}\pm \sqrt{(\frac{p}{2})^2 - q}
+$$</p>
 
 <p>Eine Funktion $f$ mit $f(x)=ax^2 - 4x +3$ laesst sich auf (1) bzw die <em>p-q-Formel</em> zurueck fuehren, indem man
 durch $a$ dividiert.</p>
 
 <p>Also fuer:</p>
 
-\[f(x)=2x^2-8x+6=0 \\
-\big\downarrow \\
-x^2-4x+3=0\]
+<p>$$
+f(x)=2x^2-8x+6=0 <br>
+\big\downarrow <br>
+x^2-4x+3=0
+$$</p>
 
 <blockquote>
   <p>Sonnst kann auch der <em>CAS</em> mit <em>solve($f(x)=0$)</em> verwendet werden.</p>
@@ -226,7 +215,9 @@ x^2-4x+3=0\]
 
 <p>Eine ganzrationale Funktion laesst sich umformen:</p>
 
-\[f(x)=(x-1)(x+3) = x^2 + 2x -3\]
+<p>$$
+f(x)=(x-1)(x+3) = x^2 + 2x -3
+$$</p>
 
 <p>Vorteile der beiden:</p>
 
@@ -262,24 +253,27 @@ x^2-4x+3=0\]
   <li>S. 76 ff</li>
 </ul>
 
-\[\begin{aligned}
+<p>$$
+\begin{aligned}
 f(x)=ax^2+bx+c
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
-\[A(-1 | 4) \quad B(0 | 0) \quad C(2 | 4)\\
-\big\downarrow\\
+<p>$$A(-1 | 4) \quad B(0 | 0) \quad C(2 | 4)<br>
+\big\downarrow<br>
 \begin{aligned}
 \begin{vmatrix}
-&amp; 4 &amp; = &amp; a &amp; \cdot &amp; (-1)^2 &amp; + &amp; b &amp; \cdot &amp; (-1) &amp; + &amp; c &amp;  &amp;  \\
-&amp; 0 &amp; = &amp; a &amp; \cdot &amp; 0^2    &amp; + &amp; b &amp; \cdot &amp; 0    &amp; + &amp; c &amp;  &amp;  \\
-&amp; 2 &amp; = &amp; a &amp; \cdot &amp; 4^2    &amp; + &amp; b &amp; \cdot &amp; 4    &amp; + &amp; c &amp;  &amp;  \\
+&amp; 4 &amp; = &amp; a &amp; \cdot &amp; (-1)^2 &amp; + &amp; b &amp; \cdot &amp; (-1) &amp; + &amp; c &amp;  &amp;  <br>
+&amp; 0 &amp; = &amp; a &amp; \cdot &amp; 0^2    &amp; + &amp; b &amp; \cdot &amp; 0    &amp; + &amp; c &amp;  &amp;  <br>
+&amp; 2 &amp; = &amp; a &amp; \cdot &amp; 4^2    &amp; + &amp; b &amp; \cdot &amp; 4    &amp; + &amp; c &amp;  &amp;  <br>
 \end{vmatrix}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 
 
     </main>
-<hr />
+<hr>
 <footer>
     <nav>
         <a href="https://landchad.net" target="_blank">
@@ -297,6 +291,7 @@ f(x)=ax^2+bx+c
     </span>
 </footer>
 
-</body>
 
+
+</body>
 </html>

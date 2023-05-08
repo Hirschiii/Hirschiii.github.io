@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html lang="en">
+
+
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>
         
@@ -16,40 +17,16 @@
     <meta name="author" content="Niklas von Hirschfeld">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/niklas/css/style.css">
+    <link rel="stylesheet" href="/niklas/css/syntax.css">
     <link rel="icon" type="image/png" href="/niklas/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
-        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
-        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
-        crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                // • rendering keys, e.g.:
-                throwOnError: false
-            });
-        });
-    </script>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 
-    <script>hljs.highlightAll();</script>
+
+<script>MathJax={"tex":{"inlineMath":[["$","$"],["\\(","\\)"]],"displayMath":[["$$","$$"],["\\[","\\]"]]},"svg":{"fontCache":"global"},"svg":{"fontCache":"global"}}</script><script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
-
 <body>
     <header>
-        <h1>This is <span>my Website</span></h1>
+        <h1>This is <span>my Website</span>
+</h1>
         <nav>
             <span><a href="/niklas/">Home</a></span>|
             <span><a href="/niklas/about">About</a></span>|
@@ -65,11 +42,11 @@
             </div>
         </div>
     </header>
-    <hr />
+    <hr>
     <main>
 
 
-<body>
+
     <h1 id="klausur-2023-2-hj">Klausur 2023 2 HJ.</h1>
 
 <ul>
@@ -81,7 +58,8 @@
       <li>Aufprall</li>
     </ul>
   </li>
-  <li>Geschwindigkeit als <em>Vektor</em></li>
+  <li>Geschwindigkeit als <em>Vektor</em>
+</li>
   <li>Auswertung mit Taschenrechner</li>
 </ul>
 
@@ -97,7 +75,7 @@ Bewegung</strong></p>
 </blockquote>
 
 <div style="width: 60%; margin: 0 auto" class="ui rounded images">
-  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/horizontale_Bewegung_gleichförmig.png" /></p>
+  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/horizontale_Bewegung_gleichf%C3%B6rmig.png"></p>
 </div>
 
 <h2 id="bewegung-vertikal">Bewegung vertikal</h2>
@@ -107,7 +85,7 @@ Bewegung</strong></p>
 </blockquote>
 
 <div style="width: 60%; margin: 0 auto" class="ui rounded images">
-  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/vertikale_bewegung_gleichförmig.png" /></p>
+  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/vertikale_bewegung_gleichf%C3%B6rmig.png"></p>
 </div>
 
 <h2 id="wagerechter-wurf-übung">Wagerechter Wurf Übung</h2>
@@ -127,11 +105,15 @@ Bewegung</strong></p>
   <dd>$s(t)=\frac{1}{2}<em>a</em>t^2+y_0$</dd>
 </dl>
 
-<p>\(\begin{aligned}
-y_0&amp;=10m&amp;&amp;\\
-a&amp;=9.81\frac{m}{s^2}&amp;&amp;\\
-\end{aligned}\)
-\(0m=-\frac{1}{2}*9.81\frac{m}{s^2}*t^2+10 \Rightarrow t\approx 1.43s\)</p>
+<p>$$
+\begin{aligned}
+y_0&amp;=10m&amp;&amp;<br>
+a&amp;=9.81\frac{m}{s^2}&amp;&amp;<br>
+\end{aligned}
+$$
+$$
+0m=-\frac{1}{2}<em>9.81\frac{m}{s^2}</em>t^2+10 \Rightarrow t\approx 1.43s
+$$</p>
 
 <blockquote>
   <p>Gelöst mit <strong>cas</strong> und <strong>solve</strong></p>
@@ -156,31 +138,39 @@ a&amp;=9.81\frac{m}{s^2}&amp;&amp;\\
   <dd>$s(t)=t*v$</dd>
 </dl>
 
-\[s(t)=1.43s*5\frac{m}{s}=7.15m\]
+<p>$$
+s(t)=1.43s*5\frac{m}{s}=7.15m
+$$</p>
 
 <p>Bis zum Aufprall werden $7.15m$ zurück gelegt.</p>
 
 <h3 id="c-fma">c) $F=m*a$</h3>
 
-\[a=\dot{v}\]
+<p>$$
+a=\dot{v}
+$$</p>
 
 <p>Es wird die Gesammtgeschwindigkeit gebraucht:</p>
 
-\[\begin{aligned}
-v_{ges}^2&amp;=v_x^2+v_y^2&amp;&amp;\\
-v_y&amp;=9.81\frac{m}{s^2}*t; t=1.43s&amp;&amp;\\
-&amp;\approx14\frac{m}{s}&amp;&amp;\\
-v_{ges}&amp;\approx14.87\frac{m}{s}&amp;&amp;\\
-a&amp;=\frac{v_{ges}}{\Delta t_{Brems}}; \Delta t_{Brems}=1s&amp;&amp;\\
+<p>$$
+\begin{aligned}
+v_{ges}^2&amp;=v_x^2+v_y^2&amp;&amp;<br>
+v_y&amp;=9.81\frac{m}{s^2}*t; t=1.43s&amp;&amp;<br>
+&amp;\approx14\frac{m}{s}&amp;&amp;<br>
+v_{ges}&amp;\approx14.87\frac{m}{s}&amp;&amp;<br>
+a&amp;=\frac{v_{ges}}{\Delta t_{Brems}}; \Delta t_{Brems}=1s&amp;&amp;<br>
 &amp;\approx14.87\frac{m}{s^2}
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
-<hr />
+<hr>
 
-\[\begin{aligned}
-F&amp;=m*a; \: m=60kg&amp;&amp;\\
-&amp;=892.2N&amp;&amp;\\
-\end{aligned}\]
+<p>$$
+\begin{aligned}
+F&amp;=m*a; : m=60kg&amp;&amp;<br>
+&amp;=892.2N&amp;&amp;<br>
+\end{aligned}
+$$</p>
 
 <p>Die wirkende Kragt beträgt ungefähr $892.2N$</p>
 
@@ -191,18 +181,20 @@ F&amp;=m*a; \: m=60kg&amp;&amp;\\
 <p>An jedem Pfeil, soweut möglich höhe, Ges, besch notieren</p>
 
 <div style="width: 100%; margin: 0 auto" class="ui rounded images">
-  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/pfeil_sil.png" /></p>
+  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/pfeil_sil.png"></p>
 </div>
 
 <h3 id="b-bewegunsgleichung">b) Bewegunsgleichung</h3>
 
-\[\begin{aligned}
-g&amp;=9.81 \frac{m}{s^2}&amp;&amp;\\
-v_0&amp;=40 \frac{m}{s}&amp;&amp;\\
-h(t)&amp;=-\frac{1}{2}gt^2+v_0t&amp;&amp;\\
-v(t)&amp;=-g*t+v_0&amp;&amp;\\
-0\frac{m}{s}&amp;=-g*t+v_0 \Rightarrow t \approx 4,077s&amp;&amp;\\
-\end{aligned}\]
+<p>$$
+\begin{aligned}
+g&amp;=9.81 \frac{m}{s^2}&amp;&amp;<br>
+v_0&amp;=40 \frac{m}{s}&amp;&amp;<br>
+h(t)&amp;=-\frac{1}{2}gt^2+v_0t&amp;&amp;<br>
+v(t)&amp;=-g<em>t+v_0&amp;&amp;<br>
+0\frac{m}{s}&amp;=-g</em>t+v_0 \Rightarrow t \approx 4,077s&amp;&amp;<br>
+\end{aligned}
+$$</p>
 
 <blockquote>
   <p>Es dauert ungefaehr $4.077s$, bis der Pfeil nach unten faellt.</p>
@@ -254,24 +246,28 @@ gleichförmige Bewegung senkrecht.</p>
 
 <p>Die Regresseion ergibt:</p>
 
-\[y=ax+b\]
+<p>$$
+y=ax+b
+$$</p>
 
-\[\begin{aligned}
-a&amp;\approx 1,63&amp;&amp;\\
-b&amp;\approx 0&amp;&amp;\\
+<p>$$
+\begin{aligned}
+a&amp;\approx 1,63&amp;&amp;<br>
+b&amp;\approx 0&amp;&amp;<br>
 v^2&amp;\approx 0.9997
-\end{aligned}\]
+\end{aligned}
+$$</p>
 
 <h2 id="aufgabe-2">Aufgabe 2</h2>
 
 <div style="width: 100%; margin: 0 auto" class="ui rounded images">
-  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/matrix_neos_sprung.png" /></p>
+  <p><img class="ui image" src="/notes/note-physik-2023-11-2--wurf--a/matrix_neos_sprung.png"></p>
 </div>
 
 
 
     </main>
-<hr />
+<hr>
 <footer>
     <nav>
         <a href="https://landchad.net" target="_blank">
@@ -289,6 +285,7 @@ v^2&amp;\approx 0.9997
     </span>
 </footer>
 
-</body>
 
+
+</body>
 </html>

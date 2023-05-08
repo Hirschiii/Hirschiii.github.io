@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html lang="en">
+
+
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>
         
@@ -16,40 +17,15 @@
     <meta name="author" content="Niklas von Hirschfeld">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/niklas/css/style.css">
+    <link rel="stylesheet" href="/niklas/css/syntax.css">
     <link rel="icon" type="image/png" href="/niklas/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
-        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
-        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
-        crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                // • rendering keys, e.g.:
-                throwOnError: false
-            });
-        });
-    </script>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 
-    <script>hljs.highlightAll();</script>
+
 </head>
-
 <body>
     <header>
-        <h1>This is <span>my Website</span></h1>
+        <h1>This is <span>my Website</span>
+</h1>
         <nav>
             <span><a href="/niklas/">Home</a></span>|
             <span><a href="/niklas/about">About</a></span>|
@@ -65,24 +41,29 @@
             </div>
         </div>
     </header>
-    <hr />
+    <hr>
     <main>
 
 
-<body>
+
     <ul id="markdown-toc">
-  <li><a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a>    <ul>
+  <li>
+<a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a>    <ul>
       <li><a href="#was-ist-caldav-bzw-wie-funktioniert-es" id="markdown-toc-was-ist-caldav-bzw-wie-funktioniert-es">Was ist CalDAV bzw wie funktioniert es?</a></li>
-      <li><a href="#icalendar" id="markdown-toc-icalendar">iCalendar</a>        <ul>
+      <li>
+<a href="#icalendar" id="markdown-toc-icalendar">iCalendar</a>        <ul>
           <li><a href="#einschraenkungen" id="markdown-toc-einschraenkungen">Einschraenkungen</a></li>
           <li><a href="#kernobjekt" id="markdown-toc-kernobjekt">Kernobjekt</a></li>
         </ul>
       </li>
     </ul>
   </li>
-  <li><a href="#installation" id="markdown-toc-installation">Installation</a>    <ul>
-      <li><a href="#radicale" id="markdown-toc-radicale">Radicale</a>        <ul>
-          <li><a href="#configuration" id="markdown-toc-configuration">Configuration</a>            <ul>
+  <li>
+<a href="#installation" id="markdown-toc-installation">Installation</a>    <ul>
+      <li>
+<a href="#radicale" id="markdown-toc-radicale">Radicale</a>        <ul>
+          <li>
+<a href="#configuration" id="markdown-toc-configuration">Configuration</a>            <ul>
               <li><a href="#authentifizierung" id="markdown-toc-authentifizierung">Authentifizierung</a></li>
               <li><a href="#addresse" id="markdown-toc-addresse">Addresse</a></li>
               <li><a href="#dateinordner" id="markdown-toc-dateinordner">Dateinordner</a></li>
@@ -92,15 +73,18 @@
           </li>
         </ul>
       </li>
-      <li><a href="#sabre" id="markdown-toc-sabre">Sabre</a>        <ul>
-          <li><a href="#ein-einfacher-server" id="markdown-toc-ein-einfacher-server">Ein einfacher Server</a>            <ul>
+      <li>
+<a href="#sabre" id="markdown-toc-sabre">Sabre</a>        <ul>
+          <li>
+<a href="#ein-einfacher-server" id="markdown-toc-ein-einfacher-server">Ein einfacher Server</a>            <ul>
               <li><a href="#die-basis-url" id="markdown-toc-die-basis-url">Die basis URL</a></li>
             </ul>
           </li>
           <li><a href="#authentifizierung-1" id="markdown-toc-authentifizierung-1">Authentifizierung</a></li>
         </ul>
       </li>
-      <li><a href="#administration" id="markdown-toc-administration">Administration:</a>        <ul>
+      <li>
+<a href="#administration" id="markdown-toc-administration">Administration:</a>        <ul>
           <li><a href="#neuer-benutzer" id="markdown-toc-neuer-benutzer">Neuer Benutzer:</a></li>
         </ul>
       </li>
@@ -109,8 +93,9 @@
       <li><a href="#zusammenfassung-und-vergleich" id="markdown-toc-zusammenfassung-und-vergleich">Zusammenfassung und Vergleich</a></li>
     </ul>
   </li>
-  <li><a href="#clients" id="markdown-toc-clients">Clients</a>    <ul>
-      <li><a href="#webdavbrücken" id="markdown-toc-webdavbrücken">Webdavbrücken</a></li>
+  <li>
+<a href="#clients" id="markdown-toc-clients">Clients</a>    <ul>
+      <li><a href="#webdavbr%C3%BCcken" id="markdown-toc-webdavbrücken">Webdavbrücken</a></li>
       <li><a href="#todo" id="markdown-toc-todo">Todo</a></li>
       <li><a href="#kalender" id="markdown-toc-kalender">Kalender</a></li>
       <li><a href="#kontakte" id="markdown-toc-kontakte">Kontakte</a></li>
@@ -130,17 +115,20 @@
   <li>Dateinbasiert (ics/vcf)</li>
   <li>erweitert <code class="language-plaintext highlighter-rouge">http</code> um Methode
     <ul>
-      <li>bzw erweiterung von <code class="language-plaintext highlighter-rouge">WebDAV</code></li>
+      <li>bzw erweiterung von <code class="language-plaintext highlighter-rouge">WebDAV</code>
+</li>
     </ul>
   </li>
-  <li><code class="language-plaintext highlighter-rouge">iCalendar</code> Format</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">iCalendar</code> Format</li>
 </ul>
 
 <h2 id="icalendar">iCalendar</h2>
 
 <ul>
   <li>ein Datenformat</li>
-  <li></li>
+  <li>
+</li>
 </ul>
 
 <h3 id="einschraenkungen">Einschraenkungen</h3>
@@ -483,7 +471,7 @@ Dies geschieht in der <code class="language-plaintext highlighter-rouge">server.
 
 
     </main>
-<hr />
+<hr>
 <footer>
     <nav>
         <a href="https://landchad.net" target="_blank">
@@ -501,6 +489,7 @@ Dies geschieht in der <code class="language-plaintext highlighter-rouge">server.
     </span>
 </footer>
 
-</body>
 
+
+</body>
 </html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
-<!DOCTYPE html>
-<html lang="en">
+
+
 
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <title>
         
@@ -16,40 +17,15 @@
     <meta name="author" content="Niklas von Hirschfeld">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/niklas/css/style.css">
+    <link rel="stylesheet" href="/niklas/css/syntax.css">
     <link rel="icon" type="image/png" href="/niklas/favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css"
-        integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js"
-        integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd"
-        crossorigin="anonymous"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js"
-        integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
-        crossorigin="anonymous"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            renderMathInElement(document.body, {
-                // customised options
-                // • auto-render specific keys, e.g.:
-                delimiters: [
-                    {left: '$$', right: '$$', display: true},
-                    {left: '$', right: '$', display: false},
-                    {left: '\\(', right: '\\)', display: false},
-                    {left: '\\[', right: '\\]', display: true}
-                ],
-                // • rendering keys, e.g.:
-                throwOnError: false
-            });
-        });
-    </script>
-    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/default.min.css"> -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
 
-    <script>hljs.highlightAll();</script>
+
 </head>
-
 <body>
     <header>
-        <h1>This is <span>my Website</span></h1>
+        <h1>This is <span>my Website</span>
+</h1>
         <nav>
             <span><a href="/niklas/">Home</a></span>|
             <span><a href="/niklas/about">About</a></span>|
@@ -65,11 +41,11 @@
             </div>
         </div>
     </header>
-    <hr />
+    <hr>
     <main>
 
 
-<body>
+
     <h1 id="plan">Plan:</h1>
 
 <ol>
@@ -108,6 +84,105 @@
 <p>Neovim kann mit Vimscript v1 und Lua konfiguriert und erweitert werden,
 wobei Lua empfohlen wird.</p>
 
+<h2 id="markdown-flavor">Markdown flavor</h2>
+
+<p>Es gibt verschiedene sog. Markdown flavor. Das sind einfach
+verschieden arten von Syntax und Features. Es gibt einmal
+den Standartisierten “Common Markdown”. Diese Syntax wurden 
+einmal als grundlage eingefuehrt so das andere “flavors” darauf
+aufbauen. Manche unterstuetzen zum beispiel “Mathe Bloecke”, andere
+“Mermaid” (fuer Diagramme).</p>
+
+<ul>
+  <li><a href="https://gist.github.com/vimtaai/99f8c89e7d3d02a362117284684baa0f">Hier ein Vergleich von verschiedenen Markdownflavors</a></li>
+</ul>
+
+<h1 id="paketmanager">Paketmanager</h1>
+
+<h2 id="lazy-vim">Lazy-vim</h2>
+
+<h3 id="features">Features</h3>
+
+<ul>
+  <li>Nice UI</li>
+  <li>Automatic caching</li>
+  <li>Automatic bytecode compilation of Lua modules</li>
+  <li>Automatic lazy-loading</li>
+  <li>Automatically install missing Plugins</li>
+  <li>Async execution</li>
+  <li>Automatic compiling</li>
+  <li>Generates helptages in case they are missing</li>
+  <li>you can use local plugins</li>
+  <li>Profiling tool to optimize performance</li>
+  <li>Automatic check for updates</li>
+  <li>Commit, branch, tag, version support</li>
+</ul>
+
+<h2 id="requirements">Requirements</h2>
+
+<ul>
+  <li>Neovim <strong>&gt;=0.8.0</strong>
+</li>
+  <li>Git <strong>&gt;=2.19.0</strong>
+</li>
+</ul>
+
+<h2 id="installation">Installation</h2>
+
+<p>Add this code to your <code class="language-plaintext highlighter-rouge">init.lua</code> to bootstrap <strong>lazy.nvim:</strong></p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">lazypath</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">stdpath</span><span class="p">(</span><span class="s2">"data"</span><span class="p">)</span> <span class="o">..</span> <span class="s2">"/lazy/lazy.nvim"</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">fs_stat</span><span class="p">(</span><span class="n">lazypath</span><span class="p">)</span> <span class="k">then</span>
+  <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span><span class="p">({</span>
+    <span class="s2">"git"</span><span class="p">,</span>
+    <span class="s2">"clone"</span><span class="p">,</span>
+    <span class="s2">"--filter=blob:none"</span><span class="p">,</span>
+    <span class="s2">"https://github.com/folke/lazy.nvim.git"</span><span class="p">,</span>
+    <span class="s2">"--branch=stable"</span><span class="p">,</span> <span class="c1">-- latest stable release</span>
+    <span class="n">lazypath</span><span class="p">,</span>
+  <span class="p">})</span>
+<span class="k">end</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">rtp</span><span class="p">:</span><span class="n">prepend</span><span class="p">(</span><span class="n">lazypath</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>To add Plugins insert them like below:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">(</span><span class="n">plugins</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+<strong>plugins</strong>: this should be a <code class="language-plaintext highlighter-rouge">table</code> or a <code class="language-plaintext highlighter-rouge">string</code>
+</li>
+  <li>
+<strong>opts</strong>: further <a href="https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration">configuration</a> <strong>(optional)</strong>
+</li>
+</ul>
+
+<p>For Example:</p>
+
+<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+  <span class="s2">"folke/which-key.nvim"</span><span class="p">,</span>
+  <span class="p">{</span> <span class="s2">"folke/neoconf.nvim"</span><span class="p">,</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s2">"Neoconf"</span> <span class="p">},</span>
+  <span class="s2">"folke/neodev.nvim"</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div></div>
+<h2 id="voundle">Voundle</h2>
+
+<h2 id="packer">Packer</h2>
+
+<h2 id="vim-plug">vim-plug</h2>
+
+<h2 id="deinvim">Dein.vim</h2>
+
+<ul>
+  <li><a href="https://github.com/Shougo/dein.vim">GitHub</a></li>
+</ul>
+
+<h2 id="manual">Manual</h2>
+
+<h1 id="spacevim-vs-scratch">Spacevim vs Scratch</h1>
+
 <h1 id="links">Links</h1>
 
 <ul>
@@ -116,7 +191,7 @@ wobei Lua empfohlen wird.</p>
 
 
     </main>
-<hr />
+<hr>
 <footer>
     <nav>
         <a href="https://landchad.net" target="_blank">
@@ -134,6 +209,7 @@ wobei Lua empfohlen wird.</p>
     </span>
 </footer>
 
-</body>
 
+
+</body>
 </html>
