@@ -46,7 +46,42 @@
 
 
 
-    <h1 id="plan">Plan:</h1>
+    <ul id="markdown-toc">
+  <li><a href="#plan" id="markdown-toc-plan">Plan:</a></li>
+  <li>
+<a href="#einleitung" id="markdown-toc-einleitung">Einleitung</a>    <ul>
+      <li><a href="#markdown-flavor" id="markdown-toc-markdown-flavor">Markdown flavor</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#paketmanager" id="markdown-toc-paketmanager">Paketmanager</a>    <ul>
+      <li><a href="#intern" id="markdown-toc-intern">Intern</a></li>
+      <li>
+<a href="#lazy-vim" id="markdown-toc-lazy-vim">Lazy-vim</a>        <ul>
+          <li><a href="#features" id="markdown-toc-features">Features</a></li>
+          <li><a href="#pro" id="markdown-toc-pro">Pro</a></li>
+          <li><a href="#kontra" id="markdown-toc-kontra">Kontra</a></li>
+          <li><a href="#requirements" id="markdown-toc-requirements">Requirements</a></li>
+        </ul>
+      </li>
+      <li><a href="#voundle" id="markdown-toc-voundle">Voundle</a></li>
+      <li><a href="#packer" id="markdown-toc-packer">Packer</a></li>
+      <li><a href="#vim-plug" id="markdown-toc-vim-plug">vim-plug</a></li>
+      <li><a href="#deinvim" id="markdown-toc-deinvim">Dein.vim</a></li>
+      <li><a href="#manual" id="markdown-toc-manual">Manual</a></li>
+    </ul>
+  </li>
+  <li>
+<a href="#spacevim-vs-scratch" id="markdown-toc-spacevim-vs-scratch">Spacevim vs Scratch</a>    <ul>
+      <li><a href="#features-1" id="markdown-toc-features-1">Features</a></li>
+      <li><a href="#pro-1" id="markdown-toc-pro-1">Pro</a></li>
+      <li><a href="#kon" id="markdown-toc-kon">Kon</a></li>
+    </ul>
+  </li>
+  <li><a href="#links" id="markdown-toc-links">Links</a></li>
+</ul>
+
+<h1 id="plan">Plan:</h1>
 
 <ol>
   <li>EInleitung
@@ -67,10 +102,14 @@
     <ol>
       <li>Syntax</li>
       <li>Html Kann man links folgen</li>
-    </ol>
-  </li>
-  <li>Pandoc
-    <ol>
+      <li>Alle Auffuehren
+        <ol>
+          <li>Features</li>
+          <li>Pro</li>
+          <li>Con
+A. Pandoc</li>
+        </ol>
+      </li>
       <li>Extension</li>
       <li>Template</li>
     </ol>
@@ -99,6 +138,8 @@ aufbauen. Manche unterstuetzen zum beispiel “Mathe Bloecke”, andere
 
 <h1 id="paketmanager">Paketmanager</h1>
 
+<h2 id="intern">Intern</h2>
+
 <h2 id="lazy-vim">Lazy-vim</h2>
 
 <h3 id="features">Features</h3>
@@ -118,6 +159,10 @@ aufbauen. Manche unterstuetzen zum beispiel “Mathe Bloecke”, andere
   <li>Commit, branch, tag, version support</li>
 </ul>
 
+<h3 id="pro">Pro</h3>
+
+<h3 id="kontra">Kontra</h3>
+
 <h3 id="requirements">Requirements</h3>
 
 <ul>
@@ -127,46 +172,6 @@ aufbauen. Manche unterstuetzen zum beispiel “Mathe Bloecke”, andere
 </li>
 </ul>
 
-<h3 id="installation">Installation</h3>
-
-<p>Add this code to your <code class="language-plaintext highlighter-rouge">init.lua</code> to bootstrap <strong>lazy.nvim:</strong></p>
-
-<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">local</span> <span class="n">lazypath</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">stdpath</span><span class="p">(</span><span class="s2">"data"</span><span class="p">)</span> <span class="o">..</span> <span class="s2">"/lazy/lazy.nvim"</span>
-<span class="k">if</span> <span class="ow">not</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">.</span><span class="n">fs_stat</span><span class="p">(</span><span class="n">lazypath</span><span class="p">)</span> <span class="k">then</span>
-  <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span><span class="p">({</span>
-    <span class="s2">"git"</span><span class="p">,</span>
-    <span class="s2">"clone"</span><span class="p">,</span>
-    <span class="s2">"--filter=blob:none"</span><span class="p">,</span>
-    <span class="s2">"https://github.com/folke/lazy.nvim.git"</span><span class="p">,</span>
-    <span class="s2">"--branch=stable"</span><span class="p">,</span> <span class="c1">-- latest stable release</span>
-    <span class="n">lazypath</span><span class="p">,</span>
-  <span class="p">})</span>
-<span class="k">end</span>
-<span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">rtp</span><span class="p">:</span><span class="n">prepend</span><span class="p">(</span><span class="n">lazypath</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>To add Plugins insert them like below:</p>
-
-<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">(</span><span class="n">plugins</span><span class="p">,</span> <span class="n">opts</span><span class="p">)</span>
-</code></pre></div></div>
-
-<ul>
-  <li>
-<strong>plugins</strong>: this should be a <code class="language-plaintext highlighter-rouge">table</code> or a <code class="language-plaintext highlighter-rouge">string</code>
-</li>
-  <li>
-<strong>opts</strong>: further <a href="https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration">configuration</a> <strong>(optional)</strong>
-</li>
-</ul>
-
-<p>For Example:</p>
-
-<div class="language-lua highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
-  <span class="s2">"folke/which-key.nvim"</span><span class="p">,</span>
-  <span class="p">{</span> <span class="s2">"folke/neoconf.nvim"</span><span class="p">,</span> <span class="n">cmd</span> <span class="o">=</span> <span class="s2">"Neoconf"</span> <span class="p">},</span>
-  <span class="s2">"folke/neodev.nvim"</span><span class="p">,</span>
-<span class="p">})</span>
-</code></pre></div></div>
 <h2 id="voundle">Voundle</h2>
 
 <h2 id="packer">Packer</h2>
@@ -182,6 +187,12 @@ aufbauen. Manche unterstuetzen zum beispiel “Mathe Bloecke”, andere
 <h2 id="manual">Manual</h2>
 
 <h1 id="spacevim-vs-scratch">Spacevim vs Scratch</h1>
+
+<h2 id="features-1">Features</h2>
+
+<h2 id="pro-1">Pro</h2>
+
+<h2 id="kon">Kon</h2>
 
 <h1 id="links">Links</h1>
 

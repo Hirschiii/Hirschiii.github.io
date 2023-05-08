@@ -10,6 +10,9 @@ tags: []
 comments: true
 ---
 
+- TOC
+{:toc}
+
 # Plan:
 
 1. EInleitung
@@ -23,7 +26,11 @@ comments: true
 4. Markdown echtzeit HTML
     1. Syntax
     2. Html Kann man links folgen
-5. Pandoc
+    3. Alle Auffuehren
+        1. Features
+        2. Pro
+        3. Con
+A. Pandoc
     1. Extension
     2. Template
 
@@ -47,6 +54,8 @@ aufbauen. Manche unterstuetzen zum beispiel "Mathe Bloecke", andere
 
 # Paketmanager
 
+## Intern
+
 ## Lazy-vim
 
 ### Features
@@ -64,48 +73,15 @@ aufbauen. Manche unterstuetzen zum beispiel "Mathe Bloecke", andere
 - Automatic check for updates
 - Commit, branch, tag, version support
 
+### Pro
+
+### Kontra
+
 ### Requirements
 
 - Neovim **>=0.8.0**
 - Git **>=2.19.0**
 
-### Installation
-
-Add this code to your `init.lua` to bootstrap **lazy.nvim:**
-
-```lua
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
-end
-vim.opt.rtp:prepend(lazypath)
-```
-
-To add Plugins insert them like below:
-
-```lua
-require("lazy").setup(plugins, opts)
-```
-
-- **plugins**: this should be a `table` or a `string`
-- **opts**: further [configuration](https://github.com/folke/lazy.nvim#%EF%B8%8F-configuration) **(optional)**
-
-For Example:
-
-```lua
-require("lazy").setup({
-  "folke/which-key.nvim",
-  { "folke/neoconf.nvim", cmd = "Neoconf" },
-  "folke/neodev.nvim",
-})
-```
 ## Voundle
 
 ## Packer
@@ -119,6 +95,12 @@ require("lazy").setup({
 ## Manual
 
 # Spacevim vs Scratch
+
+## Features
+
+## Pro
+
+## Kon
 
 
 
