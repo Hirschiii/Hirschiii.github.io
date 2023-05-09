@@ -206,8 +206,8 @@ p:has(> img){
         /* display: inline-block; */
         position: sticky;
         width: fit-content;
-        top: 10px;
-        left: 20px;
+        top: 20px;
+        left: 30px;
     }
 }
 
@@ -227,5 +227,5 @@ p:has(> img){
     display: inline-block; 
     padding: 10px 10px 10px 10px; 
     margin: 10px;
-    display: inline-block;
+    max-height: 400px;
 }
