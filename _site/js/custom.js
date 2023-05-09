@@ -11,3 +11,4 @@ function setDetails(open) {
         a[i].open = open;
     }
 }
+

@@ -6,13 +6,31 @@
 }
 
 @font-face {
-    font-family: "Kingthings Foundation";
-    src: url(../fonts/Kingthings_Foundation.ttf)
+    font-family: "kingthings foundation";
+    src: url(../fonts/kingthings_foundation.ttf)
+}
+@font-face {
+    font-family: "Seravek_Basic";
+    src: url(../fonts/Seravek_Basic.ttf)
+}
+@font-face {
+    font-family: "time";
+    src: url(../fonts/time.ttf)
+}
+
+@font-face {
+    font-family: "Roboto Slab";
+    src: url(../fonts/RobotoSlab-Regular.ttf)
+}
+@font-face {
+    font-family: "Lato";
+    src: url(../fonts/Lato-Regular.ttf)
 }
 
 body{
     max-width: 900px;
     margin: auto;
+    font-family: "Roboto Slab";
 }
 
 p{
@@ -165,6 +183,11 @@ p:has(> img){
     font-size: 110%;
 }
 
+.content {
+    max-width: 30rem;
+    margin: 0 auto;
+}
+
 @media (max-width:1000px)  {
     body {
         font-size: 80%;
@@ -172,6 +195,19 @@ p:has(> img){
     }
     #blog img{
         max-width: 80%;
+    }
+}
+
+@media (min-width:60rem) {
+    main {
+        display: flex;
+    }
+    .toc {
+        /* display: inline-block; */
+        position: sticky;
+        width: fit-content;
+        top: 10px;
+        left: 20px;
     }
 }
 
@@ -185,10 +221,11 @@ p:has(> img){
     }
 }
 
-#markdown-toc {
+.toc {
     border: 1px solid #a2a9b1; 
     background-color: #f8f9fa;
     display: inline-block; 
-    padding: 10px 10px 10px 20px; 
+    padding: 10px 10px 10px 10px; 
     margin: 10px;
+    display: inline-block;
 }

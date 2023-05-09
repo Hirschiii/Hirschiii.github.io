@@ -10,9 +10,6 @@ tags: []
 comments: true
 ---
 
-- TOC
-{:toc}
-
 # Plan:
 
 1. EInleitung
