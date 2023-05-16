@@ -38,3 +38,18 @@ Foreign travel helps to gain experience in human comunikation
 and a mutal understanding of diffrent cultures.
 
 While traveling you 
+
+# 2023-05-09
+
+1. Many underaged are going abroad to advance there foreign language skills.
+2. Going abroad also helps to develop your self
+
+## Camp Activies
+
+### Pro
+
+- Gain experience
+- "Free ride to USA"
+- Do things you like
+
+### Kontra

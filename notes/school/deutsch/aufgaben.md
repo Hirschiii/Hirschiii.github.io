@@ -41,3 +41,28 @@ Er beschuentzt die Nacht und verzaubert
 - "lieber Fluss"
 
 ## Beispiel Anaslyse
+
+
+# 2023-05-15
+
+> Vergleich der Buecehr
+
+## Alfred Doebling: Berliner Alexanderplatz
+
+## Daniel Kehlmann: Die Vermessung der Welt
+
+## Dave Eggers: Der Circle
+
+## Ödön von Horváth: Jugend ohne Gott
+
+## Bov Bjerg: Auerhaus
+
+## Patrick Süßkind: Das Perfum
+
+## Bernhard Schlink: Der Vorleser
+
+## Erich Kaestner: Fabian
+
+## Thomas Mann: Felix Krull 
+
+## Arnold Zweig: Schachnovelle

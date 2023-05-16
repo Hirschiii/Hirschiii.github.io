@@ -27,3 +27,36 @@ $$
 f(x)=-0,2x^5 \rightarrow f'(x)=-0,2 * 5 * x^4
 \end{aligned}
 $$
+
+# 2023-05-16
+
+##
+
+$$
+\begin{aligned}
+f(x)&= 3x^2+5x &&B(-1|f(-1))\\
+f(x)&= 3x^2+5x &&B(-1|-2)\\
+f'(x)&= 6x + 5&&\\
+\mathclap{\rule{2cm}{0.4pt}}\\
+Y_t&=m_t*x+b\\
+\mathclap{\rule{2cm}{0.4pt}}\\
+f'(x)&=m_t; &&f'(x)=6x+5\\
+f'(-1)&=6*(-1)+5=-6=m_t\\
+\mathclap{\rule{2cm}{0.4pt}}\\
+-2&=6*-1+5+b; &&b=-1
+\end{aligned}
+$$
+
+---
+
+### Normale
+
+$$
+\begin{aligned}
+Y_n&=m_n*x+c&&\\
+m_n&=-\frac{1}{m_t}\\
+m_n&=-\frac{1}{-1}=1\\
+-2 &= 1*(-1)+c &&\vert +1\\
+-1&=c
+\end{aligned}
+$$
