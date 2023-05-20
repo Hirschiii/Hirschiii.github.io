@@ -44,4 +44,30 @@ Radius (Zeigerlaenge) abhaengig ist.
 - Bahngeschwindigkeit: $v=\omega * r=0,00000259*400.000km=1.036$
 - Zentripetalbeschleunigung: $a_{ZP}=\omega^2*r=0,00000259^2*400.000km=0,00000268324$
 
-# Sil Nr. 3 b
+# 2023-05-17
+
+## Nr. 3 b)
+
+- Kugel masse $150g$
+- Reissfestigkeit des Fadens: $6N$
+- max Radius: $r_{max}=0.2m$
+
+$$
+\begin{aligned}
+F_z &= m_B*\frac{v^2}{r}=m*w^2*r&&\\
+F_z &= 150g * w^2 * 0.2m&&\\
+F_z &= 6 = 150 * w^2 * 0.2&&|150*0.2\\
+6 &= 30 * w^2&&\\
+w^2&=0.2
+\end{aligned}
+$$
+---
+
+$$
+\begin{aligned}
+F_z &= m * w^2 * r &&m=0.15kg\\
+& &&r = 0.2m\\
+& &&F_z = 6N\\
+
+\end{aligned}
+$$

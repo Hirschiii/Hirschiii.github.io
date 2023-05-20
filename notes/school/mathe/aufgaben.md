@@ -60,3 +60,17 @@ m_n&=-\frac{1}{-1}=1\\
 -1&=c
 \end{aligned}
 $$
+
+### $f(x)=x^3-3x^2+2$
+
+#### Tangente $P(1|0)$:
+
+$$
+\begin{aligned}
+f(x)&=x^3-3x^2+2&&\\
+f'(x)&=3x^2-6x&&\\
+
+\end{aligned}
+$$
+
+
